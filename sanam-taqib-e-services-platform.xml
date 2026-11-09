@@ -3,7 +3,7 @@
 <html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='indie.xml' b:templateVersion='1.3.3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <head>
     <meta content='width=device-width, initial-scale=1' name='viewport'/>
-    <title><data:view.title.escaped/> | منصة تعقيب</title>
+    <title><data:view.title.escaped/> | سوق سنام للإعلانات المبوبة</title>
     <b:include data='blog' name='all-head-content'/>
     <link rel='preconnect' href='https://fonts.googleapis.com'/>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin='crossorigin'/>
@@ -2759,6 +2759,34 @@ body{background:#fff!important;color:var(--sx-ink)!important;font-size:16px;line
 @media(max-width:760px){.sx-hero{min-height:0}.sx-hero-content{max-width:100%;padding:62px 0 42px}.sx-hero-visual{position:relative;inset:auto;transform:none;width:min(calc(100% - 40px),440px);margin:0 auto 34px}.sx-hero{display:flex;flex-direction:column;align-items:stretch}.sx-hero-points{gap:6px 14px}.sx-tracking{grid-template-columns:1fr;gap:25px}.sx-steps{grid-template-columns:1fr}.sx-platform-footer-inner{justify-content:center;text-align:center}}
 @media(max-width:420px){.sx-visual-card{padding:22px}.sx-visual-card strong{font-size:24px}.sx-track-panel{padding:19px}}
 
+
+/* Sanam Classifieds theme overrides */
+:root{--sx-ink:#172b3a;--sx-muted:#667887;--sx-line:#e4eaf0;--sx-soft:#f5f7f9;--sx-navy:#172b3a;--sx-teal:#16827d;--sx-accent:#e8b85b}
+body{font-family:'Tajawal',Arial,sans-serif!important;background:#f5f7f9!important;color:#172b3a}
+.sx-header-inner{min-height:76px}.sx-mark{font-size:24px;font-weight:800;background:#172b3a}
+.sx-market-hero{background:linear-gradient(115deg,#132a3c,#1c4658 65%,#267b78);min-height:490px}
+.sx-market-search{display:flex;gap:10px;max-width:610px;background:#fff;padding:7px;border-radius:14px;margin:22px 0 18px;box-shadow:0 14px 36px rgba(0,0,0,.12)}
+.sx-market-search input{flex:1;min-width:0;border:0;outline:0;padding:12px 15px;color:#172b3a;background:transparent}
+.sx-market-search .sx-button{border:0;white-space:nowrap}
+.sx-category-grid .sx-card{display:block;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+.sx-category-grid .sx-card:hover{transform:translateY(-4px);box-shadow:0 14px 35px rgba(20,45,65,.1)}
+.sx-category-grid .sx-card-link{display:inline-block;margin-top:10px;color:#16827d;font-weight:800}
+#latest-ads{padding-bottom:18px}
+#main{max-width:1160px;margin:0 auto;padding:0 20px 60px}
+.main-heading{font-size:25px;font-weight:800;color:#172b3a}
+.blog-posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.blog-posts .post-outer{margin:0!important;padding:0!important;min-width:0}
+.blog-posts .post-outer-container,.blog-posts .post{height:100%;background:#fff;border:1px solid #e5ebf0;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(20,45,65,.045)}
+.blog-posts .post-title{font-family:'Tajawal',Arial,sans-serif!important;font-size:20px!important;font-weight:800!important;line-height:1.45}
+.blog-posts .post-body,.blog-posts .post-snippet{color:#647584;line-height:1.9}
+.blog-posts .snippet-thumbnail img,.blog-posts .post-body img{max-width:100%;height:auto;object-fit:cover}
+.post-footer,.post-header{color:#82909b}
+.post-labels a{display:inline-block;background:#edf5f4;color:#167a76!important;border-radius:20px;padding:5px 10px;margin:3px;text-decoration:none}
+#comments{background:#fff;border:1px solid #e5ebf0;border-radius:16px;padding:22px;margin-top:24px}
+.sx-platform-footer{background:#132a3c}
+@media(max-width:900px){.sx-nav{display:none}.blog-posts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.sx-wrap{width:calc(100% - 28px)}.sx-header-inner{min-height:68px}.sx-head-actions .sx-search{display:none}.sx-head-actions .sx-cta{padding:10px 13px;font-size:13px}.sx-market-hero{min-height:0}.sx-market-search{flex-direction:column}.sx-market-search .sx-button{width:100%}.blog-posts{grid-template-columns:1fr}#main{padding-inline:14px}.sx-section{padding:52px 0}}
+
 ]]></b:skin>
 
     <b:template-skin>
@@ -3078,56 +3106,58 @@ body{background:#fff!important;color:var(--sx-ink)!important;font-size:16px;line
 
     <header class='sx-header' role='banner'>
       <div class='sx-wrap sx-header-inner'>
-        <a class='sx-brand' expr:href='data:blog.homepageUrl' aria-label='منصة تعقيب - الصفحة الرئيسية'>
-          <span class='sx-mark' aria-hidden='true'><svg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5 3h10l4 4v14H5z' stroke='currentColor' stroke-width='1.7' stroke-linejoin='round'/><path d='M14 3v5h5M8 13h8M8 17h8M8 9h2' stroke='currentColor' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/></svg></span>
-          <span class='sx-brand-name'>منصة تعقيب<small>الخدمات الإلكترونية</small></span>
+        <a class='sx-brand' expr:href='data:blog.homepageUrl' aria-label='سوق سنام - الرئيسية'>
+          <span class='sx-mark' aria-hidden='true'>س</span>
+          <span class='sx-brand-name'>سوق سنام<small>إعلانات مبوبة للجميع</small></span>
         </a>
         <nav class='sx-nav' aria-label='التنقل الرئيسي'>
-          <a expr:href='data:blog.homepageUrl'>الرئيسية</a><a href='#services'>الخدمات</a><a href='#tracking'>تتبّع الطلبات</a><a href='#how-it-works'>طريقة الاستخدام</a><a href='#faq'>الأسئلة الشائعة</a>
+          <a expr:href='data:blog.homepageUrl'>الرئيسية</a><a href='/search/label/عقارات'>عقارات</a><a href='/search/label/سيارات'>سيارات</a><a href='/search/label/أجهزة'>أجهزة</a><a href='/search/label/وظائف'>وظائف</a>
         </nav>
         <div class='sx-head-actions'>
-          <form class='sx-search' expr:action='data:blog.searchUrl' role='search'><input aria-label='ابحث في معلومات الخدمات' name='q' placeholder='ابحث في الخدمات' type='search'/><button aria-label='بحث' type='submit'>⌕</button></form>
-          <a class='sx-button sx-cta' href='#services'>استعرض الخدمات</a>
+          <form class='sx-search' expr:action='data:blog.searchUrl' role='search'><input aria-label='ابحث في الإعلانات' name='q' placeholder='ابحث عن إعلان...' type='search'/><button aria-label='بحث' type='submit'>⌕</button></form>
+          <a class='sx-button sx-cta' href='/p/submit-ad.html'>+ أضف إعلانك</a>
         </div>
       </div>
     </header>
     <b:if cond='data:view.isHomepage'>
-      <section class='sx-hero' aria-labelledby='sx-hero-title'>
+      <section class='sx-hero sx-market-hero' aria-labelledby='sx-hero-title'>
         <div class='sx-wrap sx-hero-content'>
-          <span class='sx-eyebrow'>منصة تعقيب | خدمات رقمية</span>
-          <h1 id='sx-hero-title'>خدماتك ومعاملاتك<br/>في مكان واحد</h1>
-          <p>واجهة موحّدة لاستعراض الخدمات الإلكترونية، ومعرفة خطوات التقديم، ومتابعة الطلبات عبر القنوات المعتمدة.</p>
-          <div class='sx-hero-actions'><a class='sx-button' href='#services'>استكشف الخدمات</a><a class='sx-button sx-button--outline' href='#tracking'>تتبّع طلباً</a></div>
-          <div class='sx-hero-points'><span>واجهة عربية واضحة</span><span>خدمات مرتبة حسب احتياجك</span><span>معلومات وإرشادات موثوقة</span></div>
+          <span class='sx-eyebrow'>سوق سنام للإعلانات المبوبة</span>
+          <h1 id='sx-hero-title'>كل ما تبحث عنه،<br/>تجده في مكان واحد</h1>
+          <p>انشر إعلانك مجاناً، واكتشف عروض البيع والشراء والخدمات من حولك بسهولة.</p>
+          <form class='sx-market-search' expr:action='data:blog.searchUrl' role='search'>
+            <input name='q' type='search' placeholder='ما الذي تبحث عنه؟' aria-label='ابحث في جميع الإعلانات'/>
+            <button class='sx-button' type='submit'>ابحث الآن</button>
+          </form>
+          <div class='sx-hero-actions'><a class='sx-button' href='/p/submit-ad.html'>أضف إعلاناً مجانياً</a><a class='sx-button sx-button--outline' href='#latest-ads'>تصفح الإعلانات</a></div>
+          <div class='sx-hero-points'><span>نشر الإعلانات مجاناً</span><span>تواصل مباشر مع المعلنين</span><span>تصنيفات متنوعة</span></div>
         </div>
-        <div class='sx-hero-visual' aria-hidden='true'><div class='sx-visual-card'><span class='sx-visual-kicker'>بوابتك للخدمات</span><strong>إجراء أسهل.<br/>متابعة أوضح.</strong><span class='sx-visual-line'></span><span class='sx-visual-row'><i></i> تقديم الطلبات</span><span class='sx-visual-row'><i></i> متابعة المعاملات</span><span class='sx-visual-row'><i></i> الإرشادات والنماذج</span></div></div>
+        <div class='sx-hero-visual' aria-hidden='true'><div class='sx-visual-card'><span class='sx-visual-kicker'>سوق مفتوح للجميع</span><strong>اعرض. اكتشف.<br/>وتواصل بسهولة.</strong><span class='sx-visual-line'></span><span class='sx-visual-row'><i></i> بيع وشراء</span><span class='sx-visual-row'><i></i> عقارات وسيارات</span><span class='sx-visual-row'><i></i> خدمات وفرص عمل</span></div></div>
       </section>
-      <section class='sx-section sx-section--soft' id='services'>
-        <div class='sx-wrap'><div class='sx-section-head'><span class='sx-kicker'>الخدمات الإلكترونية</span><h2>اختر الخدمة التي تحتاجها</h2><p>تصفّح مجالات الخدمات، واطّلع على المتطلبات والخطوات قبل البدء.</p></div>
-          <div class='sx-grid'>
-            <article class='sx-card'><span class='sx-card-icon' aria-hidden='true'>01</span><h3>التعقيب على المعاملات</h3><p>معلومات وإرشادات حول تقديم الطلبات ومتابعة إجراءاتها.</p><a class='sx-card-link' href='#request'>تفاصيل الخدمة <span aria-hidden='true'>&#8592;</span></a></article>
-            <article class='sx-card'><span class='sx-card-icon' aria-hidden='true'>02</span><h3>متابعة الطلبات</h3><p>تعرّف على طريقة الاستعلام عن حالة الطلب باستخدام رقم المرجع عند تفعيل نظام المتابعة.</p><a class='sx-card-link' href='#tracking'>انتقل إلى المتابعة <span aria-hidden='true'>&#8592;</span></a></article>
-            <article class='sx-card'><span class='sx-card-icon' aria-hidden='true'>03</span><h3>الخدمات الحكومية</h3><p>دليل مبسّط للخدمات والإجراءات الإلكترونية ذات الصلة.</p><a class='sx-card-link' href='#news'>استعرض الأدلة <span aria-hidden='true'>&#8592;</span></a></article>
-            <article class='sx-card'><span class='sx-card-icon' aria-hidden='true'>04</span><h3>النماذج والمستندات</h3><p>إرشادات تجهيز المستندات والنماذج المطلوبة لكل نوع من الطلبات.</p><a class='sx-card-link' href='#news'>تصفّح الإرشادات <span aria-hidden='true'>&#8592;</span></a></article>
-            <article class='sx-card'><span class='sx-card-icon' aria-hidden='true'>05</span><h3>الاستعلامات</h3><p>إجابات ومعلومات تساعدك على فهم خطوات الخدمة ومتطلباتها.</p><a class='sx-card-link' href='#faq'>اعرف المزيد <span aria-hidden='true'>&#8592;</span></a></article>
-            <article class='sx-card'><span class='sx-card-icon' aria-hidden='true'>06</span><h3>مركز المساعدة</h3><p>إرشادات الاستخدام والأسئلة الشائعة وقنوات الدعم المعتمدة.</p><a class='sx-card-link' href='#faq'>زيارة مركز المساعدة <span aria-hidden='true'>&#8592;</span></a></article>
+      <section class='sx-section sx-section--soft' id='categories'>
+        <div class='sx-wrap'><div class='sx-section-head'><span class='sx-kicker'>تصفّح حسب القسم</span><h2>ماذا تبحث عنه اليوم؟</h2><p>اختر القسم المناسب للوصول إلى الإعلانات المنشورة.</p></div>
+          <div class='sx-grid sx-category-grid'>
+            <a class='sx-card' href='/search/label/عقارات'><span class='sx-card-icon'>01</span><h3>عقارات</h3><p>شقق وأراضٍ ومنازل للبيع والإيجار.</p><span class='sx-card-link'>تصفح العقارات ←</span></a>
+            <a class='sx-card' href='/search/label/سيارات'><span class='sx-card-icon'>02</span><h3>سيارات ومركبات</h3><p>سيارات ومركبات وقطع غيار.</p><span class='sx-card-link'>تصفح السيارات ←</span></a>
+            <a class='sx-card' href='/search/label/أجهزة'><span class='sx-card-icon'>03</span><h3>أجهزة وإلكترونيات</h3><p>هواتف وأجهزة منزلية وإلكترونيات.</p><span class='sx-card-link'>تصفح الأجهزة ←</span></a>
+            <a class='sx-card' href='/search/label/وظائف'><span class='sx-card-icon'>04</span><h3>وظائف وفرص عمل</h3><p>وظائف وخدمات ومهارات متنوعة.</p><span class='sx-card-link'>تصفح الوظائف ←</span></a>
+            <a class='sx-card' href='/search/label/أثاث'><span class='sx-card-icon'>05</span><h3>أثاث ومنزل</h3><p>أثاث وأدوات ومستلزمات منزلية.</p><span class='sx-card-link'>تصفح الأثاث ←</span></a>
+            <a class='sx-card' href='/search/label/خدمات'><span class='sx-card-icon'>06</span><h3>خدمات متنوعة</h3><p>خدمات مهنية وتجارية وشخصية.</p><span class='sx-card-link'>تصفح الخدمات ←</span></a>
           </div>
         </div>
       </section>
-      <section class='sx-section' id='tracking'>
-        <div class='sx-wrap sx-tracking'><div class='sx-tracking-copy'><span class='sx-kicker'>متابعة المعاملات</span><h2>تتبّع حالة طلبك</h2><p>تعرض هذه الواجهة مكاناً مخصصاً لمتابعة الطلبات. يلزم ربطها بنظام إدارة الطلبات وبياناته حتى تعمل الاستعلامات الفعلية.</p><a class='sx-button' href='#how-it-works'>كيف تتم المتابعة؟</a></div><div class='sx-track-panel'><div class='sx-track-panel-head'><span class='sx-track-icon' aria-hidden='true'>✓</span><div><strong>منطقة متابعة الطلب</strong><small>واجهة جاهزة للربط بالنظام</small></div><span class='sx-status'>قيد الربط</span></div><div class='sx-track-placeholder'><span class='sx-track-placeholder-label'>رقم الطلب أو المرجع</span><div class='sx-track-input'>ستظهر حالة الطلب بعد ربط نظام المتابعة</div><button class='sx-button sx-track-disabled' disabled='disabled' type='button'>الاستعلام عن الطلب</button></div><p class='sx-track-note'>لا تُدخل بيانات شخصية في هذه المعاينة.</p></div></div>
+      <section class='sx-section' id='latest-ads'>
+        <div class='sx-wrap'><div class='sx-section-head'><span class='sx-kicker'>المعروض حديثاً</span><h2>أحدث الإعلانات</h2><p>تظهر الإعلانات المنشورة في المدونة هنا تلقائياً. استخدم عنوان الإعلان والصور والتسميات لتسهيل العثور عليه.</p></div></div>
       </section>
       <section class='sx-section sx-section--soft' id='how-it-works'>
-        <div class='sx-wrap'><div class='sx-section-head'><span class='sx-kicker'>طريقة الاستخدام</span><h2>خطوات واضحة من البداية</h2><p>نظّم احتياجاتك قبل التقديم لتسهيل إنجاز المعاملة.</p></div><div class='sx-steps'><article class='sx-step'><span>١</span><h3>اختر الخدمة</h3><p>حدّد نوع الخدمة واقرأ وصفها ومتطلباتها.</p></article><article class='sx-step'><span>٢</span><h3>جهّز المعلومات</h3><p>راجع قائمة الوثائق والبيانات اللازمة قبل إرسال الطلب.</p></article><article class='sx-step'><span>٣</span><h3>تابع التحديثات</h3><p>استخدم رقم الطلب والقناة المعتمدة لمتابعة المستجدات.</p></article></div></div>
+        <div class='sx-wrap'><div class='sx-section-head'><span class='sx-kicker'>ابدأ خلال دقائق</span><h2>كيف تستخدم سوق سنام؟</h2><p>تصفّح الإعلانات أو أضف إعلانك ليتعرف عليه المهتمون.</p></div><div class='sx-steps'><article class='sx-step'><span>١</span><h3>اختر القسم</h3><p>تصفح الأقسام أو ابحث بالكلمات المفتاحية.</p></article><article class='sx-step'><span>٢</span><h3>أضف إعلانك</h3><p>أرسل تفاصيل السلعة أو الخدمة والصور ووسيلة التواصل.</p></article><article class='sx-step'><span>٣</span><h3>تواصل واتفق</h3><p>ناقش التفاصيل مباشرة مع صاحب الإعلان وتحقق من المعلومات قبل إتمام التعامل.</p></article></div></div>
       </section>
-      <section class='sx-section' id='request'>
-        <div class='sx-wrap sx-about'><div class='sx-about-copy'><span class='sx-kicker'>عن المنصة</span><h2>تعقيب وخدمات إلكترونية<br/>بتجربة أكثر وضوحاً</h2><p>منصة رقمية تجمع أدلة الخدمات وإرشادات المعاملات في واجهة عربية سهلة الاستخدام، مع مساحة قابلة للتوسّع لتقديم الطلبات ومتابعتها بعد ربطها بالأنظمة المعتمدة.</p><div class='sx-values'><span>سهولة الوصول</span><span>وضوح الإجراءات</span><span>حماية البيانات</span></div></div><div class='sx-about-panel'><strong>معلومات أوضح.<br/>خطوات أسهل.<br/>خدمات أقرب إليك.</strong></div></div>
+      <section class='sx-section' id='community'>
+        <div class='sx-wrap sx-about'><div class='sx-about-copy'><span class='sx-kicker'>مجتمع الإعلانات</span><h2>مساحة سهلة للبيع<br/>والشراء والتواصل</h2><p>سوق سنام يجمع الإعلانات المبوبة في واجهة عربية متوافقة مع Blogger. يمكن للزوار تصفح المنشورات والتعليق عليها، بينما تُدار الإعلانات المنشورة من خلال مدونة بلوجر.</p><div class='sx-values'><span>إعلانات مجانية</span><span>تعليقات على الإعلانات</span><span>بحث وتصنيفات</span></div></div><div class='sx-about-panel'><strong>إعلانك يصل.<br/>والفرص أقرب.<br/>والتواصل أسهل.</strong></div></div>
       </section>
       <section class='sx-section sx-section--soft' id='faq'>
-        <div class='sx-wrap'><div class='sx-section-head'><span class='sx-kicker'>مركز المساعدة</span><h2>الأسئلة الشائعة</h2><p>إجابات أولية تساعدك على الاستعداد لاستخدام الخدمات.</p></div><div class='sx-faq'><details><summary>كيف أبدأ طلب خدمة؟</summary><p>اختر الخدمة من القائمة، ثم راجع وصفها ومتطلباتها واتبع القناة الرسمية المحددة لها.</p></details><details><summary>كيف أتابع حالة معاملتي؟</summary><p>تحتاج المتابعة إلى رقم الطلب وربط المنصة بنظام إدارة المعاملات. ستتوفر الاستعلامات الفعلية بعد إتمام هذا الربط.</p></details><details><summary>أين أجد النماذج والمستندات المطلوبة؟</summary><p>راجع صفحة الخدمة أو أدلة المنصة المنشورة، إذ تختلف المتطلبات باختلاف نوع المعاملة والجهة المختصة.</p></details></div></div>
+        <div class='sx-wrap'><div class='sx-section-head'><span class='sx-kicker'>مركز المساعدة</span><h2>الأسئلة الشائعة</h2></div><div class='sx-faq'><details><summary>هل نشر الإعلان مجاني؟</summary><p>نعم، القالب مهيأ لعرض الإعلانات مجاناً. قد تُطبق أي شروط تحريرية أو مراجعة يحددها مشرف المدونة.</p></details><details><summary>كيف أضيف إعلاناً؟</summary><p>استخدم زر «أضف إعلانك». يلزم إنشاء صفحة نشر وربطها بنموذج إرسال وخدمة وسيطة إذا أردت استقبال إعلانات الزوار ونشرها تلقائياً على Blogger.</p></details><details><summary>هل يمكن التعليق على الإعلانات؟</summary><p>نعم، فعّل التعليقات في إعدادات Blogger لكل المنشورات أو للمنشورات الجديدة، وحدد ما إذا كان التعليق يتطلب حساب Google.</p></details><details><summary>هل يمكن تسجيل الدخول؟</summary><p>يستخدم نظام تعليقات Blogger تسجيل الدخول بحساب Google وفق إعدادات التعليقات. أما حسابات الأعضاء المستقلة داخل الموقع فتحتاج نظام عضويات خارجياً.</p></details></div></div>
       </section>
-      <section class='sx-news-intro' id='news'><div class='sx-wrap'><div class='sx-section-head'><span class='sx-kicker'>المعرفة والتحديثات</span><h2>أدلة وإرشادات الخدمات</h2><p>تظهر هنا أحدث الأدلة والتحديثات المنشورة للزوار.</p></div></div></section>
-      <section class='sx-contact' id='contact'><div class='sx-wrap sx-contact-inner'><div><h2>تحتاج إلى مساعدة؟</h2><p>ابدأ بقراءة الأسئلة الشائعة وأدلة الخدمات، ثم تواصل عبر قنوات الدعم المعتمدة.</p></div><a class='sx-button' href='#faq'>زيارة مركز المساعدة</a></div></section>
     </b:if>
 
     <div class='page'>
@@ -4279,8 +4309,8 @@ body{background:#fff!important;color:var(--sx-ink)!important;font-size:16px;line
     <b:template-script async='true' name='indie' version='1.0.0'/>
       <footer class='sx-platform-footer' role='contentinfo'>
       <div class='sx-platform-footer-inner'>
-        <p>© 2026 <strong>منصة تعقيب</strong>. جميع الحقوق محفوظة.</p>
-        <p class='sx-footer-note'>تصميم وتطوير المنصة: <strong>فريق منصة تعقيب</strong></p>
+        <p>© 2026 <strong>سوق سنام</strong>. جميع الحقوق محفوظة.</p>
+        <p class='sx-footer-note'>منصة إعلانات مبوبة مجانية</p>
       </div>
     </footer>
   </body>
