@@ -4452,8 +4452,8 @@ function bloggerPosts(){
   var known=['عقارات','سيارات','أجهزة','وظائف','أثاث','خدمات'];
   var category=known.find(function(c){return labels.indexOf(c)>-1})||labels[0]||'أخرى';
   var image=body&&body.querySelector('img');
-  var price=(desc.match(/(?:السعر|المطلوب|الإيجار)\\s*[:：-]?\\s*([^\\n،]+)/)||[])[1]||'تواصل لمعرفة السعر';
-  var city=(desc.match(/(?:المدينة|الموقع|المدينة\\s*\\/\\s*الحي)\\s*[:：-]?\\s*([^\\n،]+)/)||[])[1]||'غير محدد';
+  var price=(desc.match(/(?:السعر|المطلوب|الإيجار)\s*[:：-]?\s*([^\n،]+)/)||[])[1]||'تواصل لمعرفة السعر';
+  var city=(desc.match(/(?:المدينة|الموقع|المدينة\s*\/\s*الحي)\s*[:：-]?\s*([^\n،]+)/)||[])[1]||'غير محدد';
   var dateNode=w.querySelector('.published,.post-timestamp time');
   out.push({t:name,c:category,p:price,city:city,date:dateNode?(dateNode.textContent||dateNode.getAttribute('datetime')||''):'من بلوجر',i:'🛍️',d:desc.slice(0,1800),image:image?image.src:'',url:link||'',source:'blogger'});
  });
