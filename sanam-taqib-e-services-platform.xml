@@ -3164,7 +3164,8 @@ body{font-family:'Tajawal',Arial,sans-serif!important;background:#f5f7f9!importa
       @media(max-width:640px){.sx-market-toolbar-actions{width:100%}.sx-market-toolbar-actions>*{flex:1}}
     </style>
 
-  </head>
+      <style type='text/css'><![CDATA[:root{--sx-ink:#202522;--sx-muted:#68736c;--sx-line:#e7ebe7;--sx-paper:#fff;--sx-canvas:#f5f6f4;--sx-accent:#245b43}html,body{font-family:'Tajawal',Arial,sans-serif!important}body{background:var(--sx-canvas);color:var(--sx-ink)}.sx-wrap{max-width:1200px}.sx-section{padding-top:64px;padding-bottom:64px}.sx-section--soft{background:#f0f3f0}.sx-section-head{margin-bottom:28px}.sx-section-head h2{font-size:clamp(24px,3vw,34px);line-height:1.45;letter-spacing:-.3px}.sx-section-head p{color:var(--sx-muted);line-height:1.9}.sx-category-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.sx-card{background:#fff;border:1px solid var(--sx-line);border-radius:14px;box-shadow:0 3px 14px rgba(20,35,25,.035);padding:22px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.sx-card:hover{transform:translateY(-3px);border-color:#cbd8ce;box-shadow:0 10px 26px rgba(20,35,25,.07)}.sx-card h3{font-size:18px}.sx-card p{color:var(--sx-muted);line-height:1.8}.sx-card-icon{background:#edf3ee;color:var(--sx-accent);border-radius:9px;font-weight:800}.sx-kicker{color:var(--sx-accent);font-weight:800}.sx-hero{background:#f5f6f4}.sx-hero h1{letter-spacing:-.5px;line-height:1.35}.sx-hero-visual,.sx-about-panel{border-radius:18px}.sx-step,.sx-faq details{border:1px solid var(--sx-line);border-radius:12px;background:#fff}.sx-detail-actions button{border-radius:10px}@media(max-width:850px){.sx-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.sx-section{padding-top:48px;padding-bottom:48px}}@media(max-width:520px){.sx-category-grid{grid-template-columns:1fr}.sx-card{padding:18px}.sx-section-head h2{font-size:25px}}]]></style>
+</head>
 
   <body>
     <b:class cond='data:view.isPreview' name='preview'/>
@@ -3208,17 +3209,18 @@ body{font-family:'Tajawal',Arial,sans-serif!important;background:#f5f7f9!importa
         <div class='sx-hero-visual' aria-hidden='true'><div class='sx-visual-card'><span class='sx-visual-kicker'>سوق مفتوح للجميع</span><strong>اعرض. اكتشف.<br/>وتواصل بسهولة.</strong><span class='sx-visual-line'></span><span class='sx-visual-row'><i></i> بيع وشراء</span><span class='sx-visual-row'><i></i> عقارات وسيارات</span><span class='sx-visual-row'><i></i> خدمات وفرص عمل</span></div></div>
       </section>
       <section class='sx-section sx-section--soft' id='categories'>
-        <div class='sx-wrap'><div class='sx-section-head'><span class='sx-kicker'>تصفّح حسب القسم</span><h2>ماذا تبحث عنه اليوم؟</h2><p>اختر القسم المناسب للوصول إلى الإعلانات المنشورة.</p></div>
-          <div class='sx-grid sx-category-grid'>
-            <a class='sx-card' href='/search/label/عقارات'><span class='sx-card-icon'>01</span><h3>عقارات</h3><p>شقق وأراضٍ ومنازل للبيع والإيجار.</p><span class='sx-card-link'>تصفح العقارات ←</span></a>
-            <a class='sx-card' href='/search/label/سيارات'><span class='sx-card-icon'>02</span><h3>سيارات ومركبات</h3><p>سيارات ومركبات وقطع غيار.</p><span class='sx-card-link'>تصفح السيارات ←</span></a>
-            <a class='sx-card' href='/search/label/أجهزة'><span class='sx-card-icon'>03</span><h3>أجهزة وإلكترونيات</h3><p>هواتف وأجهزة منزلية وإلكترونيات.</p><span class='sx-card-link'>تصفح الأجهزة ←</span></a>
-            <a class='sx-card' href='/search/label/وظائف'><span class='sx-card-icon'>04</span><h3>وظائف وفرص عمل</h3><p>وظائف وخدمات ومهارات متنوعة.</p><span class='sx-card-link'>تصفح الوظائف ←</span></a>
-            <a class='sx-card' href='/search/label/أثاث'><span class='sx-card-icon'>05</span><h3>أثاث ومنزل</h3><p>أثاث وأدوات ومستلزمات منزلية.</p><span class='sx-card-link'>تصفح الأثاث ←</span></a>
-            <a class='sx-card' href='/search/label/خدمات'><span class='sx-card-icon'>06</span><h3>خدمات متنوعة</h3><p>خدمات مهنية وتجارية وشخصية.</p><span class='sx-card-link'>تصفح الخدمات ←</span></a>
-          </div>
-        </div>
-      </section>
+<div class='sx-wrap'><div class='sx-section-head'><span class='sx-kicker'>تصفّح حسب القسم</span><h2>ماذا تبحث عنه اليوم؟</h2><p>اختر القسم المناسب للوصول إلى الإعلانات المنشورة.</p></div>
+<div class='sx-grid sx-category-grid'>
+<a class='sx-card' href='/search/label/عقارات'><span class='sx-card-icon'>01</span><h3>عقارات</h3><p>شقق وأراضٍ ومنازل للبيع والإيجار.</p><span class='sx-card-link'>تصفح العقارات ←</span></a>
+<a class='sx-card' href='/search/label/سيارات'><span class='sx-card-icon'>02</span><h3>سيارات ومركبات</h3><p>سيارات ومركبات وقطع غيار.</p><span class='sx-card-link'>تصفح السيارات ←</span></a>
+<a class='sx-card' href='/search/label/أجهزة'><span class='sx-card-icon'>03</span><h3>أجهزة وإلكترونيات</h3><p>هواتف وأجهزة منزلية وإلكترونيات.</p><span class='sx-card-link'>تصفح الأجهزة ←</span></a>
+<a class='sx-card' href='/search/label/وظائف'><span class='sx-card-icon'>04</span><h3>وظائف وفرص عمل</h3><p>وظائف وخدمات ومهارات متنوعة.</p><span class='sx-card-link'>تصفح الوظائف ←</span></a>
+<a class='sx-card' href='/search/label/أثاث'><span class='sx-card-icon'>05</span><h3>أثاث ومنزل</h3><p>أثاث وأدوات ومستلزمات منزلية.</p><span class='sx-card-link'>تصفح الأثاث ←</span></a>
+<a class='sx-card' href='/search/label/خدمات'><span class='sx-card-icon'>06</span><h3>خدمات متنوعة</h3><p>خدمات مهنية وتجارية وشخصية.</p><span class='sx-card-link'>تصفح الخدمات ←</span></a>
+<a class='sx-card' href='/search/label/ملابس'><span class='sx-card-icon'>07</span><h3>ملابس وإكسسوارات</h3><p>ملابس وأحذية وساعات وإكسسوارات.</p><span class='sx-card-link'>تصفح الملابس ←</span></a>
+<a class='sx-card' href='/search/label/مواشي'><span class='sx-card-icon'>08</span><h3>مواشي وحيوانات</h3><p>مواشي وطيور وحيوانات ومستلزماتها.</p><span class='sx-card-link'>تصفح المواشي ←</span></a>
+<a class='sx-card' href='/search/label/متنوعات'><span class='sx-card-icon'>09</span><h3>متنوعات</h3><p>إعلانات وسلع أخرى في مختلف المجالات.</p><span class='sx-card-link'>تصفح المتنوعات ←</span></a>
+</div></div></section>
       <section class='sx-section' id='latest-ads'>
         <div class='sx-wrap'><div class='sx-section-head'><span class='sx-kicker'>المعروض حديثاً</span><h2>أحدث الإعلانات</h2><p>تظهر الإعلانات المنشورة في المدونة هنا تلقائياً. استخدم عنوان الإعلان والصور والتسميات لتسهيل العثور عليه.</p></div></div>
       </section>
