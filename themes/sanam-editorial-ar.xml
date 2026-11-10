@@ -2880,19 +2880,19 @@
           <div class='container'>
             <div class='stats-grid'>
               <article class='stat-card'>
-                <h2>AI</h2>
+                <h2>تقنية</h2>
                 <p>تقنية</p>
               </article>
               <article class='stat-card'>
-                <h2>UX</h2>
+                <h2>تصميم</h2>
                 <p>تصميم</p>
               </article>
               <article class='stat-card'>
-                <h2>Tech</h2>
+                <h2>أعمال</h2>
                 <p>أدلة عملية</p>
               </article>
               <article class='stat-card'>
-                <h2>Grow/7</h2>
+                <h2>معرفة</h2>
                 <p>معرفة متجددة</p>
               </article>
             </div>
@@ -3023,7 +3023,7 @@
                             <p class='editor-category'>
                               <b:if cond='data:post.labels'>
                                 <data:post.labels.first.name />
-                              <b:else /> Article </b:if>
+                              <b:else /> مقال </b:if>
                             </p>
                           </div>
                           <p class='editor-snippet'>
@@ -3077,7 +3077,7 @@
                 <b:if cond='data:blog.url == data:blog.homepageUrl'>
                   <b:include name='phoenix-home-hero' />
                   <div class='flex-between latest-articles-header'>
-                    <h2>Latest Articles</h2>
+                    <h2>أحدث المقالات</h2>
                     <a class='btn btn-outline' href='/search'>View All</a>
                   </div>
                   <div class='blog-posts hfeed'>
