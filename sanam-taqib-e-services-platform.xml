@@ -2797,6 +2797,58 @@ body{font-family:'Tajawal',Arial,sans-serif!important;background:#f5f7f9!importa
 .sx-like-count{font-variant-numeric:tabular-nums}
 @media(max-width:600px){.sx-post-actions{gap:8px}.sx-post-action{padding:8px 10px}}
 
+
+/* Full marketplace interface */
+.sx-marketplace{padding:18px 0 60px;background:#f5f7f9}
+.sx-market-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:0 0 20px}
+.sx-market-toolbar h2{margin:0;font-size:26px;color:#172b3a}
+.sx-market-count{font-size:13px;color:#71808c}
+.sx-market-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:22px;align-items:start}
+.sx-market-sidebar,.sx-market-main{background:#fff;border:1px solid #e5ebf0;border-radius:16px}
+.sx-market-sidebar{padding:18px;position:sticky;top:16px}
+.sx-market-sidebar h3{font-size:16px;margin:0 0 13px}
+.sx-market-filter{display:flex;flex-direction:column;gap:5px}
+.sx-market-filter button{border:0;background:transparent;text-align:right;padding:10px 11px;border-radius:9px;color:#566978;font:600 14px 'Tajawal',Arial;cursor:pointer}
+.sx-market-filter button:hover,.sx-market-filter button.active{background:#edf5f4;color:#117a74}
+.sx-market-main{padding:18px;min-width:0}
+.sx-market-main-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.sx-market-main-head strong{font-size:18px}
+.sx-market-sort{border:1px solid #e1e8ed;border-radius:9px;padding:9px 12px;background:#fff;color:#526473;font:14px 'Tajawal',Arial}
+.sx-listing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.sx-listing-card{border:1px solid #e8edf1;border-radius:13px;overflow:hidden;min-width:0;background:#fff;transition:.18s}
+.sx-listing-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px #142d4110}
+.sx-listing-image{height:148px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e6efef,#d7e4e6);font-size:48px;position:relative}
+.sx-listing-image img{width:100%;height:100%;object-fit:cover}
+.sx-listing-tag{position:absolute;top:10px;right:10px;background:#fff;border-radius:20px;padding:4px 9px;font-size:11px;color:#167a74;font-weight:800}
+.sx-listing-body{padding:13px}
+.sx-listing-body h3{font-size:15px;line-height:1.5;margin:0 0 8px;color:#203545;min-height:45px}
+.sx-listing-price{font-size:17px;font-weight:800;color:#167a74;margin:0 0 9px}
+.sx-listing-meta{display:flex;justify-content:space-between;gap:8px;color:#82909b;font-size:11px}
+.sx-listing-open{display:block;width:100%;margin-top:12px;border:1px solid #dce7e8;background:#f7fbfa;color:#167a74;border-radius:8px;padding:8px;font:700 13px 'Tajawal',Arial;cursor:pointer}
+.sx-listing-empty{grid-column:1/-1;padding:45px 15px;text-align:center;color:#7c8b96}
+.sx-market-submit{position:fixed;z-index:50;left:20px;bottom:20px;background:#16827d;color:white;border:0;border-radius:999px;padding:14px 21px;font:800 15px 'Tajawal',Arial;box-shadow:0 8px 25px #0d514b40;cursor:pointer}
+.sx-market-modal{position:fixed;inset:0;z-index:1000;background:#10233299;display:none;align-items:center;justify-content:center;padding:16px}
+.sx-market-modal.open{display:flex}
+.sx-market-dialog{background:#fff;width:min(620px,100%);max-height:92vh;overflow:auto;border-radius:18px;padding:22px;box-shadow:0 20px 70px #0003}
+.sx-market-dialog-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}
+.sx-market-dialog-head h2{font-size:21px;margin:0}
+.sx-market-close{border:0;background:#f1f4f6;border-radius:50%;width:36px;height:36px;font-size:22px;cursor:pointer}
+.sx-market-form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sx-market-field{display:flex;flex-direction:column;gap:6px}
+.sx-market-field.full{grid-column:1/-1}
+.sx-market-field label{font-size:13px;font-weight:700;color:#425565}
+.sx-market-field input,.sx-market-field select,.sx-market-field textarea{width:100%;box-sizing:border-box;border:1px solid #dfe7ec;border-radius:9px;padding:11px;background:#fff;font:14px 'Tajawal',Arial;color:#243b4c}
+.sx-market-field textarea{min-height:90px;resize:vertical}
+.sx-market-disclaimer{grid-column:1/-1;background:#fff8e8;color:#85672a;padding:11px;border-radius:9px;font-size:12px;line-height:1.7}
+.sx-market-form button{grid-column:1/-1;border:0;background:#16827d;color:#fff;border-radius:10px;padding:13px;font:800 15px 'Tajawal',Arial;cursor:pointer}
+.sx-market-detail{display:flex;flex-direction:column;gap:10px}
+.sx-market-detail .sx-detail-price{font-size:22px;font-weight:800;color:#16827d}
+.sx-market-detail p{line-height:1.9;color:#596d7b}
+.sx-market-notice{background:#edf6f4;color:#176d68;border-radius:9px;padding:11px;font-size:13px;margin-bottom:14px}
+.sx-market-hero .sx-hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:900px){.sx-market-layout{grid-template-columns:1fr}.sx-market-sidebar{position:static}.sx-market-filter{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.sx-listing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.sx-listing-grid{grid-template-columns:1fr 1fr;gap:9px}.sx-listing-image{height:115px}.sx-listing-body{padding:10px}.sx-listing-body h3{font-size:13px;min-height:39px}.sx-listing-price{font-size:15px}.sx-listing-meta{font-size:10px;flex-direction:column;gap:3px}.sx-market-main{padding:11px}.sx-market-filter{grid-template-columns:repeat(2,minmax(0,1fr))}.sx-market-form{grid-template-columns:1fr}.sx-market-field.full,.sx-market-disclaimer,.sx-market-form button{grid-column:1}.sx-market-submit{left:12px;bottom:12px;padding:12px 17px}}
+
 ]]></b:skin>
 
     <b:template-skin>
@@ -4358,6 +4410,74 @@ body{font-family:'Tajawal',Arial,sans-serif!important;background:#f5f7f9!importa
   var observer=new MutationObserver(initMarketActions);
   observer.observe(document.documentElement,{childList:true,subtree:true});
   setTimeout(function(){observer.disconnect()},10000);
+})();
+]]></script>
+<script type='text/javascript'><![CDATA[
+(function(){
+'use strict';
+var demo=[
+{t:'شقة غرفتين وصالة للإيجار بحي هادئ',c:'عقارات',p:'1,800 ريال / شهرياً',city:'الرياض',date:'اليوم',i:'🏠',d:'شقة نظيفة ومجددة، غرفتا نوم وصالة ومطبخ ودورة مياه، قريبة من الخدمات. بيانات تجريبية للعرض.'},
+{t:'أرض سكنية 300 متر في مخطط جديد',c:'عقارات',p:'185,000 ريال',city:'الخرج',date:'اليوم',i:'🏡',d:'أرض سكنية بصك إلكتروني افتراضي لأغراض العرض فقط.'},
+{t:'فيلا عائلية دورين مع حوش',c:'عقارات',p:'780,000 ريال',city:'جدة',date:'أمس',i:'🏘️',d:'فيلا واسعة بتصميم عائلي. هذا إعلان تجريبي وليس عرضاً حقيقياً.'},
+{t:'تويوتا كامري 2021 حالة ممتازة',c:'سيارات',p:'69,000 ريال',city:'الرياض',date:'اليوم',i:'🚘',d:'سيارة تجريبية لعرض شكل بطاقة الإعلان، يرجى عدم اعتبار البيانات حقيقية.'},
+{t:'هيونداي إلنترا 2019 اقتصادية',c:'سيارات',p:'38,500 ريال',city:'الدمام',date:'أمس',i:'🚗',d:'مواصفات وسعر افتراضيان لعرض واجهة السوق.'},
+{t:'دباب توصيل بحالة جيدة',c:'سيارات',p:'4,200 ريال',city:'مكة',date:'قبل يومين',i:'🛵',d:'إعلان توضيحي تجريبي.'},
+{t:'آيفون 14 برو سعة 256 جيجا',c:'أجهزة',p:'2,150 ريال',city:'الرياض',date:'اليوم',i:'📱',d:'جهاز تجريبي معروض لاختبار التصميم.'},
+{t:'لابتوب للأعمال والدراسة',c:'أجهزة',p:'1,850 ريال',city:'أبها',date:'أمس',i:'💻',d:'لابتوب بمواصفات افتراضية لعرض نموذج الإعلان.'},
+{t:'شاشة تلفزيون ذكية 55 بوصة',c:'أجهزة',p:'1,100 ريال',city:'الطائف',date:'قبل يومين',i:'📺',d:'تفاصيل المنتج افتراضية.'},
+{t:'مطلوب محاسب للعمل بدوام كامل',c:'وظائف',p:'راتب يحدد بعد المقابلة',city:'الرياض',date:'اليوم',i:'💼',d:'فرصة وظيفية افتراضية لأغراض اختبار واجهة المنصة.'},
+{t:'مصمم جرافيك للعمل عن بعد',c:'وظائف',p:'حسب الخبرة',city:'عن بعد',date:'أمس',i:'🎨',d:'إعلان وظيفة تجريبي.'},
+{t:'كنب زاوية مع طاولة وسط',c:'أثاث',p:'1,300 ريال',city:'جدة',date:'اليوم',i:'🛋️',d:'أثاث منزلي افتراضي.'},
+{t:'غرفة نوم كاملة بحالة ممتازة',c:'أثاث',p:'2,400 ريال',city:'المدينة',date:'أمس',i:'🛏️',d:'إعلان تجريبي لعرض تصنيف الأثاث.'},
+{t:'خدمات نقل عفش داخل المدينة',c:'خدمات',p:'تبدأ من 150 ريال',city:'الرياض',date:'اليوم',i:'🚚',d:'خدمة افتراضية لشرح شكل الإعلان.'},
+{t:'تصميم مواقع ومتاجر إلكترونية',c:'خدمات',p:'حسب الطلب',city:'كل المناطق',date:'أمس',i:'🖥️',d:'خدمة تجريبية لعرض قسم الخدمات.'}
+];
+var cats=['الكل','عقارات','سيارات','أجهزة','وظائف','أثاث','خدمات'];
+var userKey='snam-market-user-listings-v1';
+var active='الكل',query='';
+function esc(v){return String(v||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function users(){try{return JSON.parse(localStorage.getItem(userKey)||'[]')}catch(e){return []}}
+function save(a){try{localStorage.setItem(userKey,JSON.stringify(a));return true}catch(e){return false}}
+function all(){return users().concat(demo)}
+function render(){
+ var root=document.getElementById('sx-market-listings');if(!root)return;
+ var items=all().filter(function(x){return (active==='الكل'||x.c===active)&&(!query||(x.t+' '+x.c+' '+x.city+' '+x.d).toLowerCase().indexOf(query.toLowerCase())>-1)});
+ var count=root.querySelector('.sx-market-count');if(count)count.textContent=items.length+' إعلان';
+ var grid=root.querySelector('.sx-listing-grid');if(!grid)return;
+ grid.innerHTML=items.map(function(x,n){return '<article class="sx-listing-card"><div class="sx-listing-image">'+(x.image?'<img src="'+esc(x.image)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'"/>':esc(x.i||'🛍️'))+'<span class="sx-listing-tag">'+esc(x.c)+'</span></div><div class="sx-listing-body"><h3>'+esc(x.t)+'</h3><div class="sx-listing-price">'+esc(x.p||'على السوم')+'</div><div class="sx-listing-meta"><span>📍 '+esc(x.city)+'</span><span>'+esc(x.date||'الآن')+'</span></div><button class="sx-listing-open" type="button" data-detail="'+n+'">عرض التفاصيل</button></div></article>'}).join('')||'<div class="sx-listing-empty">لا توجد إعلانات مطابقة. جرّب قسماً آخر أو أضف إعلانك.</div>';
+ grid.querySelectorAll('[data-detail]').forEach(function(btn){btn.addEventListener('click',function(){showDetail(items[Number(btn.getAttribute('data-detail'))])})});
+}
+function showDetail(x){
+ var modal=document.getElementById('sx-market-detail-modal');if(!modal)return;
+ modal.querySelector('.sx-market-dialog').innerHTML='<div class="sx-market-dialog-head"><h2>'+esc(x.t)+'</h2><button class="sx-market-close" type="button" data-close>×</button></div><div class="sx-market-detail"><div class="sx-listing-image">'+(x.image?'<img src="'+esc(x.image)+'" alt=""/>':esc(x.i||'🛍️'))+'</div><div class="sx-detail-price">'+esc(x.p||'على السوم')+'</div><div>📍 '+esc(x.city)+'　 ·　 '+esc(x.c)+'</div><p>'+esc(x.d)+'</p>'+(x.phone?'<a class="sx-button" href="https://wa.me/'+esc(x.phone.replace(/\D/g,''))+'" target="_blank" rel="noopener">تواصل عبر واتساب</a>':'')+'<div class="sx-market-notice">تنبيه: الإعلانات التجريبية المعروضة بيانات افتراضية وليست عروضاً موثقة.</div></div>';
+ modal.classList.add('open');modal.querySelector('[data-close]').addEventListener('click',function(){modal.classList.remove('open')});
+}
+function openForm(){var m=document.getElementById('sx-market-add-modal');if(m)m.classList.add('open')}
+function closeModals(){document.querySelectorAll('.sx-market-modal').forEach(function(m){m.classList.remove('open')})}
+function mount(){
+ if(document.getElementById('sx-market-listings'))return;
+ var target=document.getElementById('latest-ads');if(!target)return;
+ target.innerHTML='<div class="sx-wrap"><div class="sx-market-toolbar"><div><span class="sx-kicker">تصفح السوق</span><h2>إعلانات للبيع والخدمات</h2><span class="sx-market-count"></span></div><button class="sx-button" type="button" id="sx-open-add">＋ أضف إعلانك مجاناً</button></div><div class="sx-market-layout" id="sx-market-listings"><aside class="sx-market-sidebar"><h3>الأقسام</h3><div class="sx-market-filter">'+cats.map(function(c){return '<button type="button" data-cat="'+c+'" class="'+(c==='الكل'?'active':'')+'">'+c+'</button>'}).join('')+'</div></aside><div class="sx-market-main"><div class="sx-market-main-head"><strong>تصفح أحدث الإعلانات</strong><select class="sx-market-sort" id="sx-market-sort"><option value="new">الأحدث أولاً</option><option value="price">السعر (بيانات العرض)</option></select></div><div class="sx-listing-grid"></div></div></div></div>';
+ var add=document.createElement('button');add.type='button';add.className='sx-market-submit';add.id='sx-floating-add';add.textContent='+ أضف إعلانك';document.body.appendChild(add);
+ var addModal=document.createElement('div');addModal.className='sx-market-modal';addModal.id='sx-market-add-modal';
+ addModal.innerHTML='<div class="sx-market-dialog"><div class="sx-market-dialog-head"><h2>أضف إعلانك مجاناً</h2><button class="sx-market-close" type="button" data-close>×</button></div><div class="sx-market-notice">لا تحتاج إلى تسجيل دخول في هذه النسخة التجريبية. إعلانك يُحفظ على هذا الجهاز والمتصفح فقط ولا يظهر للزوار الآخرين.</div><form class="sx-market-form" id="sx-market-form"><div class="sx-market-field full"><label>عنوان الإعلان *</label><input name="title" required maxlength="90" placeholder="مثال: شقة للإيجار في الرياض"/></div><div class="sx-market-field"><label>القسم *</label><select name="category" required>'+cats.slice(1).map(function(c){return '<option>'+c+'</option>'}).join('')+'</select></div><div class="sx-market-field"><label>السعر</label><input name="price" placeholder="مثال: 2500 ريال"/></div><div class="sx-market-field"><label>المدينة *</label><input name="city" required placeholder="الرياض"/></div><div class="sx-market-field"><label>رقم التواصل (اختياري)</label><input name="phone" inputmode="tel" placeholder="9665xxxxxxxx"/></div><div class="sx-market-field full"><label>رابط صورة (اختياري)</label><input name="image" type="url" placeholder="https://..."/></div><div class="sx-market-field full"><label>وصف الإعلان *</label><textarea name="description" required maxlength="1200" placeholder="اكتب تفاصيل الإعلان بوضوح..."></textarea></div><div class="sx-market-disclaimer">بيانات الإعلانات الموجودة حالياً أمثلة افتراضية. لا تستخدم المنصة لإرسال بيانات حساسة، وتحقق من المعلن والسلعة قبل الدفع.</div><button type="submit">نشر الإعلان على هذا الجهاز</button></form></div>';
+ document.body.appendChild(addModal);
+ var detail=document.createElement('div');detail.className='sx-market-modal';detail.id='sx-market-detail-modal';detail.innerHTML='<div class="sx-market-dialog"></div>';document.body.appendChild(detail);
+ document.getElementById('sx-open-add').addEventListener('click',openForm);add.addEventListener('click',openForm);
+ document.querySelectorAll('.sx-market-close').forEach(function(b){b.addEventListener('click',closeModals)});
+ document.querySelectorAll('.sx-market-modal').forEach(function(m){m.addEventListener('click',function(e){if(e.target===m)closeModals()})});
+ document.querySelectorAll('.sx-market-filter button').forEach(function(b){b.addEventListener('click',function(){active=b.getAttribute('data-cat');document.querySelectorAll('.sx-market-filter button').forEach(function(x){x.classList.toggle('active',x===b)});render()})});
+ document.getElementById('sx-market-form').addEventListener('submit',function(e){
+  e.preventDefault();var fd=new FormData(e.currentTarget);var x={t:fd.get('title').trim(),c:fd.get('category'),p:fd.get('price').trim()||'على السوم',city:fd.get('city').trim(),phone:fd.get('phone').trim(),image:fd.get('image').trim(),d:fd.get('description').trim(),i:'🛍️',date:'الآن'};
+  if(!x.t||!x.city||!x.d)return;
+  var list=users();list.unshift(x);if(!save(list)){alert('تعذر حفظ الإعلان. قد تكون مساحة التخزين ممتلئة.');return}
+  e.currentTarget.reset();closeModals();active='الكل';document.querySelectorAll('.sx-market-filter button').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-cat')==='الكل')});render();alert('تمت إضافة إعلانك إلى قائمة هذا المتصفح التجريبية.');
+ });
+ var search=document.querySelector('.sx-market-search input');if(search)search.addEventListener('input',function(){query=search.value;render()});
+ var topSearch=document.querySelector('.sx-search input');if(topSearch)topSearch.addEventListener('input',function(){query=topSearch.value;render()});
+ render();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
 })();
 ]]></script>
   </body>
