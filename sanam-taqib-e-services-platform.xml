@@ -4331,27 +4331,31 @@ body{font-family:'Tajawal',Arial,sans-serif!important;background:#f5f7f9!importa
   function readLikes(){try{return JSON.parse(localStorage.getItem(storageKey)||'{}')}catch(e){return {}}}
   function writeLikes(data){try{localStorage.setItem(storageKey,JSON.stringify(data))}catch(e){}}
   function initMarketActions(){
-    var posts=document.querySelectorAll('.blog-posts .post-outer, .blog-posts .post-outer-container, .blog-posts article.post, body.item-view .post-outer, body.item-view .post-outer-container');
+    var posts=document.querySelectorAll('.blog-posts .post-outer, .blog-posts .post-outer-container, body.item-view .post-outer, body.item-view .post-outer-container');
     posts.forEach(function(wrap){
+      if(wrap.classList.contains('post-outer-container') && wrap.querySelector('.post-outer')) return;
       if(wrap.querySelector('.sx-post-actions')) return;
       var titleLink=wrap.querySelector('.post-title a, h3 a, h2 a');
       var permalink=titleLink ? titleLink.href : location.href;
       var key='post:'+permalink;
-      var likes=readLikes();
-      var liked=!!likes[key];
+      var liked=!!readLikes()[key];
       var bar=document.createElement('div');bar.className='sx-post-actions';
       var like=document.createElement('button');like.type='button';like.className='sx-post-action sx-like-button';like.setAttribute('aria-pressed',liked?'true':'false');
-      like.innerHTML='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-8c1.8 0 2.7 1.4 2.2 3.1L13 10h5.4a2.5 2.5 0 0 1 2.4 3.2l-1.8 6A2.5 2.5 0 0 1 16.6 21H7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>إعجاب</span><span class="sx-like-count"></span>';
-      like.querySelector('.sx-like-count').textContent=liked?'1':'0';
-      like.addEventListener('click',function(){var current=readLikes();var next=!current[key];if(next){current[key]=1}else{delete current[key]}writeLikes(current);like.setAttribute('aria-pressed',next?'true':'false');like.querySelector('.sx-like-count').textContent=next?'1':'0';});
-      var comments=document.createElement('a');comments.className='sx-post-action';comments.href=permalink+(permalink.indexOf('#')===-1?'#comments':'');comments.innerHTML='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l-2 2v-6a7.5 7.5 0 1 1 17-3.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>التعليقات</span>';
+      like.innerHTML='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-8c1.8 0 2.7 1.4 2.2 3.1L13 10h5.4a2.5 2.5 0 0 1 2.4 3.2l-1.8 6A2.5 2.5 0 0 1 16.6 21H7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span></span>';
+      like.querySelector('span').textContent=liked?'أعجبني':'إعجاب';
+      like.addEventListener('click',function(){
+        var current=readLikes();var next=!current[key];
+        if(next){current[key]=1}else{delete current[key]}
+        writeLikes(current);like.setAttribute('aria-pressed',next?'true':'false');like.querySelector('span').textContent=next?'أعجبني':'إعجاب';
+      });
+      var comments=document.createElement('a');comments.className='sx-post-action';comments.href=permalink+(permalink.indexOf('#')===-1?'#comments':'');
+      comments.innerHTML='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l-2 2v-6a7.5 7.5 0 1 1 17-3.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>التعليقات</span>';
       bar.appendChild(like);bar.appendChild(comments);
-      var target=wrap.querySelector('.post-footer, .post-bottom, .post-body')||wrap;
-      target.appendChild(bar);
+      (wrap.querySelector('.post-footer, .post-bottom, .post-body')||wrap).appendChild(bar);
     });
   }
   if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMarketActions)}else{initMarketActions()}
-  var observer=new MutationObserver(function(){initMarketActions()});
+  var observer=new MutationObserver(initMarketActions);
   observer.observe(document.documentElement,{childList:true,subtree:true});
   setTimeout(function(){observer.disconnect()},10000);
 })();
