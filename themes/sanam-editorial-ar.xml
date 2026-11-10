@@ -2971,8 +2971,7 @@
               <b:widget-setting name='content' />
             </b:widget-settings>
             <b:includable id='main'>
-              <b:if cond='data:content != &quot;&quot;'>
-<div class='container'>
+              <div class='container'>
                 <div class='announcement-content'>
                   <span aria-hidden='true' class='announcement-badge'>جديد</span>
                   <span class='announcement-text'>
@@ -3198,16 +3197,17 @@
               <b:widget-setting name='content' />
             </b:widget-settings>
             <b:includable id='main'>
-              <div class='container'>
-                <div class='ad-placeholder'>
-                  <span class='ad-label'>مساحة إعلانية</span>
-                  <div aria-label='مساحة إعلانية داخل المحتوى' class='ad-box'
-                    role='img'>
-                    <data:content />
+              <b:if cond='data:content != &quot;&quot;'>
+                <div class='container'>
+                  <div class='ad-placeholder'>
+                    <span class='ad-label'>مساحة إعلانية</span>
+                    <div aria-label='مساحة إعلانية داخل المحتوى' class='ad-box'
+                      role='img'>
+                      <data:content />
+                    </div>
                   </div>
                 </div>
-              </div>
-</b:if>
+              </b:if>
             </b:includable>
           </b:widget>
         </b:section>
