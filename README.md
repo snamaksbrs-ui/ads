@@ -1,15 +1,26 @@
-# Souk Sanam — Blogger Classifieds
+# منصة تعقيب — قالب الخدمات الإلكترونية
 
-Arabic classifieds marketplace theme for Blogger, with a Supabase-connected implementation.
+قالب واجهة عربية متجاوبة لمنصة تعقيب وخدمات إلكترونية. يتضمن أقسام الخدمات، متابعة الطلبات، خطوات الاستخدام، الأسئلة الشائعة، أدلة الخدمات، ومركز المساعدة، إضافة إلى تذييل حقوق المنصة والتطوير.
 
-## Main integrated theme
-- sanam-taqib-e-services-platform.xml: current Blogger theme with the existing Supabase marketplace integration.
-- supabase/schema.sql: database schema and row-level security.
-- docs/SETUP-AR.md: setup and testing guide.
+## التثبيت
 
-## Pixel-derived design variant
-- themes/souk-sanam-pixel.xml: Arabic/RTL adaptation of the Pixel Blogger theme by Colorlib.
-- themes/PIXEL-ATTRIBUTION.md: upstream attribution and GPL-3.0 licensing information.
-- themes/PIXEL-LICENSE: upstream license text.
+1. افتح لوحة Blogger ثم **المظهر**.
+2. من قائمة الإجراءات اختر **استعادة**.
+3. ارفع الملف `sanam-taqib-e-services-platform.xml`.
 
-The Pixel-derived file is an optional visual variant. The root theme remains the integrated version so existing Supabase workflows are not silently replaced.
+## ملاحظة التكامل
+
+قسم تتبع الطلبات في هذا القالب واجهة جاهزة للربط، ويعرض حالة «قيد الربط». لا يستعلم عن معاملات فعلية إلى أن يُربط بنظام الطلبات أو بواجهة API مناسبة.
+
+---
+
+Arabic RTL e-services platform theme. The tracking panel is a front-end placeholder until connected to a transaction system or API.
+
+
+## Souk Sanam marketplace theme variants
+
+- `sanam-taqib-e-services-platform.xml` remains the Supabase-connected marketplace template.
+- `themes/souk-sanam-pixel.xml` is an additional Arabic/RTL adaptation of Colorlib's Pixel Blogger theme.
+- `themes/PIXEL-ATTRIBUTION.md` and `themes/PIXEL-LICENSE` preserve upstream attribution and GPL-3.0 terms.
+
+The Pixel-derived theme is a visual alternative; it does not replace the integrated Supabase theme.
