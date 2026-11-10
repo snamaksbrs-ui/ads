@@ -2806,6 +2806,20 @@
       *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
     }
 
+
+    /* Image loading and card media consistency */
+    .article-image img {
+      display: block; width: 100%; height: 100%; object-fit: cover;
+      transition: transform .35s ease;
+    }
+    .article-card:hover .article-image img { transform: scale(1.035); }
+    .article-image { isolation: isolate; }
+    .article-badge { z-index: 2; }
+    @media (max-width: 768px) {
+      .article-image { aspect-ratio: 16 / 9; height: auto; }
+      .article-image img { min-height: 100%; }
+    }
+
     ]]></b:skin>
   </head>
 
@@ -3307,9 +3321,10 @@
                     <b:loop values='data:posts' var='post'>
                       <article class='post-outer article-card'>
                         <b:if cond='data:post.firstImageUrl'>
-                          <div aria-label='صورة المقال' class='article-image'
-                            expr:style='&quot;background: url(&quot; + data:post.firstImageUrl + &quot;) center/cover;&quot;'
-                            role='img'>
+                          <div class='article-image'>
+                            <img decoding='async' expr:alt='data:post.title'
+                              expr:src='resizeImage(data:post.firstImageUrl, 720, &quot;16:10&quot;)'
+                              loading='lazy' />
                             <span aria-hidden='true' class='article-badge'>الأحدث</span>
                           </div>
                           <b:else />
@@ -3410,10 +3425,11 @@
                     <b:loop values='data:posts' var='post'>
                       <article class='post-outer article-card'>
                         <b:if cond='data:post.firstImageUrl'>
-                          <div aria-label='صورة المقال' class='article-image'
-                            expr:style='&quot;background: url(&quot; + data:post.firstImageUrl + &quot;) center/cover;&quot;'
-                            role='img'>
-                            <span class='article-badge'>الأحدث</span>
+                          <div class='article-image'>
+                            <img decoding='async' expr:alt='data:post.title'
+                              expr:src='resizeImage(data:post.firstImageUrl, 720, &quot;16:10&quot;)'
+                              loading='lazy' />
+                            <span aria-hidden='true' class='article-badge'>الأحدث</span>
                           </div>
                           <b:else />
                           <div aria-label='صورة افتراضية للمقال' class='article-image' role='img'>
