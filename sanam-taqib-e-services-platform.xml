@@ -4438,7 +4438,28 @@ var active='الكل',query='';
 function esc(v){return String(v||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 function users(){try{return JSON.parse(localStorage.getItem(userKey)||'[]')}catch(e){return []}}
 function save(a){try{localStorage.setItem(userKey,JSON.stringify(a));return true}catch(e){return false}}
-function all(){return users().concat(demo)}
+function bloggerPosts(){
+ var out=[],seen={};
+ document.querySelectorAll('.blog-posts .post-outer, .blog-posts .post-outer-container, .blog-posts article').forEach(function(w){
+  if(w.classList.contains('post-outer-container')&&w.querySelector('.post-outer'))return;
+  var title=w.querySelector('.post-title a, h3.post-title a, h2.post-title a, .post-title');
+  var link=title&&title.href?title.href:(w.querySelector('a[rel="bookmark"]')||{}).href;
+  var name=(title?title.textContent:w.querySelector('h1,h2,h3')?.textContent||'').trim();
+  if(!name||seen[name])return;seen[name]=1;
+  var body=w.querySelector('.post-body,.entry-content,.post-snippet');
+  var desc=body?(body.innerText||body.textContent||'').trim():'';
+  var labels=Array.from(w.querySelectorAll('.post-labels a, .post-labels .label-name')).map(function(a){return a.textContent.trim()});
+  var known=['عقارات','سيارات','أجهزة','وظائف','أثاث','خدمات'];
+  var category=known.find(function(c){return labels.indexOf(c)>-1})||labels[0]||'أخرى';
+  var image=body&&body.querySelector('img');
+  var price=(desc.match(/(?:السعر|المطلوب|الإيجار)\\s*[:：-]?\\s*([^\\n،]+)/)||[])[1]||'تواصل لمعرفة السعر';
+  var city=(desc.match(/(?:المدينة|الموقع|المدينة\\s*\\/\\s*الحي)\\s*[:：-]?\\s*([^\\n،]+)/)||[])[1]||'غير محدد';
+  var dateNode=w.querySelector('.published,.post-timestamp time');
+  out.push({t:name,c:category,p:price,city:city,date:dateNode?(dateNode.textContent||dateNode.getAttribute('datetime')||''):'من بلوجر',i:'🛍️',d:desc.slice(0,1800),image:image?image.src:'',url:link||'',source:'blogger'});
+ });
+ return out;
+}
+function all(){return bloggerPosts().concat(users().map(function(x){x.source='local';return x}),demo.map(function(x){x.source='demo';return x}))}
 function render(){
  var root=document.getElementById('sx-market-listings');if(!root)return;
  var items=all().filter(function(x){return (active==='الكل'||x.c===active)&&(!query||(x.t+' '+x.c+' '+x.city+' '+x.d).toLowerCase().indexOf(query.toLowerCase())>-1)});
@@ -4449,7 +4470,7 @@ function render(){
 }
 function showDetail(x){
  var modal=document.getElementById('sx-market-detail-modal');if(!modal)return;
- modal.querySelector('.sx-market-dialog').innerHTML='<div class="sx-market-dialog-head"><h2>'+esc(x.t)+'</h2><button class="sx-market-close" type="button" data-close>×</button></div><div class="sx-market-detail"><div class="sx-listing-image">'+(x.image?'<img src="'+esc(x.image)+'" alt=""/>':esc(x.i||'🛍️'))+'</div><div class="sx-detail-price">'+esc(x.p||'على السوم')+'</div><div>📍 '+esc(x.city)+'　 ·　 '+esc(x.c)+'</div><p>'+esc(x.d)+'</p>'+(x.phone?'<a class="sx-button" href="https://wa.me/'+esc(x.phone.replace(/\D/g,''))+'" target="_blank" rel="noopener">تواصل عبر واتساب</a>':'')+'<div class="sx-market-notice">تنبيه: الإعلانات التجريبية المعروضة بيانات افتراضية وليست عروضاً موثقة.</div></div>';
+ modal.querySelector('.sx-market-dialog').innerHTML='<div class="sx-market-dialog-head"><h2>'+esc(x.t)+'</h2><button class="sx-market-close" type="button" data-close>×</button></div><div class="sx-market-detail"><div class="sx-listing-image">'+(x.image?'<img src="'+esc(x.image)+'" alt=""/>':esc(x.i||'🛍️'))+'</div><div class="sx-detail-price">'+esc(x.p||'على السوم')+'</div><div>📍 '+esc(x.city)+'　 ·　 '+esc(x.c)+'</div><p>'+esc(x.d)+'</p>'+(x.url?'<a class="sx-button" href="'+esc(x.url)+'" target="_blank" rel="noopener">فتح منشور بلوجر</a>':'')+(x.phone?'<a class="sx-button" href="https://wa.me/'+esc(x.phone.replace(/\D/g,''))+'" target="_blank" rel="noopener">تواصل عبر واتساب</a>':'')+'<div class="sx-market-notice">تنبيه: الإعلانات التجريبية المعروضة بيانات افتراضية وليست عروضاً موثقة.</div></div>';
  modal.classList.add('open');modal.querySelector('[data-close]').addEventListener('click',function(){modal.classList.remove('open')});
 }
 function openForm(){var m=document.getElementById('sx-market-add-modal');if(m)m.classList.add('open')}
@@ -4471,7 +4492,7 @@ function mount(){
   e.preventDefault();var fd=new FormData(e.currentTarget);var x={t:fd.get('title').trim(),c:fd.get('category'),p:fd.get('price').trim()||'على السوم',city:fd.get('city').trim(),phone:fd.get('phone').trim(),image:fd.get('image').trim(),d:fd.get('description').trim(),i:'🛍️',date:'الآن'};
   if(!x.t||!x.city||!x.d)return;
   var list=users();list.unshift(x);if(!save(list)){alert('تعذر حفظ الإعلان. قد تكون مساحة التخزين ممتلئة.');return}
-  e.currentTarget.reset();closeModals();active='الكل';document.querySelectorAll('.sx-market-filter button').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-cat')==='الكل')});render();alert('تمت إضافة إعلانك إلى قائمة هذا المتصفح التجريبية.');
+  e.currentTarget.reset();closeModals();active='الكل';document.querySelectorAll('.sx-market-filter button').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-cat')==='الكل')});render();alert('تم حفظ معاينة الإعلان على هذا الجهاز فقط. لن يظهر للزوار الآخرين حتى يُنشر كمنشور في بلوجر.');
  });
  var search=document.querySelector('.sx-market-search input');if(search)search.addEventListener('input',function(){query=search.value;render()});
  var topSearch=document.querySelector('.sx-search input');if(topSearch)topSearch.addEventListener('input',function(){query=topSearch.value;render()});
