@@ -2591,6 +2591,7 @@
       --border-color: #e7e3dc;
       --surface-shadow: 0 12px 34px rgba(34, 30, 22, .055);
       --section-space: clamp(52px, 6vw, 84px);
+      --transition-fast: .2s ease;
     }
     body {
       font-family: 'IBM Plex Sans Arabic', sans-serif;
@@ -2731,7 +2732,7 @@
       .container { width: calc(100% - 36px); }
       .navbar { padding: 8px 0; }
       .nav-container { min-height: 54px; flex-wrap: nowrap; }
-      .logo { font-size: 25px; }
+      .logo { font-size: 25px; max-width: calc(100% - 96px); overflow: hidden; text-overflow: ellipsis; }
       .nav-right { margin-inline-start: auto; }
       .nav-toggle { width: 42px; height: 42px; order: 3; }
       .search-toggle { order: 1; width: 42px; height: 42px; }
@@ -4423,7 +4424,7 @@
             <p class='newsletter-text'>تابع أحدث المقالات والموضوعات الجديدة من المدونة.</p>
             <div class='newsletter-form'>
               <a class='subscribe-btn' href='/feeds/posts/default?alt=rss'
-                rel='nofollow' target='_blank'>
+                rel='nofollow noopener noreferrer' target='_blank'>
                 تابع موجز المقالات
               </a>
             </div>
