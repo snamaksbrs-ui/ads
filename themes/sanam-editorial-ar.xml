@@ -3135,8 +3135,8 @@
                 <div class='category-grid'>
                   <a class='category-card' href='/search/label/Artificial%20Intelligence'>
                     <span aria-hidden='true' class='category-icon'>ذكاء</span>
-                    <h3>التقنية</h3>
-                    <p>أخبار التقنية والأدوات والابتكارات الرقمية.</p>
+                    <h3>الذكاء الاصطناعي</h3>
+                    <p>أدوات الذكاء الاصطناعي وتطبيقاته واستخداماته في الحياة والعمل.</p>
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/UI%2FUX'>
@@ -3147,8 +3147,8 @@
                   </a>
                   <a class='category-card' href='/search/label/Web%20Development'>
                     <span aria-hidden='true' class='category-icon'>ويب</span>
-                    <h3>الأعمال</h3>
-                    <p>ريادة الأعمال والعمل والإنتاجية.</p>
+                    <h3>تطوير الويب</h3>
+                    <p>البرمجة وبناء المواقع والتقنيات التي تقف خلف الويب.</p>
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Digital%20Marketing'>
@@ -3186,7 +3186,7 @@
               <div class='container'>
                 <div class='ad-placeholder'>
                   <span class='ad-label'>مساحة إعلانية</span>
-                  <div aria-label='Responsive in-content advertising placement' class='ad-box'
+                  <div aria-label='مساحة إعلانية داخل المحتوى' class='ad-box'
                     role='img'>
                     <data:content />
                   </div>
@@ -3305,13 +3305,13 @@
                     <b:loop values='data:posts' var='post'>
                       <article class='post-outer article-card'>
                         <b:if cond='data:post.firstImageUrl'>
-                          <div aria-label='Article Image' class='article-image'
+                          <div aria-label='صورة المقال' class='article-image'
                             expr:style='&quot;background: url(&quot; + data:post.firstImageUrl + &quot;) center/cover;&quot;'
                             role='img'>
                             <span aria-hidden='true' class='article-badge'>الأحدث</span>
                           </div>
                           <b:else />
-                          <div aria-label='Default Image' class='article-image' role='img'>
+                          <div aria-label='صورة افتراضية للمقال' class='article-image' role='img'>
                             <span class='article-badge'>مقال</span>
                           </div>
                         </b:if>
@@ -3408,13 +3408,13 @@
                     <b:loop values='data:posts' var='post'>
                       <article class='post-outer article-card'>
                         <b:if cond='data:post.firstImageUrl'>
-                          <div aria-label='Article Image' class='article-image'
+                          <div aria-label='صورة المقال' class='article-image'
                             expr:style='&quot;background: url(&quot; + data:post.firstImageUrl + &quot;) center/cover;&quot;'
                             role='img'>
                             <span class='article-badge'>الأحدث</span>
                           </div>
                           <b:else />
-                          <div aria-label='Default Image' class='article-image' role='img'>
+                          <div aria-label='صورة افتراضية للمقال' class='article-image' role='img'>
                             <span class='article-badge'>مقال</span>
                           </div>
                         </b:if>
