@@ -40,6 +40,7 @@ create table if not exists public.ads (
   city text,
   contact_name text,
   contact_phone text,
+  image_url text,
   status text not null default 'pending' check (status in ('pending','approved','rejected','sold','archived')),
   views_count bigint not null default 0,
   created_at timestamptz not null default now(),
@@ -87,6 +88,8 @@ create table if not exists public.reports (
   status text not null default 'open' check (status in ('open','reviewed','dismissed')),
   created_at timestamptz not null default now()
 );
+
+alter table public.ads add column if not exists image_url text;
 
 create index if not exists ads_status_created_idx on public.ads(status, created_at desc);
 create index if not exists ads_category_idx on public.ads(category_id);
@@ -166,7 +169,8 @@ grant select, insert on public.ad_images to anon, authenticated;
 grant select, insert, update, delete on public.profiles to authenticated;
 grant select, insert, update, delete on public.favorites to authenticated;
 grant select, insert, update, delete on public.likes to authenticated;
-grant select, insert on public.comments to authenticated;
+grant select on public.comments to anon, authenticated;
+grant insert on public.comments to authenticated;
 grant select, insert on public.reports to anon, authenticated;
 
 -- Keep private profile fields private; users can read only their own profile.
