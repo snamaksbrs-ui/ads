@@ -197,84 +197,84 @@
   PHOENIX THEME DESIGNER VARIABLES
 ====================================================================
 
-<Group description="Phoenix Theme Colors" selector="body">
+<Group description="ألوان القالب" selector="body">
 
 <Variable name="phoenix.primary.color"
-          description="Primary Accent Color"
+          description="اللون الأساسي"
           type="color"
           default="#9A7847"
           value="#9A7847"/>
 
 <Variable name="phoenix.primary.dark"
-          description="Primary Accent Hover"
+          description="لون التفاعل الأساسي"
           type="color"
           default="#765A34"
           value="#765A34"/>
 
 <Variable name="phoenix.secondary.color"
-          description="Secondary Color"
+          description="اللون الثانوي"
           type="color"
           default="#252525"
           value="#252525"/>
 
 <Variable name="phoenix.background.color"
-          description="Page Background"
+          description="خلفية الصفحة"
           type="color"
           default="#F5F4F1"
           value="#F5F4F1"/>
 
 <Variable name="phoenix.surface.color"
-          description="Card Background"
+          description="خلفية البطاقات"
           type="color"
           default="#ffffff"
           value="#ffffff"/>
 
 <Variable name="phoenix.text.color"
-          description="Primary Text"
+          description="لون النص الأساسي"
           type="color"
           default="#2b2b2b"
           value="#2b2b2b"/>
 
 <Variable name="phoenix.text.muted"
-          description="Secondary Text"
+          description="لون النص الثانوي"
           type="color"
           default="#6c757d"
           value="#6c757d"/>
 
 <Variable name="phoenix.border.color"
-          description="Border Color"
+          description="لون الحدود"
           type="color"
           default="#e9ecef"
           value="#e9ecef"/>
 
 </Group>
 
-<Group description="Phoenix Typography" selector="body">
+<Group description="الخطوط" selector="body">
 
 <Variable
     name="phoenix.brand.font"
-    description="Brand Font"
+    description="خط الهوية"
     type="font"
     default="normal normal 700 30px Tajawal, sans-serif"
     value="normal normal 700 30px Tajawal, sans-serif"/>
 
 <Variable
     name="phoenix.heading.font"
-    description="Heading Font"
+    description="خط العناوين"
     type="font"
     default="normal normal 700 48px Tajawal, sans-serif"
     value="normal normal 700 48px Tajawal, sans-serif"/>
 
 <Variable
     name="phoenix.body.font"
-    description="Body Font"
+    description="خط النصوص"
     type="font"
     default="normal normal 16px IBM Plex Sans Arabic, sans-serif"
     value="normal normal 16px IBM Plex Sans Arabic, sans-serif"/>
 
 <Variable
     name="phoenix.ui.font"
-    description="UI Font"
+    description="خط عناصر الواجهة"
     type="font"
     default="normal normal 16px IBM Plex Sans Arabic, sans-serif"
     value="normal normal 16px IBM Plex Sans Arabic, sans-serif"/>
@@ -2939,7 +2939,7 @@
       <!-- GLOBAL AD ZONE 1 - APPEARS ON ALL PAGES -->
       <!-- ============================================ -->
       <b:section class='ad-zone' id='ad-zone-1' maxwidgets='1' showaddelement='yes'>
-        <b:widget id='HTML1' locked='false' title='Leaderboard Ad' type='HTML' version='1'>
+        <b:widget id='HTML1' locked='false' title='مساحة إعلانية عريضة' type='HTML' version='1'>
           <b:widget-settings>
             <b:widget-setting name='content' />
           </b:widget-settings>
@@ -2966,7 +2966,7 @@
 
         <b:section class='announcement-bar' id='announcement-bar' maxwidgets='1'
           showaddelement='yes'>
-          <b:widget id='HTML2' locked='false' title='Announcement' type='HTML' version='1'>
+          <b:widget id='HTML2' locked='false' title='شريط الإعلان' type='HTML' version='1'>
             <b:widget-settings>
               <b:widget-setting name='content' />
             </b:widget-settings>
@@ -2987,7 +2987,7 @@
         </b:section>
 
         <b:section class='hero' id='hero' maxwidgets='3' showaddelement='yes'>
-          <b:widget id='FeaturedPost1' locked='false' title='Featured Post' type='FeaturedPost'
+          <b:widget id='FeaturedPost1' locked='false' title='المقال المميز' type='FeaturedPost'
             version='1'>
             <b:widget-settings>
               <b:widget-setting name='showSnippet'>true</b:widget-setting>
@@ -3035,7 +3035,7 @@
                       مختارات اليوم
                     </span>
                     <a class='hero-spotlight-image-link' expr:href='data:postUrl'>
-                      <span aria-label='Featured story image placeholder'
+                      <span aria-label='موضع صورة الموضوع المميز'
                         class='hero-spotlight-fallback' role='img'>موضوع مميز</span>
                       <b:if cond='data:showFirstImage and data:postFirstImage != &quot;&quot;'>
                         <img class='hero-spotlight-img' decoding='async' expr:alt='data:postTitle'
@@ -3078,7 +3078,7 @@
               </div>
             </b:includable>
           </b:widget>
-          <b:widget id='HTML3' locked='false' title='Hero Section' type='HTML' version='1'>
+          <b:widget id='HTML3' locked='false' title='المقدمة الرئيسية' type='HTML' version='1'>
             <b:widget-settings>
               <b:widget-setting name='content' />
             </b:widget-settings>
@@ -3156,7 +3156,7 @@
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/UI%2FUX'>
-                    <span aria-hidden='true' class='category-icon'>UX</span>
+                    <span aria-hidden='true' class='category-icon'>تجربة</span>
                     <h3>التصميم</h3>
                     <p>أفكار التصميم والإبداع وتجارب الاستخدام.</p>
                     <span class='category-link'>استكشف</span>
@@ -3168,7 +3168,7 @@
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Digital%20Marketing'>
-                    <span aria-hidden='true' class='category-icon'>SEO</span>
+                    <span aria-hidden='true' class='category-icon'>بحث</span>
                     <h3>التسويق</h3>
                     <p>التسويق وصناعة المحتوى والحضور الرقمي.</p>
                     <span class='category-link'>استكشف</span>
@@ -3192,7 +3192,7 @@
         </b:section>
 
         <b:section class='ad-zone' id='ad-zone-homepage' maxwidgets='1' showaddelement='yes'>
-          <b:widget id='HTML8' locked='false' title='مساحة إعلانية Ad' type='HTML' version='1'>
+          <b:widget id='HTML8' locked='false' title='مساحة إعلانية' type='HTML' version='1'>
             <b:widget-settings>
               <b:widget-setting name='content' />
             </b:widget-settings>
@@ -3285,7 +3285,7 @@
       <section class='section'>
         <div class='container'>
           <b:section class='main' id='main' showaddelement='yes'>
-            <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='1'>
+            <b:widget id='Blog1' locked='true' title='المقالات' type='Blog' version='1'>
               <b:widget-settings>
                 <b:widget-setting name='showDateHeader'>true</b:widget-setting>
                 <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
@@ -4515,7 +4515,7 @@
             fallback = document.createElement('span');
             fallback.className = 'hero-spotlight-fallback';
             fallback.setAttribute('role', 'img');
-            fallback.setAttribute('aria-label', 'Featured story image placeholder');
+            fallback.setAttribute('aria-label', 'موضع صورة الموضوع المميز');
             fallback.textContent = 'موضوع مميز';
             link.insertBefore(fallback, link.firstChild);
           }
