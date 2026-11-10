@@ -3134,7 +3134,7 @@
                 </div>
                 <div class='category-grid'>
                   <a class='category-card' href='/search/label/Artificial%20Intelligence'>
-                    <span aria-hidden='true' class='category-icon'>AI</span>
+                    <span aria-hidden='true' class='category-icon'>ذكاء</span>
                     <h3>التقنية</h3>
                     <p>أخبار التقنية والأدوات والابتكارات الرقمية.</p>
                     <span class='category-link'>استكشف</span>
@@ -3146,7 +3146,7 @@
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Web%20Development'>
-                    <span aria-hidden='true' class='category-icon'>DEV</span>
+                    <span aria-hidden='true' class='category-icon'>ويب</span>
                     <h3>الأعمال</h3>
                     <p>ريادة الأعمال والعمل والإنتاجية.</p>
                     <span class='category-link'>استكشف</span>
@@ -3158,15 +3158,15 @@
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Branding'>
-                    <span aria-hidden='true' class='category-icon'>BR</span>
-                    <h3>الثقافة الرقمية</h3>
-                    <p>اتجاهات وأفكار تؤثر في حياتنا الرقمية.</p>
+                    <span aria-hidden='true' class='category-icon'>هوية</span>
+                    <h3>الهوية والعلامة التجارية</h3>
+                    <p>بناء الهوية البصرية وصناعة حضور مميز للعلامات.</p>
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Tech%20News'>
-                    <span aria-hidden='true' class='category-icon'>NEWS</span>
-                    <h3>أدلة ومعرفة</h3>
-                    <p>شروحات ومعلومات عملية بلغة واضحة.</p>
+                    <span aria-hidden='true' class='category-icon'>أخبار</span>
+                    <h3>أخبار التقنية</h3>
+                    <p>متابعة المستجدات والاتجاهات في عالم التقنية.</p>
                     <span class='category-link'>استكشف</span>
                   </a>
                 </div>
@@ -3411,11 +3411,11 @@
                           <div aria-label='Article Image' class='article-image'
                             expr:style='&quot;background: url(&quot; + data:post.firstImageUrl + &quot;) center/cover;&quot;'
                             role='img'>
-                            <span class='article-badge'>Latest</span>
+                            <span class='article-badge'>الأحدث</span>
                           </div>
                           <b:else />
                           <div aria-label='Default Image' class='article-image' role='img'>
-                            <span class='article-badge'>Blog</span>
+                            <span class='article-badge'>مقال</span>
                           </div>
                         </b:if>
                         <div class='article-content'>
@@ -4434,13 +4434,13 @@
               <h3 class='footer-title'>الأقسام</h3>
               <ul class='footer-links'>
                 <li>
-                  <a href='/search/label/Artificial%20Intelligence'>التقنية</a>
+                  <a href='/search/label/Artificial%20Intelligence'>الذكاء الاصطناعي</a>
                 </li>
                 <li>
                   <a href='/search/label/UI%2FUX'>التصميم</a>
                 </li>
                 <li>
-                  <a href='/search/label/Web%20Development'>الأعمال</a>
+                  <a href='/search/label/Web%20Development'>تطوير الويب</a>
                 </li>
               </ul>
             </div>
