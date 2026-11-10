@@ -156,3 +156,31 @@ drop policy if exists "Public read ad images" on storage.objects;
 create policy "Public read ad images" on storage.objects for select using (bucket_id = 'ad-images');
 drop policy if exists "Visitors upload ad images" on storage.objects;
 create policy "Visitors upload ad images" on storage.objects for insert to anon, authenticated with check (bucket_id = 'ad-images');
+
+-- Explicit Data API grants (RLS remains the row-level security boundary).
+grant usage on schema public to anon, authenticated;
+grant select on public.categories to anon, authenticated;
+grant select, insert on public.ads to anon, authenticated;
+grant update, delete on public.ads to authenticated;
+grant select, insert on public.ad_images to anon, authenticated;
+grant select, insert, update, delete on public.profiles to authenticated;
+grant select, insert, update, delete on public.favorites to authenticated;
+grant select, insert, update, delete on public.likes to authenticated;
+grant select, insert on public.comments to authenticated;
+grant select, insert on public.reports to anon, authenticated;
+
+-- Keep private profile fields private; users can read only their own profile.
+drop policy if exists "Profiles are publicly readable" on public.profiles;
+drop policy if exists "Users read own profile" on public.profiles;
+create policy "Users read own profile" on public.profiles for select to authenticated using (id = auth.uid());
+
+-- Uploading files requires an account and stores them under that account's folder.
+drop policy if exists "Visitors upload ad images" on storage.objects;
+drop policy if exists "Authenticated users upload own ad images" on storage.objects;
+create policy "Authenticated users upload own ad images" on storage.objects
+for insert to authenticated
+with check (
+  bucket_id = 'ad-images'
+  and (storage.foldername(name))[1] = 'ads'
+  and (storage.foldername(name))[2] = auth.uid()::text
+);
