@@ -2930,15 +2930,17 @@
             <b:widget-setting name='content' />
           </b:widget-settings>
           <b:includable id='main'>
-            <div class='container'>
+            <b:if cond='data:content != &quot;&quot;'>
+<div class='container'>
               <div class='ad-placeholder'>
                 <span class='ad-label'>مساحة إعلانية</span>
-                <div aria-label='970 by 250 leaderboard advertising placement' class='ad-box'
+                <div aria-label='مساحة إعلانية عريضة' class='ad-box'
                   role='img'>
                   <data:content />
                 </div>
               </div>
             </div>
+</b:if>
           </b:includable>
         </b:widget>
       </b:section>
@@ -2955,7 +2957,8 @@
               <b:widget-setting name='content' />
             </b:widget-settings>
             <b:includable id='main'>
-              <div class='container'>
+              <b:if cond='data:content != &quot;&quot;'>
+<div class='container'>
                 <div class='announcement-content'>
                   <span aria-hidden='true' class='announcement-badge'>جديد</span>
                   <span class='announcement-text'>
@@ -3190,6 +3193,7 @@
                   </div>
                 </div>
               </div>
+</b:if>
             </b:includable>
           </b:widget>
         </b:section>
