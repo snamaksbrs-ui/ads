@@ -2432,6 +2432,150 @@
     @media (max-width: 768px) {
       html[dir='rtl'] .nav-right { margin-inline-start: auto; }
     }
+
+    /* =========================================================
+       SANAM EDITORIAL / ARABIC MAGAZINE DESIGN SYSTEM
+       ========================================================= */
+    :root {
+      --max-width: 1280px;
+      --primary-color: #967447;
+      --primary-dark: #765a34;
+      --bg-color: #f6f5f2;
+      --card-bg: #ffffff;
+      --text-color: #20201e;
+      --text-muted: #77756f;
+      --border-color: #e8e5df;
+      --shadow: 0 8px 28px rgba(30, 27, 20, .055);
+      --shadow-lg: 0 18px 48px rgba(30, 27, 20, .09);
+    }
+    html { scroll-behavior: smooth; }
+    html[dir='rtl'] body { direction: rtl; text-align: right; }
+    html[dir='rtl'] .navbar, html[dir='rtl'] .nav-container,
+    html[dir='rtl'] .nav-menu, html[dir='rtl'] .nav-right,
+    html[dir='rtl'] .post-footer, html[dir='rtl'] .blog-pager,
+    html[dir='rtl'] .footer-top { direction: rtl; }
+    html[dir='rtl'] .search-box input, html[dir='rtl'] input,
+    html[dir='rtl'] textarea { text-align: right; }
+    html[dir='rtl'] .container { direction: rtl; }
+    body { background: #f6f5f2; color: #20201e; font-family: 'IBM Plex Sans Arabic', sans-serif; }
+    .navbar {
+      position: sticky; top: 0; padding: 12px 0;
+      background: rgba(255,255,255,.96); backdrop-filter: blur(16px);
+      border-bottom: 1px solid #e8e5df; box-shadow: 0 2px 16px rgba(20,20,20,.025);
+    }
+    .nav-container { min-height: 58px; gap: 28px; }
+    .logo, .footer-logo { font-family: 'Tajawal', sans-serif; letter-spacing: 0; font-weight: 800; }
+    .logo { font-size: 29px; }
+    .nav-menu { gap: 1.65rem; }
+    .nav-item a { font-size: 14px; font-weight: 600; color: #4a4945; }
+    .nav-item a:hover, .nav-item a[aria-current='page'] { color: #967447; }
+    .search-box { border-radius: 5px; }
+    .subscribe-btn, .btn-primary {
+      background: #967447; border-color: #967447; border-radius: 5px;
+      color: #fff; box-shadow: none;
+    }
+    .subscribe-btn:hover, .btn-primary:hover { background: #765a34; }
+    .btn, .btn-outline { border-radius: 5px; }
+    .hero {
+      padding: 74px 0 68px; background: #efede7;
+      border-bottom: 1px solid #e5e1d8;
+    }
+    .hero-grid { grid-template-columns: 1fr .92fr; gap: clamp(28px,5vw,76px); }
+    .hero-label, .section-label, .story-category {
+      color: #967447; letter-spacing: 0; font-size: 13px; font-weight: 700;
+    }
+    .hero-title {
+      font-family: 'Tajawal', sans-serif; font-size: clamp(38px,5vw,62px);
+      line-height: 1.22; letter-spacing: 0; max-width: 700px;
+      margin-bottom: 20px;
+    }
+    .hero-description { font-size: 17px; line-height: 2; max-width: 620px; color: #66635d; }
+    .hero-buttons { margin-top: 10px; }
+    .hero-spotlight {
+      padding: 0; overflow: hidden; border: 0; border-radius: 6px;
+      background: #fff; box-shadow: 0 14px 42px rgba(40,35,25,.09);
+    }
+    .hero-spotlight-image { height: 300px; border-radius: 0; margin: 0; }
+    .hero-spotlight-content { padding: 28px 32px 32px; }
+    .hero-spotlight h2 { font-family: 'Tajawal', sans-serif; font-size: 27px; line-height: 1.4; }
+    .hero-spotlight p { line-height: 1.9; }
+    .quick-access { padding: 22px 0; background: #fff; border-bottom: 1px solid #e8e5df; }
+    .quick-access-wrapper { display:flex; flex-wrap:wrap; align-items:center; gap: 12px; }
+    .quick-title { font-size: 14px; margin: 0 10px 0 6px; color:#77756f; }
+    .quick-pill { border:1px solid #e8e5df; background:#fff; border-radius:3px; padding:8px 16px; font-size:13px; }
+    .quick-pill:hover { border-color:#967447; color:#967447; }
+    .stats { padding: 30px 0; background:#fff; }
+    .stats-grid { border:1px solid #e8e5df; border-radius:5px; overflow:hidden; }
+    .stat-card { padding:22px 16px; }
+    .stat-card h2 { color:#967447; font-size:23px; }
+    .section { padding: 76px 0; }
+    .section-header { margin-bottom: 34px; }
+    .section-header h2, .section-header h2 a {
+      font-family:'Tajawal',sans-serif; font-size:clamp(27px,3vw,38px);
+      font-weight:800; letter-spacing:0; color:#20201e;
+    }
+    .section-header > div > p:last-child, .section-header > p { color:#77756f; line-height:1.9; }
+    .category-grid { gap:16px; }
+    .category-card {
+      border:1px solid #e8e5df; border-radius:5px; padding:26px;
+      background:#fff; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .category-card:hover { transform:translateY(-4px); border-color:#c9b99e; box-shadow:var(--shadow); }
+    .category-icon { background:#f2eee7; color:#967447; border-radius:4px; }
+    .category-card h3 { font-family:'Tajawal',sans-serif; font-size:20px; }
+    .editors-picks { background:#efede7; }
+    .editor-grid { gap:16px; }
+    .editor-card { background:#fff; border:1px solid #e8e5df; border-radius:5px; padding:18px; }
+    .editor-number { color:#c9b99e; }
+    .editor-image { border-radius:4px; }
+    .article-grid { gap:22px; }
+    .article-card, .post-outer {
+      border:1px solid #e8e5df; border-radius:5px; box-shadow:none;
+      background:#fff;
+    }
+    .article-card:hover, .post-outer:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+    .article-image { height:235px; }
+    .article-content { padding:24px; }
+    .article-card h3, .post-title, .entry-title {
+      font-family:'Tajawal',sans-serif; letter-spacing:0; line-height:1.45;
+    }
+    .post-container {
+      max-width:860px; border:0; border-radius:0; box-shadow:none;
+      padding:clamp(24px,6vw,76px); margin:32px auto;
+    }
+    .post-title { font-size:clamp(32px,5vw,48px); }
+    .post-body { font-size:18px; line-height:2.05; }
+    .post-body img { border-radius:5px; }
+    .post-body blockquote { border-right:3px solid #967447; border-left:0; background:#f6f5f2; padding:18px 22px; }
+    .newsletter { background:#24231f; padding:64px 0; }
+    .newsletter-box { max-width:780px; margin:auto; text-align:center; }
+    .newsletter-box h2, .newsletter-text { color:#fff; }
+    .newsletter-text { opacity:.72; }
+    .newsletter-input { border-radius:4px; }
+    .site-footer { background:#1c1b18; color:#f5f3ee; }
+    .footer-description, .footer-tagline { color:#aaa69e; }
+    .footer-title { color:#fff; }
+    .footer-links a { color:#c8c4bb; }
+    .blog-pager a { border-radius:4px; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns:1fr; gap:34px; }
+      .hero { padding:48px 0; }
+      .hero-spotlight-image { height:260px; }
+      .nav-container { flex-wrap:wrap; }
+    }
+    @media (max-width: 640px) {
+      .container { padding-left:18px; padding-right:18px; }
+      .hero-title { font-size:37px; }
+      .hero-description { font-size:15px; }
+      .hero-buttons { flex-wrap:wrap; }
+      .hero-spotlight-content { padding:22px; }
+      .section { padding:48px 0; }
+      .post-container { margin:0; padding:28px 20px; }
+      .post-body { font-size:17px; }
+      .editor-card { padding:14px; }
+      .editor-image { width:72px; height:72px; }
+    }
+
     ]]></b:skin>
   </head>
 
@@ -2585,10 +2729,10 @@
                 <div class='announcement-content'>
                   <span aria-hidden='true' class='announcement-badge'>New</span>
                   <span class='announcement-text'>
-                    AI Tools Every Digital Marketer Should Know in 2026
+                    أفكار ومعارف تساعدك على فهم العالم الرقمي
                   </span>
                   <a class='announcement-link' href='/search'>
-                    Read Guide
+                    اقرأ الدليل
                   </a>
                 </div>
               </div>
@@ -2614,22 +2758,22 @@
               <div class='container hero-grid'>
                 <div class='hero-content'>
                   <p aria-hidden='true' class='hero-label'>
-                    Artificial Intelligence &#8226; UI/UX Design &#8226; Digital Marketing
+                    معرفة &#8226; تقنية &#8226; أفكار
                   </p>
                   <h1 class='hero-title' id='hero-title'>
-                    Helping Creators, Designers and Businesses Build Better Digital Experiences.
+                    مساحة عربية للأفكار والمعرفة والاكتشاف.
                   </h1>
                   <p class='hero-description'>
-                    Explore practical insights on Artificial Intelligence, UI/UX Design, Web
-                    Development, Digital Marketing, Branding, and emerging
+                    استكشف practical insights on التقنية, التصميم, Web
+                    Development, التسويق, Branding, and emerging
                     technologies&#8212;designed to help you learn, create, and grow.
                   </p>
                   <div aria-label='Featured actions' class='hero-buttons'>
                     <a class='btn btn-primary' href='/search'>
-                      Explore Articles
+                      اكتشف المقالات
                     </a>
                     <a class='btn btn-outline' href='/p/about-us.html'>
-                      About this site
+                      عن المدونة
                     </a>
                   </div>
                   <div aria-label='Reader community' class='hero-community'>
@@ -2640,8 +2784,8 @@
                       <div class='avatar'>+</div>
                     </div>
                     <div>
-                      <strong>Join our growing community of digital creators.</strong>
-                      <p>Learning together every week</p>
+                      <strong>نؤمن أن المعرفة تبدأ بفضول صغير.</strong>
+                      <p>اقرأ، اكتشف، وشارك</p>
                     </div>
                   </div>
                 </div>
@@ -2649,11 +2793,11 @@
                 <article class='hero-spotlight'>
                   <div class='hero-spotlight-image'>
                     <span aria-hidden='true' class='hero-spotlight-badge'>
-                      Today&#39;s Focus
+                      مختارات اليوم
                     </span>
                     <a class='hero-spotlight-image-link' expr:href='data:postUrl'>
                       <span aria-label='Featured story image placeholder'
-                        class='hero-spotlight-fallback' role='img'>Featured Story</span>
+                        class='hero-spotlight-fallback' role='img'>موضوع مميز</span>
                       <b:if cond='data:showFirstImage and data:postFirstImage != &quot;&quot;'>
                         <img class='hero-spotlight-img' decoding='async' expr:alt='data:postTitle'
                           expr:src='data:postFirstImage' fetchpriority='high' height='450'
@@ -2664,13 +2808,13 @@
 
                   <article class='hero-spotlight-content'>
                     <p class='story-category'>
-                      TODAY&#39;S INSIGHT
+                      من اختيار التحرير
                     </p>
                     <h2 id='hero-spotlight-title'>
                       <a expr:href='data:postUrl'>
                         <b:if cond='data:showPostTitle and data:postTitle != &quot;&quot;'>
                           <data:postTitle />
-                        <b:else /> Featured Story </b:if>
+                        <b:else /> موضوع مميز </b:if>
                       </a>
                     </h2>
                     <b:if cond='data:showSnippet and data:postSummary != &quot;&quot;'>
@@ -2679,7 +2823,7 @@
                       </p>
                       <b:else />
                       <p>
-                        Read this featured article selected by the editor.
+                        موضوع اختير بعناية من فريق التحرير.
                       </p>
                     </b:if>
                     <div class='hero-spotlight-meta'>
@@ -2711,8 +2855,7 @@
             <b:widget-settings>
               <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
               <b:widget-setting name='display'>LIST</b:widget-setting>
-              <b:widget-setting name='selectedLabelsList'>Artificial Intelligence,Digital
-                Marketing,UI/UX</b:widget-setting>
+              <b:widget-setting name='selectedLabelsList'>تقنية,أعمال,تصميم</b:widget-setting>
               <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
               <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
             </b:widget-settings>
@@ -2720,7 +2863,7 @@
               <div class='container'>
                 <div class='quick-access-wrapper'>
                   <h2 class='quick-title' id='trending-title'>
-                    Explore Topics
+                    تصفح الموضوعات
                   </h2>
                   <b:loop values='data:labels' var='label'>
                     <a class='quick-pill' expr:href='data:label.url'>
@@ -2738,72 +2881,71 @@
             <div class='stats-grid'>
               <article class='stat-card'>
                 <h2>AI</h2>
-                <p>Innovation First</p>
+                <p>تقنية</p>
               </article>
               <article class='stat-card'>
                 <h2>UX</h2>
-                <p>Human-Centered Design</p>
+                <p>تصميم</p>
               </article>
               <article class='stat-card'>
                 <h2>Tech</h2>
-                <p>Practical Tutorials</p>
+                <p>أدلة عملية</p>
               </article>
               <article class='stat-card'>
                 <h2>Grow/7</h2>
-                <p>Continuous Learning</p>
+                <p>معرفة متجددة</p>
               </article>
             </div>
           </div>
         </section>
 
         <b:section class='section' id='featured-categories' maxwidgets='1' showaddelement='yes'>
-          <b:widget id='HTML6' locked='false' title='Featured Categories' type='HTML' version='1'>
+          <b:widget id='HTML6' locked='false' title='أقسام المدونة' type='HTML' version='1'>
             <b:widget-settings>
               <b:widget-setting name='content' />
             </b:widget-settings>
             <b:includable id='main'>
               <div class='container'>
                 <div class='section-header'>
-                  <h2 id='categories-title'>Featured Categories</h2>
-                  <p>Explore our core topics and discover practical guides, tutorials, and industry
-                    insights.</p>
+                  <h2 id='categories-title'>أقسام المدونة</h2>
+                  <p>تصفح الأقسام واكتشف مقالات وأدلة وموضوعات مختارة.</p>
                 </div>
                 <div class='category-grid'>
                   <a class='category-card' href='/search/label/Artificial%20Intelligence'>
                     <span aria-hidden='true' class='category-icon'>AI</span>
-                    <h3>Artificial Intelligence</h3>
-                    <p>Explore AI, machine learning, automation, and LLMs.</p>
-                    <span class='category-link'>Explore</span>
+                    <h3>التقنية</h3>
+                    <p>أخبار التقنية والأدوات والابتكارات الرقمية.</p>
+                    <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/UI%2FUX'>
                     <span aria-hidden='true' class='category-icon'>UX</span>
-                    <h3>UI/UX Design</h3>
-                    <p>Design modern interfaces and improve user experiences.</p>
-                    <span class='category-link'>Explore</span>
+                    <h3>التصميم</h3>
+                    <p>أفكار التصميم والإبداع وتجارب الاستخدام.</p>
+                    <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Web%20Development'>
                     <span aria-hidden='true' class='category-icon'>DEV</span>
-                    <h3>Web Development</h3>
-                    <p>HTML, CSS, JavaScript, and modern development practices.</p>
-                    <span class='category-link'>Explore</span>
+                    <h3>الأعمال</h3>
+                    <p>ريادة الأعمال والعمل والإنتاجية.</p>
+                    <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Digital%20Marketing'>
                     <span aria-hidden='true' class='category-icon'>SEO</span>
-                    <h3>Digital Marketing</h3>
-                    <p>SEO, social media, advertising, and digital strategy.</p>
-                    <span class='category-link'>Explore</span>
+                    <h3>التسويق</h3>
+                    <p>التسويق وصناعة المحتوى والحضور الرقمي.</p>
+                    <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Branding'>
                     <span aria-hidden='true' class='category-icon'>BR</span>
-                    <h3>Branding &amp; Digital Strategy</h3>
-                    <p>Build memorable brands and engaging campaigns.</p>
-                    <span class='category-link'>Explore</span>
+                    <h3>الثقافة الرقمية</h3>
+                    <p>اتجاهات وأفكار تؤثر في حياتنا الرقمية.</p>
+                    <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Tech%20News'>
                     <span aria-hidden='true' class='category-icon'>NEWS</span>
-                    <h3>Technology &amp; Tutorials</h3>
-                    <p>Stay updated with the latest tools, trends, and guides.</p>
-                    <span class='category-link'>Explore</span>
+                    <h3>أدلة ومعرفة</h3>
+                    <p>شروحات ومعلومات عملية بلغة واضحة.</p>
+                    <span class='category-link'>استكشف</span>
                   </a>
                 </div>
               </div>
@@ -2814,14 +2956,14 @@
           showaddelement='yes' />
 
         <b:section class='ad-zone' id='ad-zone-homepage' maxwidgets='1' showaddelement='yes'>
-          <b:widget id='HTML8' locked='false' title='Sponsored Content Ad' type='HTML' version='1'>
+          <b:widget id='HTML8' locked='false' title='مساحة إعلانية Ad' type='HTML' version='1'>
             <b:widget-settings>
               <b:widget-setting name='content' />
             </b:widget-settings>
             <b:includable id='main'>
               <div class='container'>
                 <div class='ad-placeholder'>
-                  <span class='ad-label'>Sponsored Content</span>
+                  <span class='ad-label'>مساحة إعلانية</span>
                   <div aria-label='Responsive in-content advertising placement' class='ad-box'
                     role='img'>
                     <data:content />
@@ -2845,19 +2987,18 @@
               <div class='container'>
                 <div class='section-header'>
                   <div>
-                    <p class='section-label'>Editor&#39;s Picks</p>
+                    <p class='section-label'>اختيارات التحرير</p>
                     <b:if cond='data:title != &quot;&quot;'>
                       <h2 id='editors-picks-title'>
                         <data:title />
                       </h2>
                       <b:else />
-                      <h2 id='editors-picks-title'>Handpicked Articles</h2>
+                      <h2 id='editors-picks-title'>مقالات مختارة</h2>
                     </b:if>
-                    <p>Our most valuable guides selected for designers, developers, and digital
-                      marketers.</p>
+                    <p>موضوعات تستحق وقتك، اختيرت بعناية.</p>
                   </div>
                   <a class='btn btn-outline' href='/search'>
-                    Explore All
+                    استكشف All
                   </a>
                 </div>
                 <div class='editor-grid popular-posts'>
@@ -3502,18 +3643,18 @@
                       </h1>
 
                       <p class='home-hero__description'>
-                        Discover practical insights on Artificial Intelligence, UI/UX Design,
-                        Digital Marketing and Web Development.
+                        Discover practical insights on التقنية, التصميم,
+                        التسويق and الأعمال.
                       </p>
 
                       <div class='home-hero__actions'>
 
                         <a class='btn btn-primary' href='/search'>
-                          Explore Articles
+                          اكتشف المقالات
                         </a>
 
                         <a class='btn btn-outline' href='/p/about-us.html'>
-                          About this site
+                          عن المدونة
                         </a>
 
                       </div>
@@ -4067,14 +4208,13 @@
       <section class='newsletter' id='newsletter'>
         <div class='container'>
           <div class='newsletter-box'>
-            <h2>تابعنا to Our Newsletter</h2>
-            <p class='newsletter-text'>Get the latest digital marketing, AI, and UX design insights
-              delivered straight to your inbox.</p>
+            <h2>ابقَ على اطلاع</h2>
+            <p class='newsletter-text'>تابع أحدث المقالات والموضوعات الجديدة من المدونة.</p>
             <form class='newsletter-form' onsubmit='return false;'>
-              <input aria-label='Email address' class='newsletter-input'
-                placeholder='Enter your email address' required='required' type='email' />
+              <input aria-label='البريد الإلكتروني' class='newsletter-input'
+                placeholder='أدخل بريدك الإلكتروني' required='required' type='email' />
               <button aria-label='تابعنا to newsletter' class='subscribe-btn'
-                onclick='alert(&apos;Newsletter integration will be configured by the site owner.&apos;)'
+                onclick='alert(&apos;سيتم تفعيل الاشتراك لاحقًا من إعدادات الموقع.&apos;)'
                 type='button'>
                 تابعنا
               </button>
@@ -4093,30 +4233,29 @@
         <div class='footer-top'>
           <div class='footer-brand'>
             <a class='footer-logo' expr:href='data:blog.homepageUrl'><data:blog.title /></a>
-            <p class='footer-description'>Helping creators, designers, and businesses build
-              exceptional digital experiences through practical insights.</p>
-            <p class='footer-tagline'>&#169; <data:blog.title />. All rights reserved.</p>
+            <p class='footer-description'>مدونة عربية تقدم مقالات وموضوعات متنوعة في التقنية والأعمال والمعرفة.</p>
+            <p class='footer-tagline'>&#169; <data:blog.title />. جميع الحقوق محفوظة.</p>
           </div>
           <div class='footer-navigation'>
             <div>
-              <h3 class='footer-title'>Categories</h3>
+              <h3 class='footer-title'>الأقسام</h3>
               <ul class='footer-links'>
                 <li>
-                  <a href='/search/label/Artificial%20Intelligence'>Artificial Intelligence</a>
+                  <a href='/search/label/Artificial%20Intelligence'>التقنية</a>
                 </li>
                 <li>
-                  <a href='/search/label/UI%2FUX'>UI/UX Design</a>
+                  <a href='/search/label/UI%2FUX'>التصميم</a>
                 </li>
                 <li>
-                  <a href='/search/label/Web%20Development'>Web Development</a>
+                  <a href='/search/label/Web%20Development'>الأعمال</a>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 class='footer-title'>Resources</h3>
+              <h3 class='footer-title'>روابط</h3>
               <ul class='footer-links'>
                 <li>
-                  <a href='/search/label/Digital%20Marketing'>Digital Marketing</a>
+                  <a href='/search/label/Digital%20Marketing'>التسويق</a>
                 </li>
                 <li>
                   <a href='/search/label/Branding'>Branding</a>
@@ -4127,10 +4266,10 @@
               </ul>
             </div>
             <div>
-              <h3 class='footer-title'>Company</h3>
+              <h3 class='footer-title'>المدونة</h3>
               <ul class='footer-links'>
                 <li>
-                  <a href='/p/about-us.html'>About Us</a>
+                  <a href='/p/about-us.html'>من نحن</a>
                 </li>
                 <li>
                   <a href='/p/contact.html'>Contact</a>
@@ -4169,7 +4308,7 @@
             fallback.className = 'hero-spotlight-fallback';
             fallback.setAttribute('role', 'img');
             fallback.setAttribute('aria-label', 'Featured story image placeholder');
-            fallback.textContent = 'Featured Story';
+            fallback.textContent = 'موضوع مميز';
             link.insertBefore(fallback, link.firstChild);
           }
 
