@@ -3153,6 +3153,17 @@ body{font-family:'Tajawal',Arial,sans-serif!important;background:#f5f7f9!importa
     <b:include data='blog' name='google-analytics'/>
 
     <script async='async' src='https://www.gstatic.com/external_hosted/clipboardjs/clipboard.min.js'/>
+  
+    <style type='text/css'>
+      .sx-market-toolbar-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+      .sx-detail-actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+      .sx-detail-actions button{border:1px solid #d9dedb;background:#fff;border-radius:8px;padding:10px 14px;cursor:pointer;font:inherit}
+      #sx-db-status{font-size:13px;color:#64716a;margin-top:8px}
+      .sx-comment{padding:12px 0;border-bottom:1px solid #ecefed}
+      .sx-comment p{margin:5px 0 0}
+      @media(max-width:640px){.sx-market-toolbar-actions{width:100%}.sx-market-toolbar-actions>*{flex:1}}
+    </style>
+
   </head>
 
   <body>
@@ -4504,9 +4515,9 @@ async function authSubmit(e){
 }
 async function showComments(adId,container){
  container.innerHTML='<p>جاري تحميل التعليقات...</p>';
- var r=await client.from('comments').select('id,body,created_at,profiles(display_name)').eq('ad_id',adId).eq('status','approved').order('created_at',{ascending:true}).limit(30);
+ var r=await client.from('comments').select('id,body,created_at').eq('ad_id',adId).eq('status','approved').order('created_at',{ascending:true}).limit(30);
  if(r.error){container.textContent='تعذر تحميل التعليقات حالياً';return}
- var html=(r.data||[]).map(function(c){return '<div class="sx-comment"><strong>'+esc(c.profiles&&c.profiles.display_name||'مستخدم')+'</strong><p>'+esc(c.body)+'</p></div>'}).join('');
+ var html=(r.data||[]).map(function(c){return '<div class="sx-comment"><strong>'+esc('مستخدم')+'</strong><p>'+esc(c.body)+'</p></div>'}).join('');
  container.innerHTML=(html||'<p>لا توجد تعليقات منشورة بعد.</p>')+(session?'<form id="sx-comment-form" class="sx-market-form"><textarea name="body" required maxlength="2000" placeholder="اكتب تعليقك..."></textarea><button type="submit">إرسال التعليق للمراجعة</button></form>':'<p>سجل الدخول لإضافة تعليق.</p>');
  var form=container.querySelector('#sx-comment-form');if(form)form.addEventListener('submit',async function(e){e.preventDefault();var body=new FormData(form).get('body').trim();if(!body)return;var ins=await client.from('comments').insert({ad_id:adId,user_id:session.user.id,body:body,status:'pending'});if(ins.error){notify(ins.error.message);return}form.reset();notify('تم إرسال تعليقك للمراجعة قبل النشر');});
 }
