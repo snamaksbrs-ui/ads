@@ -2787,6 +2787,16 @@ body{font-family:'Tajawal',Arial,sans-serif!important;background:#f5f7f9!importa
 @media(max-width:900px){.sx-nav{display:none}.blog-posts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.sx-wrap{width:calc(100% - 28px)}.sx-header-inner{min-height:68px}.sx-head-actions .sx-search{display:none}.sx-head-actions .sx-cta{padding:10px 13px;font-size:13px}.sx-market-hero{min-height:0}.sx-market-search{flex-direction:column}.sx-market-search .sx-button{width:100%}.blog-posts{grid-template-columns:1fr}#main{padding-inline:14px}.sx-section{padding:52px 0}}
 
+
+/* Listing actions: local-device likes + native Blogger comments */
+.sx-post-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:16px 0 4px;padding-top:13px;border-top:1px solid #edf0f3}
+.sx-post-action{display:inline-flex;align-items:center;gap:7px;border:1px solid #e1e8ed;border-radius:9px;background:#fff;color:#536675;padding:8px 12px;font:700 13px 'Tajawal',Arial,sans-serif;text-decoration:none;cursor:pointer;transition:.18s}
+.sx-post-action:hover{border-color:#16827d;color:#16827d}
+.sx-post-action[aria-pressed=true]{background:#eaf5f3;border-color:#b8ded9;color:#11736e}
+.sx-post-action svg{width:16px;height:16px;flex:none}
+.sx-like-count{font-variant-numeric:tabular-nums}
+@media(max-width:600px){.sx-post-actions{gap:8px}.sx-post-action{padding:8px 10px}}
+
 ]]></b:skin>
 
     <b:template-skin>
@@ -4313,5 +4323,38 @@ body{font-family:'Tajawal',Arial,sans-serif!important;background:#f5f7f9!importa
         <p class='sx-footer-note'>منصة إعلانات مبوبة مجانية</p>
       </div>
     </footer>
+
+<script type='text/javascript'><![CDATA[
+(function(){
+  'use strict';
+  var storageKey='snam-market-likes-v1';
+  function readLikes(){try{return JSON.parse(localStorage.getItem(storageKey)||'{}')}catch(e){return {}}}
+  function writeLikes(data){try{localStorage.setItem(storageKey,JSON.stringify(data))}catch(e){}}
+  function initMarketActions(){
+    var posts=document.querySelectorAll('.blog-posts .post-outer, .blog-posts .post-outer-container, .blog-posts article.post, body.item-view .post-outer, body.item-view .post-outer-container');
+    posts.forEach(function(wrap){
+      if(wrap.querySelector('.sx-post-actions')) return;
+      var titleLink=wrap.querySelector('.post-title a, h3 a, h2 a');
+      var permalink=titleLink ? titleLink.href : location.href;
+      var key='post:'+permalink;
+      var likes=readLikes();
+      var liked=!!likes[key];
+      var bar=document.createElement('div');bar.className='sx-post-actions';
+      var like=document.createElement('button');like.type='button';like.className='sx-post-action sx-like-button';like.setAttribute('aria-pressed',liked?'true':'false');
+      like.innerHTML='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 10v11H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3Zm0 0 5-8c1.8 0 2.7 1.4 2.2 3.1L13 10h5.4a2.5 2.5 0 0 1 2.4 3.2l-1.8 6A2.5 2.5 0 0 1 16.6 21H7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>إعجاب</span><span class="sx-like-count"></span>';
+      like.querySelector('.sx-like-count').textContent=liked?'1':'0';
+      like.addEventListener('click',function(){var current=readLikes();var next=!current[key];if(next){current[key]=1}else{delete current[key]}writeLikes(current);like.setAttribute('aria-pressed',next?'true':'false');like.querySelector('.sx-like-count').textContent=next?'1':'0';});
+      var comments=document.createElement('a');comments.className='sx-post-action';comments.href=permalink+(permalink.indexOf('#')===-1?'#comments':'');comments.innerHTML='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l-2 2v-6a7.5 7.5 0 1 1 17-3.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>التعليقات</span>';
+      bar.appendChild(like);bar.appendChild(comments);
+      var target=wrap.querySelector('.post-footer, .post-bottom, .post-body')||wrap;
+      target.appendChild(bar);
+    });
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMarketActions)}else{initMarketActions()}
+  var observer=new MutationObserver(function(){initMarketActions()});
+  observer.observe(document.documentElement,{childList:true,subtree:true});
+  setTimeout(function(){observer.disconnect()},10000);
+})();
+]]></script>
   </body>
 </html>
