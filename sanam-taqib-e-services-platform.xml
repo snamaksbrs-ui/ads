@@ -4412,32 +4412,33 @@ body{font-family:'Tajawal',Arial,sans-serif!important;background:#f5f7f9!importa
   setTimeout(function(){observer.disconnect()},10000);
 })();
 ]]></script>
+<script src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'></script>
 <script type='text/javascript'><![CDATA[
 (function(){
 'use strict';
+var SUPABASE_URL='https://smjsricvzgtuaboujagz.supabase.co';
+var SUPABASE_KEY='sb_publishable_BHf8E-n5V45wS0tel61Qqg_LCFxcl4w';
+var client=null,session=null,dbAds=[],categories=[],active='الكل',query='';
 var demo=[
-{t:'شقة غرفتين وصالة للإيجار بحي هادئ',c:'عقارات',p:'1,800 ريال / شهرياً',city:'الرياض',date:'اليوم',i:'🏠',d:'شقة نظيفة ومجددة، غرفتا نوم وصالة ومطبخ ودورة مياه، قريبة من الخدمات. بيانات تجريبية للعرض.'},
-{t:'أرض سكنية 300 متر في مخطط جديد',c:'عقارات',p:'185,000 ريال',city:'الخرج',date:'اليوم',i:'🏡',d:'أرض سكنية بصك إلكتروني افتراضي لأغراض العرض فقط.'},
-{t:'فيلا عائلية دورين مع حوش',c:'عقارات',p:'780,000 ريال',city:'جدة',date:'أمس',i:'🏘️',d:'فيلا واسعة بتصميم عائلي. هذا إعلان تجريبي وليس عرضاً حقيقياً.'},
-{t:'تويوتا كامري 2021 حالة ممتازة',c:'سيارات',p:'69,000 ريال',city:'الرياض',date:'اليوم',i:'🚘',d:'سيارة تجريبية لعرض شكل بطاقة الإعلان، يرجى عدم اعتبار البيانات حقيقية.'},
-{t:'هيونداي إلنترا 2019 اقتصادية',c:'سيارات',p:'38,500 ريال',city:'الدمام',date:'أمس',i:'🚗',d:'مواصفات وسعر افتراضيان لعرض واجهة السوق.'},
-{t:'دباب توصيل بحالة جيدة',c:'سيارات',p:'4,200 ريال',city:'مكة',date:'قبل يومين',i:'🛵',d:'إعلان توضيحي تجريبي.'},
-{t:'آيفون 14 برو سعة 256 جيجا',c:'أجهزة',p:'2,150 ريال',city:'الرياض',date:'اليوم',i:'📱',d:'جهاز تجريبي معروض لاختبار التصميم.'},
-{t:'لابتوب للأعمال والدراسة',c:'أجهزة',p:'1,850 ريال',city:'أبها',date:'أمس',i:'💻',d:'لابتوب بمواصفات افتراضية لعرض نموذج الإعلان.'},
-{t:'شاشة تلفزيون ذكية 55 بوصة',c:'أجهزة',p:'1,100 ريال',city:'الطائف',date:'قبل يومين',i:'📺',d:'تفاصيل المنتج افتراضية.'},
-{t:'مطلوب محاسب للعمل بدوام كامل',c:'وظائف',p:'راتب يحدد بعد المقابلة',city:'الرياض',date:'اليوم',i:'💼',d:'فرصة وظيفية افتراضية لأغراض اختبار واجهة المنصة.'},
-{t:'مصمم جرافيك للعمل عن بعد',c:'وظائف',p:'حسب الخبرة',city:'عن بعد',date:'أمس',i:'🎨',d:'إعلان وظيفة تجريبي.'},
-{t:'كنب زاوية مع طاولة وسط',c:'أثاث',p:'1,300 ريال',city:'جدة',date:'اليوم',i:'🛋️',d:'أثاث منزلي افتراضي.'},
-{t:'غرفة نوم كاملة بحالة ممتازة',c:'أثاث',p:'2,400 ريال',city:'المدينة',date:'أمس',i:'🛏️',d:'إعلان تجريبي لعرض تصنيف الأثاث.'},
-{t:'خدمات نقل عفش داخل المدينة',c:'خدمات',p:'تبدأ من 150 ريال',city:'الرياض',date:'اليوم',i:'🚚',d:'خدمة افتراضية لشرح شكل الإعلان.'},
-{t:'تصميم مواقع ومتاجر إلكترونية',c:'خدمات',p:'حسب الطلب',city:'كل المناطق',date:'أمس',i:'🖥️',d:'خدمة تجريبية لعرض قسم الخدمات.'}
+{t:'شقة غرفتين وصالة للإيجار بحي هادئ',c:'عقارات',p:'1,800 ريال / شهرياً',city:'الرياض',date:'بيانات تجريبية',i:'🏠',d:'شقة نظيفة ومجددة، غرفتا نوم وصالة ومطبخ ودورة مياه، قريبة من الخدمات. بيانات تجريبية للعرض.'},
+{t:'أرض سكنية 300 متر في مخطط جديد',c:'عقارات',p:'185,000 ريال',city:'الخرج',date:'بيانات تجريبية',i:'🏡',d:'أرض سكنية افتراضية لأغراض العرض فقط.'},
+{t:'فيلا عائلية دورين مع حوش',c:'عقارات',p:'780,000 ريال',city:'جدة',date:'بيانات تجريبية',i:'🏘️',d:'هذا إعلان تجريبي وليس عرضاً حقيقياً.'},
+{t:'تويوتا كامري 2021 حالة ممتازة',c:'سيارات',p:'69,000 ريال',city:'الرياض',date:'بيانات تجريبية',i:'🚘',d:'سيارة تجريبية لعرض شكل بطاقة الإعلان.'},
+{t:'هيونداي إلنترا 2019 اقتصادية',c:'سيارات',p:'38,500 ريال',city:'الدمام',date:'بيانات تجريبية',i:'🚗',d:'مواصفات وسعر افتراضيان.'},
+{t:'دباب توصيل بحالة جيدة',c:'سيارات',p:'4,200 ريال',city:'مكة',date:'بيانات تجريبية',i:'🛵',d:'إعلان توضيحي تجريبي.'},
+{t:'آيفون 14 برو سعة 256 جيجا',c:'أجهزة',p:'2,150 ريال',city:'الرياض',date:'بيانات تجريبية',i:'📱',d:'جهاز تجريبي معروض لاختبار التصميم.'},
+{t:'لابتوب للأعمال والدراسة',c:'أجهزة',p:'1,850 ريال',city:'أبها',date:'بيانات تجريبية',i:'💻',d:'مواصفات افتراضية لعرض نموذج الإعلان.'},
+{t:'شاشة تلفزيون ذكية 55 بوصة',c:'أجهزة',p:'1,100 ريال',city:'الطائف',date:'بيانات تجريبية',i:'📺',d:'تفاصيل المنتج افتراضية.'},
+{t:'مطلوب محاسب للعمل بدوام كامل',c:'وظائف',p:'راتب يحدد بعد المقابلة',city:'الرياض',date:'بيانات تجريبية',i:'💼',d:'فرصة وظيفية افتراضية.'},
+{t:'مصمم جرافيك للعمل عن بعد',c:'وظائف',p:'حسب الخبرة',city:'عن بعد',date:'بيانات تجريبية',i:'🎨',d:'إعلان وظيفة تجريبي.'},
+{t:'كنب زاوية مع طاولة وسط',c:'أثاث',p:'1,300 ريال',city:'جدة',date:'بيانات تجريبية',i:'🛋️',d:'أثاث منزلي افتراضي.'},
+{t:'غرفة نوم كاملة بحالة ممتازة',c:'أثاث',p:'2,400 ريال',city:'المدينة',date:'بيانات تجريبية',i:'🛏️',d:'إعلان تجريبي.'},
+{t:'خدمات نقل عفش داخل المدينة',c:'خدمات',p:'تبدأ من 150 ريال',city:'الرياض',date:'بيانات تجريبية',i:'🚚',d:'خدمة افتراضية.'},
+{t:'تصميم مواقع ومتاجر إلكترونية',c:'خدمات',p:'حسب الطلب',city:'كل المناطق',date:'بيانات تجريبية',i:'🖥️',d:'خدمة تجريبية.'}
 ];
 var cats=['الكل','عقارات','سيارات','أجهزة','وظائف','أثاث','خدمات'];
-var userKey='snam-market-user-listings-v1';
-var active='الكل',query='';
-function esc(v){return String(v||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-function users(){try{return JSON.parse(localStorage.getItem(userKey)||'[]')}catch(e){return []}}
-function save(a){try{localStorage.setItem(userKey,JSON.stringify(a));return true}catch(e){return false}}
+function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function notify(msg){var n=document.getElementById('sx-market-toast');if(!n){n=document.createElement('div');n.id='sx-market-toast';n.style.cssText='position:fixed;bottom:22px;left:18px;right:18px;z-index:99999;max-width:520px;margin:auto;background:#202522;color:#fff;padding:14px 18px;border-radius:10px;box-shadow:0 8px 30px #0002;font:14px Tajawal,sans-serif;text-align:center';document.body.appendChild(n)}n.textContent=msg;n.style.display='block';clearTimeout(n._timer);n._timer=setTimeout(function(){n.style.display='none'},4500)}
 function bloggerPosts(){
  var out=[],seen={};
  document.querySelectorAll('.blog-posts .post-outer, .blog-posts .post-outer-container, .blog-posts article').forEach(function(w){
@@ -4446,20 +4447,22 @@ function bloggerPosts(){
   var link=title&&title.href?title.href:(w.querySelector('a[rel="bookmark"]')||{}).href;
   var name=(title?title.textContent:w.querySelector('h1,h2,h3')?.textContent||'').trim();
   if(!name||seen[name])return;seen[name]=1;
-  var body=w.querySelector('.post-body,.entry-content,.post-snippet');
-  var desc=body?(body.innerText||body.textContent||'').trim():'';
+  var body=w.querySelector('.post-body,.entry-content,.post-snippet'),desc=body?(body.innerText||body.textContent||'').trim():'';
   var labels=Array.from(w.querySelectorAll('.post-labels a, .post-labels .label-name')).map(function(a){return a.textContent.trim()});
-  var known=['عقارات','سيارات','أجهزة','وظائف','أثاث','خدمات'];
-  var category=known.find(function(c){return labels.indexOf(c)>-1})||labels[0]||'أخرى';
+  var known=cats.slice(1),category=known.find(function(c){return labels.indexOf(c)>-1})||labels[0]||'أخرى';
   var image=body&&body.querySelector('img');
   var price=(desc.match(/(?:السعر|المطلوب|الإيجار)\s*[:：-]?\s*([^\n،]+)/)||[])[1]||'تواصل لمعرفة السعر';
   var city=(desc.match(/(?:المدينة|الموقع|المدينة\s*\/\s*الحي)\s*[:：-]?\s*([^\n،]+)/)||[])[1]||'غير محدد';
-  var dateNode=w.querySelector('.published,.post-timestamp time');
-  out.push({t:name,c:category,p:price,city:city,date:dateNode?(dateNode.textContent||dateNode.getAttribute('datetime')||''):'من بلوجر',i:'🛍️',d:desc.slice(0,1800),image:image?image.src:'',url:link||'',source:'blogger'});
+  out.push({t:name,c:category,p:price,city:city,date:'من بلوجر',i:'🛍️',d:desc.slice(0,1800),image:image?image.src:'',url:link||'',source:'blogger'});
  });
  return out;
 }
-function all(){return bloggerPosts().concat(users().map(function(x){x.source='local';return x}),demo.map(function(x){x.source='demo';return x}))}
+function mapped(row){
+ var cat=row.categories&&row.categories.name?row.categories.name:(categories.find(function(c){return c.id===row.category_id})||{}).name||'أخرى';
+ var price=row.price==null?(row.price_type==='free'?'مجاني':row.price_type==='contact'?'تواصل لمعرفة السعر':'على السوم'):Number(row.price).toLocaleString('en-US')+' ريال';
+ return {id:row.id,t:row.title,c:cat,p:price,city:row.city||'غير محدد',date:row.created_at?new Date(row.created_at).toLocaleDateString('ar-SA'):'حديثاً',i:'🛍️',d:row.description||'',image:row.image_url||'',phone:row.contact_phone||'',source:'supabase'};
+}
+function all(){return dbAds.map(mapped).concat(bloggerPosts(),demo)}
 function render(){
  var root=document.getElementById('sx-market-listings');if(!root)return;
  var items=all().filter(function(x){return (active==='الكل'||x.c===active)&&(!query||(x.t+' '+x.c+' '+x.city+' '+x.d).toLowerCase().indexOf(query.toLowerCase())>-1)});
@@ -4468,38 +4471,112 @@ function render(){
  grid.innerHTML=items.map(function(x,n){return '<article class="sx-listing-card"><div class="sx-listing-image">'+(x.image?'<img src="'+esc(x.image)+'" alt="" loading="lazy" onerror="this.style.display=\'none\'"/>':esc(x.i||'🛍️'))+'<span class="sx-listing-tag">'+esc(x.c)+'</span></div><div class="sx-listing-body"><h3>'+esc(x.t)+'</h3><div class="sx-listing-price">'+esc(x.p||'على السوم')+'</div><div class="sx-listing-meta"><span>📍 '+esc(x.city)+'</span><span>'+esc(x.date||'الآن')+'</span></div><button class="sx-listing-open" type="button" data-detail="'+n+'">عرض التفاصيل</button></div></article>'}).join('')||'<div class="sx-listing-empty">لا توجد إعلانات مطابقة. جرّب قسماً آخر أو أضف إعلانك.</div>';
  grid.querySelectorAll('[data-detail]').forEach(function(btn){btn.addEventListener('click',function(){showDetail(items[Number(btn.getAttribute('data-detail'))])})});
 }
-function showDetail(x){
- var modal=document.getElementById('sx-market-detail-modal');if(!modal)return;
- modal.querySelector('.sx-market-dialog').innerHTML='<div class="sx-market-dialog-head"><h2>'+esc(x.t)+'</h2><button class="sx-market-close" type="button" data-close>×</button></div><div class="sx-market-detail"><div class="sx-listing-image">'+(x.image?'<img src="'+esc(x.image)+'" alt=""/>':esc(x.i||'🛍️'))+'</div><div class="sx-detail-price">'+esc(x.p||'على السوم')+'</div><div>📍 '+esc(x.city)+'　 ·　 '+esc(x.c)+'</div><p>'+esc(x.d)+'</p>'+(x.url?'<a class="sx-button" href="'+esc(x.url)+'" target="_blank" rel="noopener">فتح منشور بلوجر</a>':'')+(x.phone?'<a class="sx-button" href="https://wa.me/'+esc(x.phone.replace(/\D/g,''))+'" target="_blank" rel="noopener">تواصل عبر واتساب</a>':'')+'<div class="sx-market-notice">تنبيه: الإعلانات التجريبية المعروضة بيانات افتراضية وليست عروضاً موثقة.</div></div>';
- modal.classList.add('open');modal.querySelector('[data-close]').addEventListener('click',function(){modal.classList.remove('open')});
+async function loadAds(){
+ if(!client)return;
+ try{
+  var c=await client.from('categories').select('id,name,slug').eq('is_active',true).order('sort_order');
+  if(c.error)throw c.error;categories=c.data||[];
+  var a=await client.from('ads').select('id,title,description,price,price_type,city,contact_phone,image_url,category_id,created_at,categories(name)').eq('status','approved').order('created_at',{ascending:false}).limit(100);
+  if(a.error)throw a.error;dbAds=a.data||[];render();
+  var status=document.getElementById('sx-db-status');if(status)status.textContent='متصل بقاعدة البيانات · '+dbAds.length+' إعلان منشور';
+ }catch(e){console.error('Supabase load error:',e);var status=document.getElementById('sx-db-status');if(status)status.textContent='تعذر تحميل بيانات Supabase: '+(e.message||'تحقق من إعداد قاعدة البيانات والصلاحيات');}
 }
-function openForm(){var m=document.getElementById('sx-market-add-modal');if(m)m.classList.add('open')}
+async function refreshSession(){
+ var r=await client.auth.getSession();session=r.data.session||null;updateAccount();
+}
+function updateAccount(){
+ var b=document.getElementById('sx-account-button');if(!b)return;
+ b.textContent=session?(session.user.email||'حسابي')+' · خروج':'دخول / إنشاء حساب';
+ b.title=session?'اضغط لتسجيل الخروج':'تسجيل الدخول أو إنشاء حساب';
+}
+function openAuth(){var m=document.getElementById('sx-market-auth-modal');if(m)m.classList.add('open')}
 function closeModals(){document.querySelectorAll('.sx-market-modal').forEach(function(m){m.classList.remove('open')})}
+async function authSubmit(e){
+ e.preventDefault();var f=e.currentTarget,fd=new FormData(f),mode=fd.get('mode'),email=String(fd.get('email')||'').trim(),password=String(fd.get('password')||''),name=String(fd.get('name')||'').trim();
+ if(password.length<6){notify('كلمة المرور يجب أن تكون 6 أحرف على الأقل');return}
+ var result=mode==='signup'?await client.auth.signUp({email:email,password:password,options:{data:{display_name:name}}}):await client.auth.signInWithPassword({email:email,password:password});
+ if(result.error){notify(result.error.message);return}
+ if(result.data.user&&result.data.session){
+  session=result.data.session;
+  await client.from('profiles').upsert({id:result.data.user.id,display_name:name||result.data.user.user_metadata?.display_name||email.split('@')[0]},{onConflict:'id'});
+  updateAccount();closeModals();notify(mode==='signup'?'تم إنشاء الحساب وتسجيل الدخول':'تم تسجيل الدخول');loadAds();
+ }else{closeModals();notify('تم إنشاء الحساب. تحقق من بريدك الإلكتروني لتأكيد التسجيل ثم سجل الدخول.')}
+}
+async function showComments(adId,container){
+ container.innerHTML='<p>جاري تحميل التعليقات...</p>';
+ var r=await client.from('comments').select('id,body,created_at,profiles(display_name)').eq('ad_id',adId).eq('status','approved').order('created_at',{ascending:true}).limit(30);
+ if(r.error){container.textContent='تعذر تحميل التعليقات حالياً';return}
+ var html=(r.data||[]).map(function(c){return '<div class="sx-comment"><strong>'+esc(c.profiles&&c.profiles.display_name||'مستخدم')+'</strong><p>'+esc(c.body)+'</p></div>'}).join('');
+ container.innerHTML=(html||'<p>لا توجد تعليقات منشورة بعد.</p>')+(session?'<form id="sx-comment-form" class="sx-market-form"><textarea name="body" required maxlength="2000" placeholder="اكتب تعليقك..."></textarea><button type="submit">إرسال التعليق للمراجعة</button></form>':'<p>سجل الدخول لإضافة تعليق.</p>');
+ var form=container.querySelector('#sx-comment-form');if(form)form.addEventListener('submit',async function(e){e.preventDefault();var body=new FormData(form).get('body').trim();if(!body)return;var ins=await client.from('comments').insert({ad_id:adId,user_id:session.user.id,body:body,status:'pending'});if(ins.error){notify(ins.error.message);return}form.reset();notify('تم إرسال تعليقك للمراجعة قبل النشر');});
+}
+async function toggleUserRelation(table,adId){
+ if(!session){openAuth();notify('سجل الدخول لاستخدام هذه الميزة');return}
+ var uid=session.user.id,check=await client.from(table).select('ad_id').eq('user_id',uid).eq('ad_id',adId).maybeSingle();
+ if(check.error){notify(check.error.message);return}
+ var r=check.data?await client.from(table).delete().eq('user_id',uid).eq('ad_id',adId):await client.from(table).insert({user_id:uid,ad_id:adId});
+ notify(r.error?r.error.message:(check.data?'تمت الإزالة':'تمت الإضافة بنجاح'));
+}
+async function showDetail(x){
+ var modal=document.getElementById('sx-market-detail-modal');if(!modal)return;
+ modal.querySelector('.sx-market-dialog').innerHTML='<div class="sx-market-dialog-head"><h2>'+esc(x.t)+'</h2><button class="sx-market-close" type="button" data-close>×</button></div><div class="sx-market-detail"><div class="sx-listing-image">'+(x.image?'<img src="'+esc(x.image)+'" alt=""/>':esc(x.i||'🛍️'))+'</div><div class="sx-detail-price">'+esc(x.p||'على السوم')+'</div><div>📍 '+esc(x.city)+'　 ·　 '+esc(x.c)+'</div><p>'+esc(x.d)+'</p>'+(x.phone?'<a class="sx-button" href="https://wa.me/'+esc(x.phone.replace(/\D/g,''))+'" target="_blank" rel="noopener">تواصل عبر واتساب</a>':'')+(x.source==='supabase'?'<div class="sx-detail-actions"><button type="button" id="sx-like-ad">إعجاب</button><button type="button" id="sx-save-ad">حفظ بالمفضلة</button></div><h3>التعليقات</h3><div id="sx-comments-area">جاري تحميل التعليقات...</div>':'')+(x.url?'<a class="sx-button" href="'+esc(x.url)+'" target="_blank" rel="noopener">فتح منشور بلوجر</a>':'')+(x.source==='demo'?'<div class="sx-market-notice">إعلان تجريبي ببيانات افتراضية وليس عرضاً حقيقياً.</div>':'')+'</div>';
+ modal.classList.add('open');modal.querySelector('[data-close]').addEventListener('click',closeModals);
+ if(x.source==='supabase'){
+  modal.querySelector('#sx-like-ad').addEventListener('click',function(){toggleUserRelation('likes',x.id)});
+  modal.querySelector('#sx-save-ad').addEventListener('click',function(){toggleUserRelation('favorites',x.id)});
+  showComments(x.id,modal.querySelector('#sx-comments-area'));
+ }
+}
 function mount(){
  if(document.getElementById('sx-market-listings'))return;
  var target=document.getElementById('latest-ads');if(!target)return;
- target.innerHTML='<div class="sx-wrap"><div class="sx-market-toolbar"><div><span class="sx-kicker">تصفح السوق</span><h2>إعلانات للبيع والخدمات</h2><span class="sx-market-count"></span></div><button class="sx-button" type="button" id="sx-open-add">＋ أضف إعلانك مجاناً</button></div><div class="sx-market-layout" id="sx-market-listings"><aside class="sx-market-sidebar"><h3>الأقسام</h3><div class="sx-market-filter">'+cats.map(function(c){return '<button type="button" data-cat="'+c+'" class="'+(c==='الكل'?'active':'')+'">'+c+'</button>'}).join('')+'</div></aside><div class="sx-market-main"><div class="sx-market-main-head"><strong>تصفح أحدث الإعلانات</strong><select class="sx-market-sort" id="sx-market-sort"><option value="new">الأحدث أولاً</option><option value="price">السعر (بيانات العرض)</option></select></div><div class="sx-listing-grid"></div></div></div></div>';
+ target.innerHTML='<div class="sx-wrap"><div class="sx-market-toolbar"><div><span class="sx-kicker">تصفح السوق</span><h2>إعلانات للبيع والخدمات</h2><span class="sx-market-count"></span><p id="sx-db-status">جاري الاتصال بقاعدة البيانات...</p></div><div class="sx-market-toolbar-actions"><button class="sx-button sx-button--outline" type="button" id="sx-account-button">دخول / إنشاء حساب</button><button class="sx-button" type="button" id="sx-open-add">＋ أضف إعلانك مجاناً</button></div></div><div class="sx-market-layout" id="sx-market-listings"><aside class="sx-market-sidebar"><h3>الأقسام</h3><div class="sx-market-filter">'+cats.map(function(c){return '<button type="button" data-cat="'+c+'" class="'+(c==='الكل'?'active':'')+'">'+c+'</button>'}).join('')+'</div></aside><div class="sx-market-main"><div class="sx-market-main-head"><strong>تصفح أحدث الإعلانات</strong><button type="button" id="sx-refresh-ads">تحديث</button></div><div class="sx-listing-grid"></div></div></div></div>';
  var add=document.createElement('button');add.type='button';add.className='sx-market-submit';add.id='sx-floating-add';add.textContent='+ أضف إعلانك';document.body.appendChild(add);
  var addModal=document.createElement('div');addModal.className='sx-market-modal';addModal.id='sx-market-add-modal';
- addModal.innerHTML='<div class="sx-market-dialog"><div class="sx-market-dialog-head"><h2>أضف إعلانك مجاناً</h2><button class="sx-market-close" type="button" data-close>×</button></div><div class="sx-market-notice">تظهر هنا تلقائياً الإعلانات المنشورة كمنشورات في بلوجر. هذا النموذج التجريبي يحفظ على هذا المتصفح فقط؛ لا يمكنه إنشاء منشور عام في بلوجر دون صلاحية OAuth آمنة.</div><form class="sx-market-form" id="sx-market-form"><div class="sx-market-field full"><label>عنوان الإعلان *</label><input name="title" required maxlength="90" placeholder="مثال: شقة للإيجار في الرياض"/></div><div class="sx-market-field"><label>القسم *</label><select name="category" required>'+cats.slice(1).map(function(c){return '<option>'+c+'</option>'}).join('')+'</select></div><div class="sx-market-field"><label>السعر</label><input name="price" placeholder="مثال: 2500 ريال"/></div><div class="sx-market-field"><label>المدينة *</label><input name="city" required placeholder="الرياض"/></div><div class="sx-market-field"><label>رقم التواصل (اختياري)</label><input name="phone" inputmode="tel" placeholder="9665xxxxxxxx"/></div><div class="sx-market-field full"><label>رابط صورة (اختياري)</label><input name="image" type="url" placeholder="https://..."/></div><div class="sx-market-field full"><label>وصف الإعلان *</label><textarea name="description" required maxlength="1200" placeholder="اكتب تفاصيل الإعلان بوضوح..."></textarea></div><div class="sx-market-disclaimer">بيانات الإعلانات الموجودة حالياً أمثلة افتراضية. لا تستخدم المنصة لإرسال بيانات حساسة، وتحقق من المعلن والسلعة قبل الدفع.</div><button type="submit">حفظ معاينة الإعلان على هذا الجهاز</button></form></div>';
+ addModal.innerHTML='<div class="sx-market-dialog"><div class="sx-market-dialog-head"><h2>أضف إعلانك</h2><button class="sx-market-close" type="button" data-close>×</button></div><div class="sx-market-notice">ستُرسل الإعلانات الجديدة للمراجعة، ولن تظهر للعامة إلا بعد موافقة الإدارة. يمكن النشر كزائر، أما رفع ملف صورة فيتطلب تسجيل الدخول.</div><form class="sx-market-form" id="sx-market-form"><div class="sx-market-field full"><label>عنوان الإعلان *</label><input name="title" required minlength="5" maxlength="140" placeholder="مثال: شقة للإيجار في الرياض"/></div><div class="sx-market-field"><label>القسم *</label><select name="category" required>'+cats.slice(1).map(function(c){return '<option>'+c+'</option>'}).join('')+'</select></div><div class="sx-market-field"><label>السعر</label><input name="price" inputmode="decimal" placeholder="مثال: 2500"/></div><div class="sx-market-field"><label>المدينة *</label><input name="city" required placeholder="الرياض"/></div><div class="sx-market-field"><label>رقم التواصل (اختياري)</label><input name="phone" inputmode="tel" placeholder="9665xxxxxxxx"/></div><div class="sx-market-field full"><label>رابط صورة (اختياري)</label><input name="image_url" type="url" placeholder="https://..."/></div><div class="sx-market-field full"><label>أو ارفع صورة (للمستخدم المسجل)</label><input name="image_file" type="file" accept="image/jpeg,image/png,image/webp"/></div><div class="sx-market-field full"><label>وصف الإعلان *</label><textarea name="description" required minlength="10" maxlength="10000" placeholder="اكتب تفاصيل الإعلان بوضوح..."></textarea></div><button type="submit">إرسال الإعلان للمراجعة</button></form></div>';
  document.body.appendChild(addModal);
+ var auth=document.createElement('div');auth.className='sx-market-modal';auth.id='sx-market-auth-modal';auth.innerHTML='<div class="sx-market-dialog"><div class="sx-market-dialog-head"><h2>حساب سوق سنام</h2><button class="sx-market-close" type="button" data-close>×</button></div><form id="sx-auth-form" class="sx-market-form"><div class="sx-market-field full"><label>الاسم (للتسجيل الجديد)</label><input name="name" maxlength="80" placeholder="اسمك"/></div><div class="sx-market-field full"><label>البريد الإلكتروني</label><input name="email" type="email" required autocomplete="email"/></div><div class="sx-market-field full"><label>كلمة المرور</label><input name="password" type="password" required minlength="6" autocomplete="current-password"/></div><div class="sx-market-field full"><label>نوع العملية</label><select name="mode"><option value="signin">تسجيل الدخول</option><option value="signup">إنشاء حساب جديد</option></select></div><button type="submit">متابعة</button></form></div>';document.body.appendChild(auth);
  var detail=document.createElement('div');detail.className='sx-market-modal';detail.id='sx-market-detail-modal';detail.innerHTML='<div class="sx-market-dialog"></div>';document.body.appendChild(detail);
- document.getElementById('sx-open-add').addEventListener('click',openForm);add.addEventListener('click',openForm);
- document.querySelectorAll('.sx-market-close').forEach(function(b){b.addEventListener('click',closeModals)});
+ document.getElementById('sx-open-add').addEventListener('click',function(){document.getElementById('sx-market-add-modal').classList.add('open')});add.addEventListener('click',function(){document.getElementById('sx-market-add-modal').classList.add('open')});
+ document.getElementById('sx-account-button').addEventListener('click',async function(){if(session){var out=await client.auth.signOut();if(out.error)notify(out.error.message);else{session=null;updateAccount();notify('تم تسجيل الخروج')}}else openAuth()});
+ document.getElementById('sx-auth-form').addEventListener('submit',authSubmit);
+ document.getElementById('sx-refresh-ads').addEventListener('click',loadAds);
  document.querySelectorAll('.sx-market-modal').forEach(function(m){m.addEventListener('click',function(e){if(e.target===m)closeModals()})});
  document.querySelectorAll('.sx-market-filter button').forEach(function(b){b.addEventListener('click',function(){active=b.getAttribute('data-cat');document.querySelectorAll('.sx-market-filter button').forEach(function(x){x.classList.toggle('active',x===b)});render()})});
- document.getElementById('sx-market-form').addEventListener('submit',function(e){
-  e.preventDefault();var fd=new FormData(e.currentTarget);var x={t:fd.get('title').trim(),c:fd.get('category'),p:fd.get('price').trim()||'على السوم',city:fd.get('city').trim(),phone:fd.get('phone').trim(),image:fd.get('image').trim(),d:fd.get('description').trim(),i:'🛍️',date:'الآن'};
-  if(!x.t||!x.city||!x.d)return;
-  var list=users();list.unshift(x);if(!save(list)){alert('تعذر حفظ الإعلان. قد تكون مساحة التخزين ممتلئة.');return}
-  e.currentTarget.reset();closeModals();active='الكل';document.querySelectorAll('.sx-market-filter button').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-cat')==='الكل')});render();alert('تم حفظ معاينة الإعلان على هذا الجهاز فقط. لن يظهر للزوار الآخرين حتى يُنشر كمنشور في بلوجر.');
+ document.getElementById('sx-market-form').addEventListener('submit',async function(e){
+  e.preventDefault();var form=e.currentTarget,fd=new FormData(form),title=String(fd.get('title')||'').trim(),description=String(fd.get('description')||'').trim(),categoryName=String(fd.get('category')||''),priceText=String(fd.get('price')||'').trim(),priceDigits=priceText.replace(/[^0-9.]/g,''),file=fd.get('image_file'),imageUrl=String(fd.get('image_url')||'').trim();
+  var category=categories.find(function(c){return c.name===categoryName});
+  if(!category){notify('القسم غير جاهز. تأكد من تشغيل ملف قاعدة البيانات في Supabase.');return}
+  if(file&&file.size&&(!session)){notify('سجل الدخول أولاً لرفع الصور، أو استخدم رابط صورة.');return}
+  if(file&&file.size>5242880){notify('حجم الصورة يجب ألا يتجاوز 5 ميجابايت');return}
+  var payload={title:title,description:description,category_id:category.id,price:priceDigits?Number(priceDigits):null,price_type:/تفاوض|سوم/.test(priceText)?'negotiable':'fixed',city:String(fd.get('city')||'').trim(),contact_phone:String(fd.get('phone')||'').trim()||null,image_url:imageUrl||null,status:'pending',user_id:session?session.user.id:null};
+  var queryInsert=client.from('ads').insert(payload);
+  var ins=session?await queryInsert.select('id').single():await queryInsert;
+  if(ins.error){console.error(ins.error);notify('تعذر إرسال الإعلان: '+ins.error.message);return}
+  var adId=ins.data&&ins.data.id;
+  if(file&&file.size&&adId){
+   var ext=(file.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'')||'jpg',path='ads/'+session.user.id+'/'+adId+'/'+Date.now()+'.'+ext;
+   var up=await client.storage.from('ad-images').upload(path,file,{contentType:file.type,upsert:false});
+   if(up.error){notify('تم إرسال الإعلان، لكن تعذر رفع الصورة: '+up.error.message)}else{
+    var pub=client.storage.from('ad-images').getPublicUrl(path).data.publicUrl;
+    var upd=await client.from('ads').update({image_url:pub}).eq('id',adId);
+    if(upd.error)notify('تم إرسال الإعلان، لكن تعذر ربط الصورة بالإعلان');
+   }
+  }
+  form.reset();closeModals();notify('تم استلام إعلانك وإرساله للمراجعة. سيظهر بعد موافقة الإدارة.');
  });
  var search=document.querySelector('.sx-market-search input');if(search)search.addEventListener('input',function(){query=search.value;render()});
  var topSearch=document.querySelector('.sx-search input');if(topSearch)topSearch.addEventListener('input',function(){query=topSearch.value;render()});
  render();
 }
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+async function init(){
+ if(!window.supabase||!window.supabase.createClient){notify('تعذر تحميل مكتبة Supabase');return}
+ client=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY,{auth:{autoRefreshToken:true,persistSession:true,detectSessionInUrl:true}});
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+ await refreshSession();client.auth.onAuthStateChange(function(_event,s){session=s;updateAccount()});
+ await loadAds();
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 ]]></script>
-  </body>
 </html>
