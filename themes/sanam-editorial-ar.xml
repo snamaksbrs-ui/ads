@@ -3174,8 +3174,6 @@
             </b:includable>
           </b:widget>
         </b:section>
-        <b:section class='section featured-story' id='featured-story' maxwidgets='1'
-          showaddelement='yes' />
 
         <b:section class='ad-zone' id='ad-zone-homepage' maxwidgets='1' showaddelement='yes'>
           <b:widget id='HTML8' locked='false' title='مساحة إعلانية Ad' type='HTML' version='1'>
@@ -4403,15 +4401,12 @@
           <div class='newsletter-box'>
             <h2>ابقَ على اطلاع</h2>
             <p class='newsletter-text'>تابع أحدث المقالات والموضوعات الجديدة من المدونة.</p>
-            <form class='newsletter-form' onsubmit='return false;'>
-              <input aria-label='البريد الإلكتروني' class='newsletter-input'
-                placeholder='أدخل بريدك الإلكتروني' required='required' type='email' />
-              <button aria-label='الاشتراك في النشرة' class='subscribe-btn'
-                onclick='alert(&apos;سيتم تفعيل الاشتراك لاحقًا من إعدادات الموقع.&apos;)'
-                type='button'>
-                تابعنا
-              </button>
-            </form>
+            <div class='newsletter-form'>
+              <a class='subscribe-btn' href='/feeds/posts/default?alt=rss'
+                rel='nofollow' target='_blank'>
+                تابع موجز المقالات
+              </a>
+            </div>
           </div>
         </div>
       </section>
