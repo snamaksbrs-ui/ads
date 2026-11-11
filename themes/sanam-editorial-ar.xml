@@ -3395,6 +3395,7 @@
                       </article>
                     </b:loop>
                   </div>
+                  <b:include name='nextprev' />
                 </b:if>
 
                 <!-- STATIC PAGES: Render full page content inside required array loops -->
@@ -3501,6 +3502,7 @@
                       </article>
                     </b:loop>
                   </div>
+                  <b:include name='nextprev' />
                 </b:if>
 
               </b:includable>
@@ -3809,7 +3811,7 @@
                       <a class='pager-nav-link' expr:href='data:newerPageUrl'
                         expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;'
                         expr:title='data:newerPageTitle'>
-                        &#8592; Previous Article
+                        &#8592; المقال الأحدث
                       </a>
                     </div>
                     <b:else />
@@ -3818,7 +3820,7 @@
 
                   <div class='mobile-link-button pager-home-wrap' id='blog-pager-home-link'>
                     <a class='pager-home-link' expr:href='data:blog.homepageUrl'>
-                      Back to Home
+                      العودة إلى الرئيسية
                     </a>
                   </div>
 
@@ -3827,7 +3829,7 @@
                       <a class='pager-nav-link' expr:href='data:olderPageUrl'
                         expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;'
                         expr:title='data:olderPageTitle'>
-                        Next Article &#8594;
+                        المقال الأقدم &#8594;
                       </a>
                     </div>
                     <b:else />
