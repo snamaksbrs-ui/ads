@@ -2954,6 +2954,17 @@
 
     .editor-image-fallback { width:100%; height:100%; display:grid; place-items:center; color:#81796d; font:700 12px 'Tajawal',sans-serif; }
 
+
+    .archive-title {
+      margin: 0 0 28px; padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text); font: 800 clamp(28px,3.5vw,40px)/1.4 'Tajawal',sans-serif;
+    }
+    .static-page-container { max-width: 900px; margin-inline: auto; }
+    .static-page-container .post-title {
+      font-size: clamp(30px,4vw,46px); line-height: 1.4; margin-bottom: 26px;
+    }
+
     ]]></b:skin>
   </head>
 
@@ -3554,9 +3565,9 @@
                 <!-- ARCHIVE/LABEL/SEARCH PAGES -->
                 <b:if
                   cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;} and data:blog.url != data:blog.homepageUrl'>
-                  <h2 class='mb-5'>
+                  <h1 class='archive-title'>
                     <data:blog.pageName />
-                  </h2>
+                  </h1>
                   <div class='blog-posts hfeed'>
                     <b:loop values='data:posts' var='post'>
                       <article class='post-outer article-card'>
