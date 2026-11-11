@@ -2887,6 +2887,8 @@
     .ad-zone { padding: 0; border: 0; background: transparent; }
     .ad-zone .ad-placeholder { padding: 24px 0; }
 
+    html[dir='rtl'] .skip-link { left: auto; right: 20px; }
+
     ]]></b:skin>
   </head>
 
@@ -2962,7 +2964,7 @@
         </nav>
 
         <div class='nav-right'>
-          <form action='/search' class='search-box' method='get' role='search'>
+          <form action='/search' class='search-box' id='site-search-form' method='get' role='search'>
             <label class='sr-only' for='site-search'>ابحث في المقالات</label>
             <span aria-hidden='true'>
               <svg fill='none' focusable='false' height='18' viewBox='0 0 24 24' width='18'
@@ -2985,7 +2987,7 @@
           <a class='subscribe-btn' href='#newsletter'>
             موجز المقالات
           </a>
-          <button aria-label='فتح البحث' class='search-toggle' type='button'>
+          <button aria-controls='site-search-form' aria-expanded='false' aria-label='فتح البحث' class='search-toggle' type='button'>
             <svg aria-hidden='true' fill='none' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><circle cx='10.75' cy='10.75' r='6.75' stroke='currentColor' stroke-width='1.8'/><path d='m16 16 5 5' stroke='currentColor' stroke-linecap='round' stroke-width='1.8'/></svg>
           </button>
 
@@ -3311,8 +3313,9 @@
                         <div class='editor-header'>
                           <div class='editor-image'>
                             <b:if cond='data:post.featuredImage'>
-                              <img expr:alt='data:post.title'
-                                expr:src='resizeImage(data:post.featuredImage, 320, &quot;16:9&quot;)' />
+                              <img decoding='async' expr:alt='data:post.title'
+                                expr:src='resizeImage(data:post.featuredImage, 320, &quot;16:9&quot;)'
+                                height='180' loading='lazy' width='320' />
                             </b:if>
                           </div>
                         </div>
