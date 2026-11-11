@@ -2882,6 +2882,11 @@
       .pager-nav-link { max-width: 100%; font-size: 13px; }
     }
 
+
+    /* Ad sections should occupy space only when an ad is configured */
+    .ad-zone { padding: 0; border: 0; background: transparent; }
+    .ad-zone .ad-placeholder { padding: 24px 0; }
+
     ]]></b:skin>
   </head>
 
@@ -3010,8 +3015,7 @@
 <div class='container'>
               <div class='ad-placeholder'>
                 <span class='ad-label'>مساحة إعلانية</span>
-                <div aria-label='مساحة إعلانية عريضة' class='ad-box'
-                  role='img'>
+                <div class='ad-box'>
                   <data:content />
                 </div>
               </div>
@@ -3107,7 +3111,7 @@
                     </a>
                   </div>
 
-                  <article class='hero-spotlight-content'>
+                  <div class='hero-spotlight-content'>
                     <p class='story-category'>
                       من اختيار التحرير
                     </p>
@@ -3136,16 +3140,9 @@
                     </div>
                     <a class='hero-spotlight-link' expr:href='data:postUrl'>اقرأ الموضوع</a>
                   </article>
-                </article>
+                </div>
+              </article>
               </div>
-            </b:includable>
-          </b:widget>
-          <b:widget id='HTML3' locked='false' title='المقدمة الرئيسية' type='HTML' version='1'>
-            <b:widget-settings>
-              <b:widget-setting name='content' />
-            </b:widget-settings>
-            <b:includable id='main'>
-              <!-- Reserved for future Hero enhancements -->
             </b:includable>
           </b:widget>
         </b:section>
@@ -3272,8 +3269,7 @@
                 <div class='container'>
                   <div class='ad-placeholder'>
                     <span class='ad-label'>مساحة إعلانية</span>
-                    <div aria-label='مساحة إعلانية داخل المحتوى' class='ad-box'
-                      role='img'>
+                    <div class='ad-box'>
                       <data:content />
                     </div>
                   </div>
