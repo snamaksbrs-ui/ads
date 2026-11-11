@@ -2849,6 +2849,12 @@
       .editorial-values .stat-card:nth-last-child(-n+2) { border-bottom: 0; }
     }
 
+    @media (max-width: 768px) {
+      .nav-right .search-box.is-open { display: flex; }
+      .search-box.is-open { align-items: center; }
+      .search-box.is-open .search-close { display: inline-flex; }
+    }
+
     ]]></b:skin>
   </head>
 
@@ -4585,40 +4591,50 @@
           if (event.target.closest('a')) setMenuState(false);
         });
 
+        function closeSearch(restoreFocus) {
+          if (!searchBox || !searchToggle) return;
+          searchBox.classList.remove('is-open');
+          searchToggle.style.display = '';
+          searchToggle.setAttribute('aria-expanded', 'false');
+          if (restoreFocus) searchToggle.focus();
+        }
+
         document.addEventListener('keydown', function (event) {
           if (event.key === 'Escape') {
             setMenuState(false);
-            toggle.focus();
+            if (searchBox && searchBox.classList.contains('is-open')) {
+              closeSearch(true);
+            } else if (document.activeElement === toggle) {
+              toggle.focus();
+            }
           }
         });
+
         if (searchToggle && searchBox) {
+          searchToggle.setAttribute('aria-expanded', 'false');
+          searchToggle.addEventListener('click', function () {
+            var willOpen = !searchBox.classList.contains('is-open');
+            searchBox.classList.toggle('is-open', willOpen);
+            searchToggle.style.display = willOpen ? 'none' : '';
+            searchToggle.setAttribute('aria-expanded', String(willOpen));
+            if (willOpen && searchInput) {
+              searchInput.focus();
+            }
+          });
+        }
 
-    searchToggle.addEventListener('click', function () {
-  
+        if (searchClose) {
+          searchClose.addEventListener('click', function () {
+            closeSearch(true);
+          });
+        }
 
-    searchBox.classList.toggle('is-open');
-    searchToggle.style.display =
-    searchBox.classList.contains('is-open') ? 'none' : 'flex';
-
-   
-
-    if (searchBox.classList.contains('is-open') && searchInput) {
-        searchInput.focus();
-        searchInput.select();
-    }
-
-});
-
-}
-if (searchClose) {
-
-    searchClose.addEventListener('click', function () {
-
-    if (searchInput) {
-        searchInput.value = '';
-    }
-
-    searchBox.classList.remove('is-open');
+        document.addEventListener('click', function (event) {
+          if (searchBox && searchToggle && searchBox.classList.contains('is-open')
+              && !searchBox.contains(event.target) && !searchToggle.contains(event.target)) {
+            closeSearch(false);
+          }
+        });
 
     searchToggle.style.display = 'flex';
 
