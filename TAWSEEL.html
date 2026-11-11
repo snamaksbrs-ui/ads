@@ -1,236 +1,443 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>البريد السعودي | سبل</title>
+<meta name="theme-color" content="#172b3a">
+<meta name="description" content="سنام إكسبرس لخدمات توصيل الطرود والشحن للأفراد والمتاجر. حلول توصيل منظمة وتجربة متابعة واضحة من الاستلام حتى التسليم.">
+<title>سنام إكسبرس | توصيل طرودك بثقة</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--p:#00c8e1;--s:#146e82;--d:#153c3f;--bg:#ffffff;--bg2:#f3fafb;--t:#373737;--t2:#516477;--b:#e5e5e5;--card:#ffffff;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e2426;--bg2:#12302f;--t:#e8f1f2;--t2:#9db3bd;--b:#24474a;--card:#153c3f}}
-:root[data-theme="dark"]{--bg:#0e2426;--bg2:#12302f;--t:#e8f1f2;--t2:#9db3bd;--b:#24474a;--card:#153c3f}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
+:root{
+ --ink:#172b3a;--ink-2:#243d4e;--muted:#667783;--accent:#ed8b32;--accent-dark:#c96b19;
+ --paper:#f4f6f7;--white:#fff;--line:#e1e7ea;--soft:#fff4e9;--green:#28765b;
+ --radius:18px;--shadow:0 14px 38px rgba(23,43,58,.08);
+ --container:1160px;
+}
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--t);font-family:"URW Geometric Arabic","Tajawal",system-ui,sans-serif;font-weight:500;font-size:16px;line-height:1.7}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Tajawal",system-ui,sans-serif;font-size:16px;line-height:1.75}
 a{color:inherit;text-decoration:none}
-.w{max-width:1200px;margin:0 auto;padding:0 16px}
-svg.lucide{width:1.25em;height:1.25em;stroke-width:1.8}
-.top{background:var(--d);color:#fff;font-size:14px}
-.top .w{display:flex;justify-content:space-between;align-items:center;height:44px}
-.top nav{display:flex;gap:4px;height:100%}
-.top nav a{display:flex;align-items:center;padding:0 24px;border-radius:10px 10px 0 0;margin-top:6px;opacity:.8}
-.top nav a.on{background:var(--bg);color:var(--s);opacity:1;font-weight:700}
-.top .r{display:flex;gap:20px;align-items:center}.top .r a{display:flex;gap:6px;align-items:center}
-.hdr{background:var(--bg);border-bottom:1px solid var(--b);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
-.hdr .w{display:flex;align-items:center;gap:32px;height:80px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:28px;color:var(--s)}
-.logo i{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--p);color:var(--d)}
-.menu{display:flex;gap:6px;flex:1;overflow-x:auto}
-.menu a{display:flex;gap:4px;align-items:center;padding:8px 14px;border-radius:10px;white-space:nowrap;font-weight:600}
-.menu a:hover{background:var(--bg2);color:var(--s)}
-.acts{display:flex;gap:10px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:10px 24px;font:inherit;font-weight:700;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s}
-.btn.f{background:var(--p);color:var(--d)}.btn.f:hover{background:var(--s);color:#fff}
-.btn.o{border-color:var(--s);color:var(--s);background:transparent}.btn.o:hover{background:var(--s);color:#fff}
-:focus-visible{outline:3px solid var(--p);outline-offset:2px}
-.hero{background:linear-gradient(135deg,var(--d) 0%,#0f4a52 60%,var(--s) 100%);color:#fff;position:relative;overflow:hidden;padding:72px 0 120px}
-.hero::after{content:"";position:absolute;inset-inline-start:-140px;bottom:-200px;width:520px;height:520px;border-radius:50%;border:60px solid rgba(0,200,225,.18)}
-.hero .w{position:relative;z-index:1}
-.hero h1{font-size:clamp(48px,9vw,96px);line-height:1.15;font-weight:800;margin:0 0 8px}
-.hero p.sub{font-size:24px;margin:0 0 40px;opacity:.9}
-.track{background:var(--card);color:var(--t);border-radius:30px;padding:32px;max-width:760px;box-shadow:rgba(21,60,63,.3) 0 21px 40px 0}
-.track h2{margin:0 0 4px;font-size:24px;display:flex;gap:8px;align-items:center;color:var(--s)}
-.track .hint{color:var(--t2);font-size:14px;margin:0 0 16px}
-.tbox{display:flex;gap:12px;flex-wrap:wrap}
-.tin{flex:1;min-width:220px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;border:2px solid var(--b);border-radius:14px;padding:8px 14px;background:var(--bg)}
-.tin:focus-within{border-color:var(--p)}
-.tin input{flex:1;min-width:120px;border:0;outline:0;background:transparent;font:inherit;color:var(--t);padding:6px 0}
-.tag{display:inline-flex;gap:6px;align-items:center;background:var(--bg2);color:var(--s);border-radius:8px;padding:2px 10px;font-weight:700;direction:ltr}
-.tag button{all:unset;cursor:pointer;display:grid}
-.tin-note{font-size:13px;color:var(--t2);margin:10px 0 0}
-#res{margin-top:16px;display:grid;gap:8px}
-.rs{display:flex;gap:10px;align-items:center;background:var(--bg2);border-radius:12px;padding:10px 14px}
-.rs b{direction:ltr}
-.strip{margin-top:-56px;position:relative;z-index:2}
-.alerts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.al{display:flex;gap:14px;align-items:center;background:var(--card);border-radius:16px;padding:16px 20px;box-shadow:rgba(0,0,0,.09) 0 0 25px 0}
-.al i{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--bg2);color:var(--s)}
-.al.w2 i{background:#fff4e0;color:#c47a00}
-.al a{margin-inline-start:auto;color:var(--s);font-weight:700;white-space:nowrap}
-.sec{padding:72px 0}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.c{background:var(--card);border:1px solid var(--b);border-radius:28px;padding:32px 24px;display:flex;flex-direction:column;gap:12px;transition:box-shadow .25s}
-.c:hover{box-shadow:rgba(21,60,63,.3) 0 21px 40px -12px}
-.c .ic{width:64px;height:64px;border-radius:20px;background:var(--bg2);color:var(--s);display:grid;place-items:center}
-.c .ic svg{width:32px;height:32px}
-.c h3{margin:0;font-size:24px;color:var(--d)}
-.c p{margin:0;color:var(--t2);flex:1}
-.c .btn{align-self:flex-start}
-.split{display:grid;grid-template-columns:1fr 1fr;border-radius:40px;overflow:hidden;background:var(--d);color:#fff;margin-bottom:24px}
-.split.rev{background:var(--bg2);color:var(--t)}
-.split .tx{padding:56px;display:flex;flex-direction:column;gap:14px;justify-content:center;align-items:flex-start}
-.split h2{margin:0;font-size:40px;line-height:1.3}
-.split p{margin:0;font-size:18px;opacity:.9}
-.split .im{min-height:300px;display:grid;place-items:center;background:linear-gradient(135deg,var(--s),var(--p));color:#fff}
-.split.rev .im{background:linear-gradient(135deg,var(--d),var(--s))}
-.split .im svg{width:120px;height:120px;stroke-width:1.2;opacity:.9}
-.split.rev .btn.f:hover{background:var(--d)}
-.split .im svg.ill{width:82%;height:auto;max-width:380px;stroke-width:0;opacity:1}
-.hg{position:absolute;inset-inline-end:3%;top:40px;width:min(38vw,440px);height:auto;z-index:0}
-.orb{transform-origin:200px 200px;animation:spin 40s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media (max-width:1024px){.hg{display:none}}
-@media (prefers-reduced-motion:reduce){.orb{animation:none}}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.bn{border-radius:40px;padding:40px;display:flex;gap:20px;align-items:center;background:var(--p);color:var(--d);box-shadow:rgba(21,60,63,.3) 0 21px 40px -12px}
-.bn.b2{background:var(--s);color:#fff}
-.bn .ic{flex:none;width:72px;height:72px;border-radius:22px;background:rgba(255,255,255,.35);display:grid;place-items:center}
-.bn .ic svg{width:36px;height:36px}
-.bn h3{margin:0 0 4px;font-size:28px}.bn p{margin:0 0 14px}
-.bn .btn{background:var(--d);color:#fff}
-.br{background:var(--bg2);border-radius:40px;padding:48px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
-.br h2{font-size:40px;line-height:1.3;margin:0 0 8px;color:var(--d)}
-.srch{display:flex;gap:10px;margin:16px 0;flex-wrap:wrap}
-.srch .tin{padding:6px 14px}
-.map{min-height:260px;border-radius:28px;background:
-radial-gradient(circle at 30% 40%,var(--p) 0 8px,transparent 9px),radial-gradient(circle at 62% 28%,var(--s) 0 8px,transparent 9px),radial-gradient(circle at 70% 66%,var(--p) 0 8px,transparent 9px),radial-gradient(circle at 40% 72%,var(--s) 0 8px,transparent 9px),
-repeating-linear-gradient(0deg,transparent 0 39px,var(--b) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,var(--b) 39px 40px),var(--card);border:1px solid var(--b)}
-.app{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;background:var(--d);color:#fff;border-radius:40px;padding:56px}
-.app h2{font-size:40px;margin:8px 0 16px}
-.stores{display:flex;gap:12px;flex-wrap:wrap}
-.stores a{display:flex;gap:10px;align-items:center;background:#fff;color:var(--d);border-radius:14px;padding:10px 20px;font-weight:700}
-.phone{justify-self:center;width:220px;height:380px;border-radius:36px;border:8px solid rgba(255,255,255,.25);background:linear-gradient(160deg,var(--s),var(--p));display:grid;place-items:center}
-.phone svg{width:80px;height:80px}
-.help{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.hb{border:1px solid var(--b);border-radius:28px;padding:32px;display:flex;gap:18px;background:var(--card)}
-.hb i{flex:none;width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:var(--bg2);color:var(--s)}
-.hb h3{margin:0 0 6px;font-size:22px;color:var(--d)}.hb p{margin:0 0 14px;color:var(--t2)}
-.hb .l{display:flex;gap:10px;flex-wrap:wrap}
-footer{background:var(--d);color:#fff;padding:64px 0 24px}
-.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-.fg h4{margin:0 0 14px;font-size:18px;color:var(--p)}
-.fg a{display:block;padding:3px 0;opacity:.85}.fg a:hover{opacity:1;color:var(--p)}
-.soc{display:flex;gap:10px;margin:32px 0;flex-wrap:wrap}
-.soc a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12)}
-.soc a:hover{background:var(--p);color:var(--d)}
-.fb{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;opacity:.9}
-.fb nav{display:flex;gap:20px}
-@media (max-width:1024px){.cards,.fg{grid-template-columns:1fr 1fr}.menu{display:none}.hdr .w{justify-content:space-between}}
-@media (max-width:760px){.alerts,.two,.split,.br,.app,.help,.cards,.fg{grid-template-columns:1fr}.split .tx,.br,.app{padding:32px 24px}.split h2,.br h2,.app h2{font-size:30px}.hero{padding:48px 0 100px}.top .r a span{display:none}.top nav a{padding:0 12px}.acts .btn{padding:8px 14px}.bn{flex-direction:column;align-items:flex-start}.phone{display:none}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+button,input{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+svg{display:block}
+.container{width:min(var(--container),calc(100% - 40px));margin-inline:auto}
+.skip-link{position:absolute;top:-60px;inset-inline-start:16px;z-index:100;background:#fff;padding:10px 16px;border-radius:8px}
+.skip-link:focus{top:12px}
+.announcement{background:var(--ink);color:#dce5e9;font-size:13px}
+.announcement .container{min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.announcement strong{color:#fff;font-weight:700}
+.announcement a{color:#ffc18b}
+.site-header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header-row{height:78px;display:flex;align-items:center;gap:36px}
+.brand{display:inline-flex;align-items:center;gap:11px;flex:none}
+.brand-mark{width:44px;height:44px;background:var(--accent);color:var(--ink);border-radius:13px;display:grid;place-items:center}
+.brand-mark svg{width:27px;height:27px}
+.brand-name{display:flex;flex-direction:column;line-height:1.15}
+.brand-name b{font-size:22px;font-weight:800;letter-spacing:-.4px}
+.brand-name small{font-size:11px;color:var(--muted);font-weight:600;letter-spacing:1.2px}
+.main-nav{display:flex;align-items:center;gap:8px;flex:1}
+.main-nav a{padding:9px 13px;border-radius:9px;color:#3d5361;font-weight:700;font-size:15px;white-space:nowrap;transition:.2s}
+.main-nav a:hover,.main-nav a:focus-visible{background:#f1f4f5;color:var(--ink)}
+.header-actions{display:flex;align-items:center;gap:10px}
+.btn{min-height:46px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:10px 20px;border:1px solid transparent;border-radius:10px;font-weight:800;transition:background .2s,border-color .2s,transform .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--ink)}
+.btn-primary:hover{background:#f5a14f}
+.btn-outline{border-color:#ccd5da;color:var(--ink);background:#fff}
+.btn-outline:hover{border-color:var(--ink);background:#f8fafb}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--ink-2)}
+.btn svg{width:18px;height:18px}
+.menu-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);place-items:center}
+.menu-toggle svg{width:22px;height:22px}
+.hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:76px 0 104px}
+.hero::before{content:"";position:absolute;inset:0;opacity:.12;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:26px 26px;mask-image:linear-gradient(90deg,transparent 0%,#000 100%)}
+.hero::after{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(255,255,255,.11);border-radius:50%;inset-inline-end:-220px;top:-250px}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.04fr .96fr;gap:60px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#ffc18b;font-size:14px;font-weight:800;margin-bottom:18px}
+.eyebrow::before{content:"";width:25px;height:2px;background:var(--accent)}
+.hero h1{font-size:clamp(38px,5.3vw,66px);line-height:1.22;letter-spacing:-1.2px;margin:0 0 20px;font-weight:800;max-width:650px}
+.hero h1 span{color:#f2a052}
+.hero-copy{max-width:560px;color:#c6d1d7;font-size:18px;margin:0 0 28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn-outline{background:transparent;color:#fff;border-color:#60717d}
+.hero .btn-outline:hover{background:rgba(255,255,255,.08);border-color:#fff}
+.hero-note{display:flex;gap:20px;flex-wrap:wrap;margin-top:28px;color:#c3d0d6;font-size:14px}
+.hero-note span{display:inline-flex;align-items:center;gap:8px}
+.hero-note svg{width:17px;height:17px;color:#f2a052}
+.parcel-stage{min-height:365px;position:relative;display:grid;place-items:center}
+.parcel-panel{width:min(100%,450px);min-height:300px;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:rgba(255,255,255,.055);padding:24px;position:relative}
+.panel-top{display:flex;align-items:center;justify-content:space-between;color:#d9e1e5;font-size:13px}
+.panel-dot{width:9px;height:9px;border-radius:50%;background:#6cc19a;display:inline-block;margin-inline-end:7px}
+.box-illustration{position:absolute;inset:65px 35px 35px;display:grid;place-items:center}
+.box-illustration svg{width:100%;max-width:340px;height:auto}
+.route-chip{position:absolute;inset-inline-start:-18px;bottom:26px;background:#fff;color:var(--ink);border-radius:13px;padding:12px 16px;box-shadow:0 12px 30px rgba(0,0,0,.15);display:flex;align-items:center;gap:10px;font-weight:800}
+.route-chip i{width:34px;height:34px;border-radius:10px;background:var(--soft);color:var(--accent-dark);display:grid;place-items:center}
+.route-chip svg{width:19px;height:19px}
+.delivery-chip{position:absolute;inset-inline-end:-14px;top:38px;background:var(--accent);color:var(--ink);border-radius:12px;padding:10px 14px;font-size:13px;font-weight:800;box-shadow:0 10px 24px rgba(0,0,0,.15)}
+.tracking-wrap{position:relative;z-index:3;margin-top:-48px}
+.tracking-card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:25px 28px;box-shadow:var(--shadow);display:grid;grid-template-columns:minmax(220px,.7fr) 1.5fr auto;gap:24px;align-items:center}
+.tracking-title{display:flex;align-items:center;gap:12px}
+.tracking-icon{width:48px;height:48px;border-radius:13px;background:var(--soft);color:var(--accent-dark);display:grid;place-items:center;flex:none}
+.tracking-icon svg{width:24px;height:24px}
+.tracking-title h2{font-size:21px;margin:0;line-height:1.3}
+.tracking-title p{margin:3px 0 0;color:var(--muted);font-size:13px}
+.tracking-form{display:flex;gap:10px}
+.tracking-input{height:50px;min-width:0;flex:1;border:1px solid #d8e0e4;border-radius:10px;padding:0 15px;color:var(--ink);background:#fbfcfc;outline:0;direction:rtl}
+.tracking-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(237,139,50,.15)}
+.tracking-input::placeholder{color:#94a1a9}
+.tracking-message{grid-column:1/-1;margin:0;padding:12px 15px;background:#fff8f0;border:1px solid #f6dfc8;color:#76502e;border-radius:10px;font-size:14px}
+.tracking-message[hidden]{display:none}
+.section{padding:88px 0}
+.section-head{max-width:650px;margin-bottom:34px}
+.kicker{color:var(--accent-dark);font-weight:800;font-size:14px;margin-bottom:7px}
+.section-head h2{font-size:clamp(28px,3.3vw,40px);line-height:1.3;margin:0 0 10px;font-weight:800;letter-spacing:-.5px}
+.section-head p{color:var(--muted);font-size:17px;margin:0}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:27px;min-height:245px;display:flex;flex-direction:column;align-items:flex-start;transition:transform .2s,border-color .2s,box-shadow .2s}
+.service-card:hover{transform:translateY(-4px);border-color:#efc49e;box-shadow:var(--shadow)}
+.service-icon{width:54px;height:54px;border-radius:14px;background:#f5f7f8;color:var(--ink);display:grid;place-items:center;margin-bottom:18px}
+.service-icon svg{width:26px;height:26px}
+.service-card h3{font-size:21px;margin:0 0 8px}
+.service-card p{color:var(--muted);margin:0 0 18px;font-size:15px;flex:1}
+.text-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent-dark);font-weight:800}
+.text-link svg{width:17px;height:17px;transition:transform .2s}
+.text-link:hover svg{transform:translateX(-3px)}
+.steps-section{background:#fff;border-block:1px solid var(--line)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:steps}
+.step{position:relative;padding-top:20px}
+.step-number{width:44px;height:44px;border-radius:13px;background:var(--ink);color:#fff;display:grid;place-items:center;font-size:17px;font-weight:800;margin-bottom:18px}
+.step h3{font-size:19px;margin:0 0 7px}
+.step p{color:var(--muted);font-size:15px;margin:0}
+.step:not(:last-child)::after{content:"";position:absolute;top:41px;inset-inline-start:65px;width:calc(100% - 85px);border-top:1px dashed #c9d3d8}
+.business-panel{background:var(--ink);color:#fff;border-radius:20px;padding:52px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;overflow:hidden;position:relative}
+.business-panel::after{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(255,255,255,.12);border-radius:50%;inset-inline-end:-180px;bottom:-250px}
+.business-copy{position:relative;z-index:1}
+.business-copy .kicker{color:#ffc18b}
+.business-copy h2{font-size:clamp(28px,3.5vw,42px);line-height:1.3;margin:0 0 12px}
+.business-copy p{color:#c7d2d8;margin:0 0 24px;font-size:17px;max-width:620px}
+.business-features{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.business-feature{padding:16px;border:1px solid rgba(255,255,255,.15);border-radius:12px;background:rgba(255,255,255,.05);display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700}
+.business-feature svg{width:20px;height:20px;color:#f2a052;flex:none}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.why-visual{min-height:330px;background:#e9eef0;border-radius:18px;display:grid;place-items:center;position:relative;overflow:hidden}
+.why-visual svg{width:min(82%,390px);height:auto}
+.why-list{display:grid;gap:18px;margin-top:24px}
+.why-item{display:flex;align-items:flex-start;gap:14px}
+.why-item-icon{width:42px;height:42px;border-radius:12px;background:var(--soft);color:var(--accent-dark);display:grid;place-items:center;flex:none}
+.why-item-icon svg{width:21px;height:21px}
+.why-item h3{margin:0 0 3px;font-size:18px}
+.why-item p{margin:0;color:var(--muted);font-size:14px}
+.faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:50px;align-items:start}
+.faq-list{display:grid;gap:10px}
+.faq-list details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 18px}
+.faq-list summary{cursor:pointer;list-style:none;padding:17px 0;font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";font-size:23px;line-height:1;color:var(--accent-dark)}
+.faq-list details[open] summary::after{content:"−"}
+.faq-list details p{color:var(--muted);margin:0;padding:0 0 18px;font-size:15px}
+.contact-band{background:#fff;border:1px solid var(--line);border-radius:17px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.contact-band h2{font-size:25px;margin:0 0 5px}
+.contact-band p{margin:0;color:var(--muted)}
+.site-footer{background:#122431;color:#d4dee3;padding:58px 0 22px;margin-top:88px}
+.footer-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:48px;padding-bottom:38px}
+.footer-brand .brand{color:#fff;margin-bottom:17px}
+.footer-brand .brand-name small{color:#a8b7c0}
+.footer-brand p{color:#aebdc5;max-width:340px;font-size:14px;margin:0}
+.footer-col h3{font-size:16px;color:#fff;margin:0 0 15px}
+.footer-links{display:grid;gap:8px}
+.footer-links a{color:#b8c5cc;font-size:14px;transition:color .2s}
+.footer-links a:hover{color:#ffc18b}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.13);padding-top:18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#9fafb8;font-size:13px}
+.socials{display:flex;gap:8px;margin-top:20px}
+.socials a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:9px;display:grid;place-items:center;color:#fff}
+.socials a:hover{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.socials svg{width:17px;height:17px}
+:focus-visible{outline:3px solid rgba(237,139,50,.8);outline-offset:3px}
+@media(max-width:1000px){
+ .header-row{gap:18px}.main-nav{gap:2px}.main-nav a{padding:8px 9px;font-size:14px}
+ .hero-grid{gap:30px}.tracking-card{grid-template-columns:1fr 1.4fr}.tracking-card>.btn{grid-column:2;justify-self:start}
+ .steps-grid{grid-template-columns:repeat(2,1fr);row-gap:30px}.step:nth-child(2)::after{display:none}
+ .business-panel{padding:38px;grid-template-columns:1fr 1fr}.footer-top{gap:28px}
+}
+@media(max-width:760px){
+ .container{width:min(100% - 32px,var(--container))}
+ .announcement .container{justify-content:center;text-align:center}.announcement .container>span:last-child{display:none}
+ .header-row{height:69px;justify-content:space-between}.menu-toggle{display:grid}.header-actions .btn-outline{display:none}.header-actions .btn{min-height:42px;padding:8px 13px;font-size:14px}
+ .main-nav{display:none;position:absolute;top:69px;inset-inline:0;background:#fff;border-bottom:1px solid var(--line);padding:12px 16px 18px;box-shadow:0 15px 25px rgba(23,43,58,.08)}
+ .main-nav.is-open{display:grid;grid-template-columns:1fr 1fr}
+ .main-nav a{padding:11px 12px;background:#f7f9fa}
+ .brand-mark{width:40px;height:40px}.brand-name b{font-size:20px}
+ .hero{padding:52px 0 82px}.hero-grid{grid-template-columns:1fr;gap:34px}
+ .hero h1{font-size:clamp(36px,10vw,52px)}.hero-copy{font-size:16px}
+ .parcel-stage{min-height:270px}.parcel-panel{min-height:250px;width:min(100%,390px)}.box-illustration{inset:53px 28px 25px}.route-chip{inset-inline-start:0;bottom:8px}.delivery-chip{inset-inline-end:0;top:20px}
+ .tracking-wrap{margin-top:-35px}.tracking-card{grid-template-columns:1fr;padding:20px;gap:16px}
+ .tracking-form{width:100%}.tracking-card>.btn{grid-column:auto;justify-self:stretch}
+ .section{padding:65px 0}.services-grid{grid-template-columns:1fr}.service-card{min-height:0}
+ .steps-grid{gap:24px 18px}.step:not(:last-child)::after{display:none}
+ .business-panel{grid-template-columns:1fr;padding:30px 24px;gap:25px}.business-features{grid-template-columns:1fr 1fr}
+ .why-grid{grid-template-columns:1fr;gap:28px}.why-visual{min-height:250px;grid-row:2}
+ .faq-grid{grid-template-columns:1fr;gap:22px}
+ .contact-band{align-items:flex-start;flex-direction:column;padding:24px}
+ .footer-top{grid-template-columns:1fr 1fr;gap:30px}.footer-brand{grid-column:1/-1}
+ .site-footer{margin-top:65px;padding-top:45px}
+}
+@media(max-width:440px){
+ .hero-actions{display:grid;grid-template-columns:1fr}.hero-actions .btn{width:100%}
+ .hero-note{gap:10px 16px}.tracking-form{flex-direction:column}.tracking-form .btn{width:100%}
+ .steps-grid{grid-template-columns:1fr 1fr}.business-features{grid-template-columns:1fr}
+ .footer-top{grid-template-columns:1fr}.footer-brand{grid-column:auto}
+ .footer-bottom{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 </style>
 </head>
 <body>
-<div class="top"><div class="w">
- <nav aria-label="القطاعات"><a class="on" href="#">الأفراد</a><a href="#">الأعمال</a><a href="#">الخدمات الحكومية</a></nav>
- <div class="r"><a href="#"><i data-lucide="life-buoy"></i><span>مساعدة ودعم</span></a><a href="#branches"><i data-lucide="map-pin"></i><span>الفروع</span></a><a href="#"><i data-lucide="languages"></i><span>English</span></a></div>
-</div></div>
+<a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
+<div class="announcement"><div class="container"><span><strong>سنام إكسبرس</strong> — حلول توصيل الطرود للأفراد والمتاجر</span><span>نعتني بشحنتك من الاستلام حتى التسليم</span></div></div>
 
-<header class="hdr"><div class="w">
- <a class="logo" href="#"><i><i data-lucide="mail"></i></i>سبل</a>
- <nav class="menu" aria-label="الرئيسية">
-  <a href="#">إرسال <i data-lucide="chevron-down"></i></a><a href="#">استلام <i data-lucide="chevron-down"></i></a><a href="#">عالمي</a><a href="#">العنوان الوطني</a><a href="#">خدمات التجزئة <i data-lucide="chevron-down"></i></a><a href="#">الطوابع</a>
- </nav>
- <div class="acts"><a class="btn o" href="#">دخول</a><a class="btn f" href="#">تسجيل</a></div>
-</div></header>
-
-<section class="hero"><svg class="hg" viewBox="0 0 400 400" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00c8e1"/><stop offset="1" stop-color="#146e82"/></linearGradient></defs><circle cx="200" cy="200" r="112" fill="url(#gg)"/><g fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"><ellipse cx="200" cy="200" rx="46" ry="112"/><ellipse cx="200" cy="200" rx="88" ry="112"/><path d="M88 200h224M104 150h192M104 250h192"/></g><circle cx="200" cy="200" r="168" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="4 10"/><g class="orb"><g transform="translate(354 186)"><rect width="32" height="32" rx="7" fill="#fff"/><path d="M0 11h32M16 0v11" stroke="#00c8e1" stroke-width="5"/></g><g transform="translate(14 170)"><rect width="30" height="30" rx="7" fill="#00c8e1"/><path d="M0 10h30M15 0v10" stroke="#153c3f" stroke-width="4"/></g><path d="M190 28l36 12-36 12 6-12z" fill="#fff"/></g><circle cx="168" cy="170" r="7" fill="#fff"/><circle cx="168" cy="170" r="16" fill="none" stroke="#fff" stroke-opacity=".5"/></svg><div class="w">
- <h1>سبيلك للعالم</h1>
- <p class="sub">أهلا بك في البريد السعودي | سبل</p>
- <div class="track">
-  <h2><i data-lucide="package-search"></i>تتبع الشحنات</h2>
-  <p class="hint">يمكنك إيجاد رقم التتبع (المكوّن من 13 رقم أو أكثر) في الرسالة المرسلة على رقم جوالك.</p>
-  <div class="tbox">
-   <label class="tin" id="tin"><input id="ti" inputmode="numeric" placeholder="أدخل رقمًا أو عدة أرقام تتبع" aria-label="رقم التتبع"></label>
-   <button class="btn f" id="tb" type="button"><i data-lucide="search"></i>تتبع</button>
+<header class="site-header">
+ <div class="container header-row">
+  <a class="brand" href="#home" aria-label="سنام إكسبرس - الرئيسية">
+   <span class="brand-mark"><i data-lucide="package-check"></i></span>
+   <span class="brand-name"><b>سنام إكسبرس</b><small>SANAM EXPRESS</small></span>
+  </a>
+  <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
+   <a href="#home">الرئيسية</a><a href="#services">خدماتنا</a><a href="#how">كيف نعمل</a><a href="#business">حلول الأعمال</a><a href="#faq">الأسئلة الشائعة</a>
+  </nav>
+  <div class="header-actions">
+   <a class="btn btn-outline" href="#tracking">تتبع شحنتك</a>
+   <a class="btn btn-primary" href="#services">استكشف خدماتنا</a>
+   <button class="menu-toggle" id="menuToggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mainNav"><i data-lucide="menu"></i></button>
   </div>
-  <p class="tin-note">افصل بين أرقام التتبع المتعددة بمسافة لمعرفة حالة كل شحنة</p>
-  <div id="res" aria-live="polite"></div>
  </div>
-</div></section>
+</header>
 
-<div class="strip"><div class="w alerts">
- <div class="al"><i data-lucide="message-square-heart"></i><span>رأيك يهمنا! قيّم تجربتك الرقمية مع سبل</span><a href="#">قيّم تجربتك الآن</a></div>
- <div class="al w2"><i data-lucide="triangle-alert"></i><span>تحذير: لا يستخدم البريد الإلكتروني لسداد الفواتير!</span><a href="#">اكتشف المزيد</a></div>
-</div></div>
-
-<section class="sec"><div class="w cards">
- <article class="c"><div class="ic"><i data-lucide="map-pinned"></i></div><h3>العنوان الوطني</h3><p>العنوان الوطني هو نظام عنونة دقيق يحدد مواقع الأفراد والمؤسسات سواء كانت شركات أو جهات حكومية بدقة.</p><a class="btn f" href="#">سّجل الآن</a></article>
- <article class="c"><div class="ic"><i data-lucide="calculator"></i></div><h3>حاسبة الأسعار</h3><p>هل لديك شحنة أو طرد بحاجة إلى إرساله؟ أدخل وزن الشحنة ووجهتها واعرف تكاليف شحنتك ومدة التوصيل.</p><a class="btn f" href="#">احسب طردك</a></article>
- <article class="c"><div class="ic"><i data-lucide="credit-card"></i></div><h3>سداد الفواتير</h3><p>هل لديك فاتورة مستحقة؟ يمكنك دفع جميع فواتيرك البريدية بسهولة عبر الإنترنت.</p><a class="btn f" href="#">سدد فاتورتك</a></article>
- <article class="c"><div class="ic"><i data-lucide="layers"></i></div><h3>منصة SMEs</h3><p>منصة إلكترونية تمكنك من شراء باقة من 20 شحنة أو أكثر لإرسال شحناتك داخل المملكة بوزن يصل حتى 20 كيلو للشحنة.</p><a class="btn f" href="#">اختر باقتك</a></article>
-</div></section>
-
-<section class="w">
- <div class="split"><div class="tx"><h2>الناشر التجاري</h2><p>وثق وأدر جميع مواقعك في خرائط قوقل! عزز من وجودك على خرائط قوقل وتقديم مجموعة من المزايا التي تسمح لك بالنمو وإدارة عملك بشكل احترافي</p><a class="btn f" href="#">للمزيد من التفاصيل</a></div><div class="im"><svg class="ill" viewBox="0 0 320 240" aria-hidden="true"><rect x="20" y="20" width="280" height="200" rx="26" fill="rgba(255,255,255,.18)"/><path d="M20 110h280M110 20v200M210 20v200" stroke="rgba(255,255,255,.35)" stroke-width="3"/><g fill="#fff"><path d="M160 52a26 26 0 0 1 26 26c0 20-26 48-26 48s-26-28-26-48a26 26 0 0 1 26-26z"/><path d="M75 120a16 16 0 0 1 16 16c0 12-16 30-16 30s-16-18-16-30a16 16 0 0 1 16-16z" opacity=".8"/><path d="M248 128a16 16 0 0 1 16 16c0 12-16 30-16 30s-16-18-16-30a16 16 0 0 1 16-16z" opacity=".8"/></g><g fill="#153c3f"><circle cx="160" cy="78" r="10"/><circle cx="75" cy="136" r="6"/><circle cx="248" cy="144" r="6"/></g></svg></div></div>
- <div class="split rev"><div class="im"><svg class="ill" viewBox="0 0 320 240" aria-hidden="true"><circle cx="160" cy="120" r="84" fill="rgba(255,255,255,.2)"/><g fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"><ellipse cx="160" cy="120" rx="36" ry="84"/><path d="M76 120h168M90 80h140M90 160h140"/></g><g transform="translate(30 150)"><path d="M0 14h56l-6 50H6z" fill="#fff"/><path d="M16 14v-6a12 12 0 0 1 24 0v6" fill="none" stroke="#fff" stroke-width="5"/></g><g transform="translate(236 30)"><path d="M0 14h50l-6 44H6z" fill="#00c8e1"/><path d="M14 14v-5a11 11 0 0 1 22 0v5" fill="none" stroke="#00c8e1" stroke-width="5"/></g></svg></div><div class="tx"><h2>عالمي</h2><p>تسوّق من علاماتك التجارية المفضلة حول العالم، واستلم مشترياتك على عنوانك الوطني أو أي عنوان آخر.</p><a class="btn f" href="#">ابدأ التسوّق</a></div></div>
- <div class="split"><div class="tx"><h2>تجاري</h2><p>نوصلك وين ماتكون.. نوصلك وين ماتبي.. ورصيد إضافي 30%.. خدمة عصرية وموثوقة, تقدم عنوان سهل وواضح ومعياري للجهات التجارية لتحقيق تطلعات القطاع التجاري.</p><a class="btn f" href="#">للمزيد من التفاصيل</a></div><div class="im"><svg class="ill" viewBox="0 0 320 240" aria-hidden="true"><rect x="0" y="176" width="320" height="10" rx="5" fill="rgba(255,255,255,.35)"/><path d="M20 176v-90a10 10 0 0 1 10-10h130a10 10 0 0 1 10 10v90z" fill="#fff"/><path d="M170 106h52a14 14 0 0 1 12 7l22 34a14 14 0 0 1 2 7v22h-88z" fill="#00c8e1"/><path d="M184 122h34l16 26h-50z" fill="#153c3f" opacity=".7"/><circle cx="70" cy="182" r="20" fill="#153c3f"/><circle cx="70" cy="182" r="8" fill="#fff"/><circle cx="230" cy="182" r="20" fill="#153c3f"/><circle cx="230" cy="182" r="8" fill="#fff"/><path d="M52 118h96M52 138h60" stroke="#146e82" stroke-width="8" stroke-linecap="round"/><path d="M240 40h50M256 58h40" stroke="rgba(255,255,255,.5)" stroke-width="6" stroke-linecap="round"/></svg></div></div>
+<main id="main">
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <div class="eyebrow">توصيل يقرّب المسافات</div>
+   <h1>طرودك بأمان،<br><span>وتوصيل يليق بثقتك.</span></h1>
+   <p class="hero-copy">من أول استلام إلى آخر خطوة في الطريق، نسهّل عليك إرسال طرودك ومتابعتها بتجربة واضحة وخدمة تهتم بالتفاصيل.</p>
+   <div class="hero-actions">
+    <a class="btn btn-primary" href="#tracking">تتبع شحنتك <i data-lucide="arrow-left"></i></a>
+    <a class="btn btn-outline" href="#services">اكتشف خدماتنا <i data-lucide="arrow-left"></i></a>
+   </div>
+   <div class="hero-note">
+    <span><i data-lucide="shield-check"></i> عناية بالشحنات</span>
+    <span><i data-lucide="route"></i> متابعة واضحة</span>
+    <span><i data-lucide="headset"></i> دعم يهتم بك</span>
+   </div>
+  </div>
+  <div class="parcel-stage" aria-label="رسم توضيحي لطرد جاهز للشحن">
+   <div class="parcel-panel">
+    <div class="panel-top"><span><i class="panel-dot"></i> رحلة شحنتك تبدأ هنا</span><span>01 / 03</span></div>
+    <div class="box-illustration">
+     <svg viewBox="0 0 380 270" role="img" aria-label="صندوق شحن">
+      <path d="M32 196L184 112l164 79-158 75z" fill="#b66b32"/>
+      <path d="M32 196v-91l154-83v90z" fill="#e7a05e"/>
+      <path d="M186 112V22l162 82v87z" fill="#f4bd83"/>
+      <path d="M186 22l-48 26 158 82 48-26z" fill="#ffd4a8"/>
+      <path d="M138 48v86l48 25v-47z" fill="#d58a4d" opacity=".8"/>
+      <path d="M186 112l110-58v89l-110 58z" fill="#d88a4b"/>
+      <path d="M186 112v135l-158-51v-91z" fill="#c27a42"/>
+      <path d="M186 112l162-8v87l-162 56z" fill="#e7a05e"/>
+      <path d="M159 37l54 27v57l-54-28z" fill="#fff0de" opacity=".9"/>
+      <path d="M181 80h12m-12 10h25m-25 10h18" stroke="#9b633b" stroke-width="4" stroke-linecap="round"/>
+      <path d="M75 158l44 14v27l-44-14z" fill="#fff0de"/>
+      <path d="M87 169h21m-21 8h14" stroke="#9b633b" stroke-width="3" stroke-linecap="round"/>
+      <path d="M22 228c53 25 111 35 173 35 64 0 119-13 166-37" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="2" stroke-dasharray="5 8"/>
+     </svg>
+    </div>
+   </div>
+   <div class="delivery-chip">كل طرد له عناية خاصة</div>
+   <div class="route-chip"><i><i data-lucide="package"></i></i><span>من بابك إلى وجهته</span></div>
+  </div>
+ </div>
 </section>
 
-<section class="sec"><div class="w two">
- <div class="bn"><div class="ic"><i data-lucide="id-card"></i></div><div><h3>عنوانك هويتك</h3><p>يمكنك تسجيل عنوانك الوطني بالمجان وإدارته بكل يسر وسهولة.</p><a class="btn" href="#">سجّل الآن</a></div></div>
- <div class="bn b2"><div class="ic"><i data-lucide="badge-percent"></i></div><div><h3>هل تشحن باستمرار؟</h3><p>يمكنك توفير مايقارب 50٪ من قيمة الشحن عند استخدامك منصة SMEs.</p><a class="btn" href="#">اختر الباقة المناسبة</a></div></div>
-</div></section>
-
-<section class="w" id="branches"><div class="br">
- <div><h2>أكثر من 450 فرع لخدمتكم<br>الآن أصبحنا أقرب لكم</h2><p>ابحث عن فرع البريد السعودي | سبل</p>
-  <div class="srch"><label class="tin" style="flex:1"><i data-lucide="map-pin"></i><input placeholder="أدخل عنوانًا أو مدينة" aria-label="بحث عن فرع"></label><a class="btn f" href="#"><i data-lucide="search"></i>البحث</a></div>
-  <a class="btn o" href="#"><i data-lucide="locate-fixed"></i>الفرع الأقرب</a>
-  <p style="color:var(--t2)">خريطة تفاعلية تمكنك من معرفة الفروع التابعة للأحياء ومقدمي الخدمة الأقرب لكل حي</p></div>
- <div class="map" role="img" aria-label="خريطة الفروع"></div>
-</div></section>
-
-<section class="sec"><div class="w app">
- <div><i data-lucide="smartphone" style="width:44px;height:44px;color:var(--p)"></i><h2>حمّل التطبيق الآن!</h2><p style="font-size:18px;margin:0 0 24px">تطبيق سبل أون لاين: استفد من خدمات سبل عبر التطبيق، واستمتع بتجربة أسهل وأسرع.</p>
-  <div class="stores"><a href="#"><i data-lucide="apple"></i>App Store</a><a href="#"><i data-lucide="play"></i>Google Play</a></div></div>
- <div class="phone"><i data-lucide="mail-check"></i></div>
-</div></section>
-
-<section class="w" style="padding-bottom:72px"><div class="help">
- <div class="hb"><i data-lucide="shield-alert"></i><div><h3>تحذير لعملائنا من الرسائل الاحتيالية</h3><p>نُجدّد تنويهنا لعملائنا الكرام بعدم التفاعل مع الرسائل الاحتيالية الواردة عبر البريد الإلكتروني، والتي تنتحل اسم وشعار مؤسسة البريد السعودي | سبل.</p><div class="l"><a class="btn f" href="#">للمزيد من التفاصيل</a><a class="btn o" href="#">مساعدة ودعم</a></div></div></div>
- <div class="hb"><i data-lucide="headset"></i><div><h3>مركز العناية بالعملاء</h3><p>نسعد بخدمتكم بالرد على جميع طلباتكم واستفساراتكم عبر الرقم المجاني <a href="tel:19992" style="color:var(--s);font-weight:800">19992</a> ومن خارج المملكة <a href="tel:+966112898888" dir="ltr" style="color:var(--s);font-weight:800">+966112898888</a></p><div class="l"><a class="btn f" href="#">اتصل بنا</a><a class="btn o" href="#">الشكاوى والطلبات</a></div></div></div>
-</div></section>
-
-<footer><div class="w">
- <div class="fg">
-  <div><h4>سبل</h4><a href="#">عن المؤسسة</a><a href="#">كلمة معالي الرئيس</a><a href="#">مجلس الإدارة</a><a href="#">القادة</a><a href="#">الهيكل التنظيمي</a><a href="#">استراتيجية البريد السعودي</a><a href="#">المسؤولية الاجتماعية</a><a href="#">فروعنا</a></div>
-  <div><h4>المركز الإعلامي</h4><a href="#">الأخبار</a><a href="#">الفعاليات</a><a href="#">الجوائز والإنجازات</a><a href="#">التقارير السنوية</a><a href="#">المنقولات</a></div>
-  <div><h4>أخرى</h4><a href="#">التوظيف</a><a href="#">المنافسات والمناقصات</a><a href="#">التوعية بالاحتيال</a><a href="#">البيانات المفتوحة</a><a href="#">مشاركة البيانات</a><a href="#">منصة المشاركة الإلكترونية</a></div>
-  <div><h4>مواقع ذات علاقة</h4><a href="#">وزارة النقل والخدمات اللوجستية</a><a href="#">الهيئة العامة للنقل</a><a href="#">أبشر</a><a href="#">ناقل</a><a href="#">المركز السعودي للتنافسية والأعمال</a></div>
+<section class="tracking-wrap" id="tracking" aria-labelledby="trackingHeading">
+ <div class="container">
+  <div class="tracking-card">
+   <div class="tracking-title">
+    <span class="tracking-icon"><i data-lucide="package-search"></i></span>
+    <div><h2 id="trackingHeading">تتبع شحنتك</h2><p>أدخل رقم الشحنة لمعرفة تحديثاتها</p></div>
+   </div>
+   <form class="tracking-form" id="trackingForm">
+    <input class="tracking-input" id="trackingNumber" name="trackingNumber" type="text" autocomplete="off" placeholder="مثال: SX123456789" aria-label="رقم تتبع الشحنة" required>
+    <button class="btn btn-primary" type="submit"><i data-lucide="search"></i> تتبع الآن</button>
+   </form>
+   <p class="tracking-message" id="trackingMessage" role="status" aria-live="polite" hidden></p>
+  </div>
  </div>
- <div class="soc"><a href="#" aria-label="فيسبوك"><i data-lucide="facebook"></i></a><a href="#" aria-label="إكس"><i data-lucide="twitter"></i></a><a href="#" aria-label="يوتيوب"><i data-lucide="youtube"></i></a><a href="#" aria-label="لينكدإن"><i data-lucide="linkedin"></i></a><a href="#" aria-label="إنستغرام"><i data-lucide="instagram"></i></a><a href="#" aria-label="واتساب"><i data-lucide="message-circle"></i></a></div>
- <div class="fb"><span>© 2026 جميع الحقوق محفوظة البريد السعودي | سبل</span><nav><a href="#">شروط الخدمة</a><a href="#">سياسة الخصوصية</a><a href="#">إشعار الخصوصية</a></nav></div>
-</div></footer>
+</section>
+
+<section class="section" id="services">
+ <div class="container">
+  <div class="section-head"><div class="kicker">خدماتنا</div><h2>حلول توصيل تناسب احتياجك</h2><p>سواء كنت ترسل طرداً شخصياً أو تدير متجراً، نوفر لك خيارات شحن مرنة وتجربة سهلة.</p></div>
+  <div class="services-grid">
+   <article class="service-card"><span class="service-icon"><i data-lucide="package"></i></span><h3>توصيل الطرود</h3><p>خدمة إرسال واستلام الطرود باهتمام بالتغليف وسلامة الشحنة خلال مراحل التوصيل.</p><a class="text-link" href="#contact">تفاصيل الخدمة <i data-lucide="arrow-left"></i></a></article>
+   <article class="service-card"><span class="service-icon"><i data-lucide="shopping-bag"></i></span><h3>توصيل المتاجر الإلكترونية</h3><p>حلول تساعد المتاجر على تجهيز الطلبات وتسليمها للعملاء بخطوات واضحة ومنظمة.</p><a class="text-link" href="#business">حلول للمتاجر <i data-lucide="arrow-left"></i></a></article>
+   <article class="service-card"><span class="service-icon"><i data-lucide="building-2"></i></span><h3>الشحن للشركات</h3><p>تنسيق شحنات الأعمال والطلبات المتكررة وفق احتياجات المنشأة وطبيعة عملياتها.</p><a class="text-link" href="#business">خدمات الشركات <i data-lucide="arrow-left"></i></a></article>
+  </div>
+ </div>
+</section>
+
+<section class="section steps-section" id="how">
+ <div class="container">
+  <div class="section-head"><div class="kicker">خطوات بسيطة</div><h2>كيف تصل شحنتك؟</h2><p>أربع خطوات واضحة لتنظيم عملية التوصيل من البداية إلى النهاية.</p></div>
+  <div class="steps-grid">
+   <article class="step"><div class="step-number">١</div><h3>تجهيز الشحنة</h3><p>جهّز الطرد وتأكد من كتابة بيانات المرسل والمستلم بشكل صحيح.</p></article>
+   <article class="step"><div class="step-number">٢</div><h3>استلام الطرد</h3><p>يتم تنسيق استلام الشحنة وتجهيزها للانتقال إلى مرحلة النقل.</p></article>
+   <article class="step"><div class="step-number">٣</div><h3>متابعة الرحلة</h3><p>استخدم رقم الشحنة لمتابعة تحديثات حالتها عند تفعيل نظام التتبع.</p></article>
+   <article class="step"><div class="step-number">٤</div><h3>التسليم</h3><p>تصل الشحنة إلى وجهتها ويتم إكمال عملية التسليم للمستلم.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="business">
+ <div class="container">
+  <div class="business-panel">
+   <div class="business-copy">
+    <div class="kicker">لأصحاب المتاجر والمنشآت</div>
+    <h2>خلّ التوصيل علينا، وركّز على نمو تجارتك.</h2>
+    <p>نساعدك على تنظيم شحنات متجرك وطلبات عملائك من خلال حلول توصيل قابلة للتنسيق بحسب حجم العمل واحتياجاته.</p>
+    <a class="btn btn-primary" href="#contact">تعرّف على حلول الأعمال <i data-lucide="arrow-left"></i></a>
+   </div>
+   <div class="business-features">
+    <div class="business-feature"><i data-lucide="boxes"></i><span>إدارة الشحنات والطلبات</span></div>
+    <div class="business-feature"><i data-lucide="clipboard-list"></i><span>تنظيم عمليات التسليم</span></div>
+    <div class="business-feature"><i data-lucide="store"></i><span>خدمات للمتاجر</span></div>
+    <div class="business-feature"><i data-lucide="headset"></i><span>تنسيق ومتابعة</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container why-grid">
+  <div class="why-visual" aria-hidden="true">
+   <svg viewBox="0 0 430 330">
+    <path d="M48 252h332" stroke="#c5d0d5" stroke-width="3" stroke-linecap="round"/>
+    <path d="M87 231V105l116-64 127 64v126l-124 62z" fill="#e2a16a"/>
+    <path d="M203 167L87 105l116-64 127 63z" fill="#f4bd83"/>
+    <path d="M203 167v126l127-62V104z" fill="#cf854b"/>
+    <path d="M203 167L87 105v126l116 62z" fill="#b96f39"/>
+    <path d="M177 56l126 64-37 21-126-64z" fill="#fff0de"/>
+    <path d="M203 167v126" stroke="#f8d6b4" stroke-width="3" opacity=".7"/>
+    <rect x="232" y="185" width="65" height="49" rx="5" fill="#fff0de"/>
+    <path d="M246 200h36m-36 10h29m-29 10h19" stroke="#ad774e" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="86" cy="70" r="17" fill="#ed8b32" opacity=".85"/>
+    <path d="M80 70l5 5 9-11" fill="none" stroke="#172b3a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M334 69l18-18 18 18-18 18z" fill="#172b3a" opacity=".12"/>
+   </svg>
+  </div>
+  <div>
+   <div class="section-head"><div class="kicker">لماذا سنام إكسبرس؟</div><h2>تجربة توصيل واضحة من أول خطوة.</h2><p>نؤمن أن خدمة التوصيل الجيدة تبدأ بالتنظيم والوضوح والاهتمام بكل شحنة.</p></div>
+   <div class="why-list">
+    <div class="why-item"><span class="why-item-icon"><i data-lucide="handshake"></i></span><div><h3>اهتمام بكل شحنة</h3><p>نتعامل مع كل طرد بعناية واهتمام ببياناته ومتطلبات توصيله.</p></div></div>
+    <div class="why-item"><span class="why-item-icon"><i data-lucide="route"></i></span><div><h3>خطوات مفهومة</h3><p>رحلة شحن منظمة ومعلومات واضحة حول الخطوات المطلوبة.</p></div></div>
+    <div class="why-item"><span class="why-item-icon"><i data-lucide="briefcase-business"></i></span><div><h3>مرونة للأعمال</h3><p>إمكانية تنسيق خدمات التوصيل بما يتناسب مع احتياجات الأفراد والمتاجر.</p></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="faq">
+ <div class="container faq-grid">
+  <div class="section-head"><div class="kicker">مركز المساعدة</div><h2>أسئلة تتكرر</h2><p>إجابات مختصرة تساعدك على معرفة خطوات إرسال الشحنات ومتابعتها.</p></div>
+  <div class="faq-list">
+   <details><summary>كيف يمكنني تتبع شحنتي؟</summary><p>أدخل رقم الشحنة في مربع التتبع أعلى الصفحة. يلزم ربط النموذج بنظام إدارة الشحنات لعرض الحالة الفعلية وتحديثات الرحلة.</p></details>
+   <details><summary>ما البيانات المطلوبة لإرسال طرد؟</summary><p>تحتاج عادةً إلى بيانات المرسل والمستلم بشكل صحيح، بما في ذلك الاسم ورقم التواصل والعنوان، إضافة إلى وصف مناسب لمحتويات الشحنة.</p></details>
+   <details><summary>هل تقدم سنام إكسبرس خدمات للمتاجر؟</summary><p>تم تصميم هذه الصفحة لعرض خدمات الأفراد والمتاجر والشركات. تفاصيل التعاقد والتغطية وآلية الاستلام تحددها سياسة التشغيل الفعلية للشركة.</p></details>
+   <details><summary>هل يمكن طلب استلام الشحنة من موقعي؟</summary><p>تختلف إمكانية الاستلام من الموقع بحسب نطاق الخدمة وآلية التشغيل المعتمدة. يرجى التواصل مع الشركة لتأكيد توفر الخدمة في منطقتك.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="container" id="contact">
+ <div class="contact-band">
+  <div><h2>هل لديك شحنة جاهزة؟</h2><p>تعرّف على خدمات التوصيل المناسبة لاحتياجك وتفاصيل بدء الإرسال.</p></div>
+  <a class="btn btn-primary" href="#services">استعرض خدماتنا <i data-lucide="arrow-left"></i></a>
+ </div>
+</section>
+</main>
+
+<footer class="site-footer">
+ <div class="container">
+  <div class="footer-top">
+   <div class="footer-brand">
+    <a class="brand" href="#home"><span class="brand-mark"><i data-lucide="package-check"></i></span><span class="brand-name"><b>سنام إكسبرس</b><small>SANAM EXPRESS</small></span></a>
+    <p>خدمات توصيل الطرود والشحن للأفراد والمتاجر. نعمل على تقديم تجربة منظمة وواضحة في كل خطوة من رحلة الشحنة.</p>
+    <div class="socials" aria-label="روابط التواصل الاجتماعي">
+     <a href="#contact" aria-label="تواصل معنا"><i data-lucide="message-circle"></i></a>
+     <a href="#contact" aria-label="البريد الإلكتروني"><i data-lucide="mail"></i></a>
+    </div>
+   </div>
+   <div class="footer-col"><h3>روابط سريعة</h3><div class="footer-links"><a href="#home">الرئيسية</a><a href="#services">خدماتنا</a><a href="#how">كيف نعمل</a><a href="#tracking">تتبع شحنتك</a></div></div>
+   <div class="footer-col"><h3>للأعمال والمساعدة</h3><div class="footer-links"><a href="#business">حلول الأعمال</a><a href="#faq">الأسئلة الشائعة</a><a href="#contact">تواصل معنا</a></div></div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year">2026</span> سنام إكسبرس. جميع الحقوق محفوظة.</span><span>خدمات توصيل الطرود والشحن</span></div>
+ </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
 <script>
 (function(){
- var tags=[],tin=document.getElementById('tin'),ti=document.getElementById('ti'),res=document.getElementById('res');
- function icons(){try{lucide.createIcons()}catch(e){}}
- function draw(){
-  tin.querySelectorAll('.tag').forEach(function(n){n.remove()});
-  tags.forEach(function(t,i){
-   var s=document.createElement('span');s.className='tag';s.textContent=t;
-   var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','حذف');b.innerHTML='<i data-lucide="x"></i>';
-   b.onclick=function(){tags.splice(i,1);draw()};s.appendChild(b);tin.insertBefore(s,ti);
-  });icons();
+ 'use strict';
+ var menuButton=document.getElementById('menuToggle');
+ var nav=document.getElementById('mainNav');
+ var form=document.getElementById('trackingForm');
+ var numberInput=document.getElementById('trackingNumber');
+ var message=document.getElementById('trackingMessage');
+
+ function refreshIcons(){
+  if(window.lucide&&typeof window.lucide.createIcons==='function'){window.lucide.createIcons();}
  }
- function add(){ti.value.split(/\s+/).filter(Boolean).forEach(function(v){if(/^\d+$/.test(v)&&tags.indexOf(v)<0)tags.push(v)});ti.value='';draw()}
- ti.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();add();if(e.key==='Enter')go()}});
- ti.addEventListener('blur',add);
- function go(){
-  add();res.innerHTML='';
-  if(!tags.length){res.innerHTML='<div class="rs">أدخل رقم تتبع واحدًا على الأقل.</div>';return}
-  tags.forEach(function(t){
-   var d=document.createElement('div');d.className='rs';
-   if(t.length<13){d.innerHTML='<i data-lucide="circle-alert"></i><span>رقم التتبع <b></b> يجب أن يتكون من 13 رقمًا أو أكثر.</span>'}
-   else{d.innerHTML='<i data-lucide="circle-check"></i><span>الشحنة <b></b>: هذه صفحة تجريبية، اربطها بخدمة التتبع الفعلية.</span>'}
-   d.querySelector('b').textContent=t;res.appendChild(d);
-  });icons();
+ if(menuButton&&nav){
+  menuButton.addEventListener('click',function(){
+   var isOpen=menuButton.getAttribute('aria-expanded')==='true';
+   menuButton.setAttribute('aria-expanded',String(!isOpen));
+   menuButton.setAttribute('aria-label',isOpen?'فتح القائمة':'إغلاق القائمة');
+   nav.classList.toggle('is-open',!isOpen);
+   refreshIcons();
+  });
+  nav.querySelectorAll('a').forEach(function(link){
+   link.addEventListener('click',function(){
+    nav.classList.remove('is-open');
+    menuButton.setAttribute('aria-expanded','false');
+    menuButton.setAttribute('aria-label','فتح القائمة');
+   });
+  });
  }
- document.getElementById('tb').onclick=go;icons();
+ if(form){
+  form.addEventListener('submit',function(event){
+   event.preventDefault();
+   var trackingNumber=(numberInput.value||'').trim();
+   if(!trackingNumber){
+    message.textContent='يرجى إدخال رقم الشحنة أولاً.';
+    message.hidden=false;
+    numberInput.focus();
+    return;
+   }
+   /*
+    * نقطة ربط التتبع:
+    * اربط هذا النموذج بواجهة API الخاصة بنظام الشحن، ثم اعرض
+    * حالة الشحنة الفعلية بدلاً من رسالة التنبيه أدناه.
+    * مثال: fetch('/api/shipments/track?number=' + encodeURIComponent(trackingNumber))
+    */
+   message.textContent='تم إدخال رقم الشحنة ('+trackingNumber+'). واجهة التتبع جاهزة، ويلزم ربطها بنظام الشحن لعرض الحالة والتحديثات الفعلية.';
+   message.hidden=false;
+  });
+ }
+ var year=document.getElementById('year');
+ if(year){year.textContent=new Date().getFullYear();}
+ refreshIcons();
 })();
 </script>
 </body>
