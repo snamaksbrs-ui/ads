@@ -2821,6 +2821,34 @@
       .article-image img { min-height: 100%; }
     }
 
+
+    /* Editorial value strip: informative, not fabricated metrics */
+    .editorial-values { background: #f0eee9; border-block: 1px solid #e6e1d8; }
+    .editorial-values .section-header { max-width: 720px; margin-inline: auto; text-align: center; }
+    .editorial-values .section-header .section-label { color: var(--primary); font-weight: 700; }
+    .editorial-values .stats-grid { gap: 0; border: 1px solid #e2ddd3; background: #fff; }
+    .editorial-values .stat-card {
+      min-width: 0; text-align: start; padding: clamp(18px,2.4vw,30px);
+      border: 0; border-inline-end: 1px solid #e9e5de; border-radius: 0;
+      background: transparent; box-shadow: none;
+    }
+    .editorial-values .stat-card:last-child { border-inline-end: 0; }
+    .editorial-values .value-index {
+      display: inline-flex; margin-bottom: 14px; color: var(--primary);
+      font-size: 12px; font-weight: 700; letter-spacing: .08em;
+    }
+    .editorial-values .stat-card h3 {
+      margin: 0 0 7px; font: 700 19px/1.5 'Tajawal',sans-serif; color: var(--text);
+    }
+    .editorial-values .stat-card p { margin: 0; color: var(--text-light); font-size: 14px; line-height: 1.85; }
+    #latest-articles-title { scroll-margin-top: 90px; }
+    @media(max-width:768px) {
+      .editorial-values .stats-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .editorial-values .stat-card { padding: 18px 14px; border-bottom: 1px solid #e9e5de; }
+      .editorial-values .stat-card:nth-child(2n) { border-inline-end: 0; }
+      .editorial-values .stat-card:nth-last-child(-n+2) { border-bottom: 0; }
+    }
+
     ]]></b:skin>
   </head>
 
@@ -2864,7 +2892,7 @@
           </b:widget>
         </b:section>
 
-        <nav aria-label='Primary navigation' class='site-navigation' id='primary-navigation'>
+        <nav aria-label='التنقل الرئيسي' class='site-navigation' id='primary-navigation'>
           <b:section class='main-menu-section' id='main-menu-section' maxwidgets='1'
             showaddelement='no'>
             <b:widget id='PageList1' locked='false' title='Pages' type='PageList' version='1'>
@@ -2917,7 +2945,7 @@
           </form>
 
           <a class='subscribe-btn' href='#newsletter'>
-            تابعنا
+            موجز المقالات
           </a>
           <button aria-label='فتح البحث' class='search-toggle' type='button'>
             <svg aria-hidden='true' fill='none' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><circle cx='10.75' cy='10.75' r='6.75' stroke='currentColor' stroke-width='1.8'/><path d='m16 16 5 5' stroke='currentColor' stroke-linecap='round' stroke-width='1.8'/></svg>
@@ -3013,7 +3041,7 @@
                   <p class='hero-description'>
                     اكتشف رؤى عملية في التقنية والتصميم وتطوير الويب والتسويق والأعمال، إلى جانب موضوعات تساعدك على فهم التحولات الرقمية وتطبيق المعرفة بثقة.
                   </p>
-                  <div aria-label='Featured actions' class='hero-buttons'>
+                  <div aria-label='روابط رئيسية' class='hero-buttons'>
                     <a class='btn btn-primary' href='/search'>
                       اكتشف المقالات
                     </a>
@@ -3021,7 +3049,7 @@
                       عن المدونة
                     </a>
                   </div>
-                  <div aria-label='Reader community' class='hero-community'>
+                  <div aria-label='رسالة المدونة' class='hero-community'>
                     <div aria-hidden='true' class='hero-note-mark'>م</div>
                     <div>
                       <strong>نؤمن أن المعرفة تبدأ بفضول صغير.</strong>
@@ -3115,24 +3143,33 @@
           </b:widget>
         </b:section>
 
-        <section class='stats' id='stats'>
+        <section aria-labelledby='editorial-values-title' class='stats editorial-values' id='editorial-values'>
           <div class='container'>
+            <div class='section-header'>
+              <p class='section-label'>ما ستجده هنا</p>
+              <h2 id='editorial-values-title'>معرفة أقرب إلى التطبيق</h2>
+              <p>نختار الموضوعات التي تمنحك فكرة واضحة وخطوة يمكنك البناء عليها.</p>
+            </div>
             <div class='stats-grid'>
               <article class='stat-card'>
-                <h2>تقنية</h2>
-                <p>تقنية</p>
+                <span aria-hidden='true' class='value-index'>01</span>
+                <h3>تقنية مفهومة</h3>
+                <p>شرح مبسط للأدوات والتقنيات والتحولات الرقمية.</p>
               </article>
               <article class='stat-card'>
-                <h2>تصميم</h2>
-                <p>تصميم</p>
+                <span aria-hidden='true' class='value-index'>02</span>
+                <h3>تصميم هادف</h3>
+                <p>أفكار في تجربة المستخدم والهوية والاتصال البصري.</p>
               </article>
               <article class='stat-card'>
-                <h2>أعمال</h2>
-                <p>أدلة عملية</p>
+                <span aria-hidden='true' class='value-index'>03</span>
+                <h3>أعمال عملية</h3>
+                <p>رؤى تساعد على تطوير المشاريع والحضور الرقمي.</p>
               </article>
               <article class='stat-card'>
-                <h2>معرفة</h2>
-                <p>معرفة متجددة</p>
+                <span aria-hidden='true' class='value-index'>04</span>
+                <h3>معرفة متجددة</h3>
+                <p>مقالات وأدلة تواكب ما يتغير وتبقى مفيدة.</p>
               </article>
             </div>
           </div>
@@ -3237,7 +3274,7 @@
                     <p>موضوعات تستحق وقتك، اختيرت بعناية.</p>
                   </div>
                   <a class='btn btn-outline' href='/search'>
-                    استكشف All
+                    استكشف المقالات
                   </a>
                 </div>
                 <div class='editor-grid popular-posts'>
@@ -3291,7 +3328,7 @@
                 <b:widget-setting name='showDateHeader'>true</b:widget-setting>
                 <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
                 <b:widget-setting name='showShareButtons'>true</b:widget-setting>
-                <b:widget-setting name='authorLabel'>By</b:widget-setting>
+                <b:widget-setting name='authorLabel'>بواسطة</b:widget-setting>
                 <b:widget-setting name='showCommentLink'>true</b:widget-setting>
                 <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
                 <b:widget-setting name='showAuthor'>false</b:widget-setting>
@@ -3315,7 +3352,7 @@
                 <!-- HOMEPAGE: Show posts in grid with title -->
                 <b:if cond='data:blog.url == data:blog.homepageUrl'>
                   <div class='flex-between latest-articles-header'>
-                    <h2>أحدث المقالات</h2>
+                    <h2 id='latest-articles-title'>أحدث المقالات</h2>
                     <a class='btn btn-outline' href='/search'>عرض جميع المقالات</a>
                   </div>
                   <div class='blog-posts hfeed'>
@@ -4421,7 +4458,7 @@
         <div class='container'>
           <div class='newsletter-box'>
             <h2>ابقَ على اطلاع</h2>
-            <p class='newsletter-text'>تابع أحدث المقالات والموضوعات الجديدة من المدونة.</p>
+            <p class='newsletter-text'>تابع جديد المدونة عبر موجز RSS، وأضف الموجز إلى تطبيق قراءة الأخبار المفضل لديك.</p>
             <div class='newsletter-form'>
               <a class='subscribe-btn' href='/feeds/posts/default?alt=rss'
                 rel='nofollow noopener noreferrer' target='_blank'>
