@@ -3139,9 +3139,8 @@
                       </b:if>
                     </div>
                     <a class='hero-spotlight-link' expr:href='data:postUrl'>اقرأ الموضوع</a>
-                  </article>
-                </div>
-              </article>
+                  </div>
+                </article>
               </div>
             </b:includable>
           </b:widget>
