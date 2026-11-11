@@ -2922,6 +2922,36 @@
       .hero-spotlight:hover, .article-card:hover, .category-card:hover { transform: none; }
     }
 
+
+    /* Long-form content and embedded media */
+    .article-body-shell .post-body { overflow-wrap: anywhere; }
+    .article-body-shell .post-body pre {
+      max-width: 100%; overflow-x: auto; direction: ltr; text-align: left;
+      border: 1px solid #e8e4dc; border-radius: 5px; line-height: 1.65;
+    }
+    .article-body-shell .post-body pre code {
+      white-space: pre; background: transparent; padding: 0; border-radius: 0;
+    }
+    .article-body-shell .post-body table {
+      display: block; max-width: 100%; overflow-x: auto;
+      border-collapse: collapse; -webkit-overflow-scrolling: touch;
+    }
+    .article-body-shell .post-body iframe,
+    .article-body-shell .post-body video,
+    .article-body-shell .post-body embed {
+      max-width: 100%;
+    }
+    .article-body-shell .post-body video { height: auto; }
+    .editor-image { border-radius: 6px; }
+    .editor-image:empty::after {
+      content: 'مقال'; width: 100%; height: 100%; display: grid; place-items: center;
+      color: #81796d; font: 700 12px 'Tajawal',sans-serif;
+    }
+    @media(max-width:768px) {
+      .article-body-shell .post-body { overflow-wrap: anywhere; }
+      .article-body-shell .post-body pre { padding: 14px; font-size: 13px; }
+    }
+
     ]]></b:skin>
   </head>
 
