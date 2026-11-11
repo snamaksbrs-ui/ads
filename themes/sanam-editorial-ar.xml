@@ -4636,13 +4636,6 @@
           }
         });
 
-    searchToggle.style.display = 'flex';
-
-    searchInput.blur();
-
-});
-
-}
       }());
       //]]>
     </script>
