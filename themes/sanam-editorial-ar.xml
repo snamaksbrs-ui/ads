@@ -2855,6 +2855,33 @@
       .search-box.is-open .search-close { display: inline-flex; }
     }
 
+
+    html[dir='rtl'] .search-box.is-open .search-close { right: auto; left: 12px; }
+    html[dir='rtl'] .search-box.is-open input { padding-right: 12px; padding-left: 38px; }
+    html[dir='ltr'] .search-box.is-open .search-close { left: auto; right: 12px; }
+    html[dir='ltr'] .search-box.is-open input { padding-left: 12px; padding-right: 38px; }
+    .search-box.is-open .search-close {
+      width: 30px; height: 30px; align-items: center; justify-content: center;
+      border-radius: 50%; line-height: 1; cursor: pointer;
+    }
+    .search-box.is-open .search-close:hover { background: #eeeae2; color: var(--text); }
+    .phoenix-pager { gap: 12px; }
+    .pager-nav-link, .pager-home-link {
+      min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 16px; border: 1px solid var(--border); border-radius: 4px;
+      background: #fff; color: var(--text); font-weight: 700;
+    }
+    .pager-nav-link:hover, .pager-home-link:hover {
+      border-color: var(--primary); color: var(--primary); background: #faf8f4;
+    }
+    .phoenix-pager .spacer { flex: 1; }
+    @media(max-width: 520px) {
+      .phoenix-pager { flex-wrap: wrap; }
+      .pager-home-wrap { order: 3; width: 100%; }
+      .pager-home-link { width: 100%; }
+      .pager-nav-link { max-width: 100%; font-size: 13px; }
+    }
+
     ]]></b:skin>
   </head>
 
@@ -2867,7 +2894,7 @@
     <header class='navbar' role='banner'>
       <div class='container nav-container'>
         <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
-          <b:widget id='Header1' locked='true' title='Blog Header' type='Header' version='1'>
+          <b:widget id='Header1' locked='true' title='رأس المدونة' type='Header' version='1'>
             <b:widget-settings>
               <b:widget-setting name='displayUrl' />
               <b:widget-setting name='displayHeight'>0</b:widget-setting>
@@ -2878,7 +2905,7 @@
               <b:widget-setting name='displayWidth'>0</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
-              <a class='logo' expr:aria-label='data:blog.title + &quot; home&quot;' expr:href='data:blog.homepageUrl'><data:blog.title /></a>
+              <a class='logo' expr:aria-label='data:blog.title + &quot; الرئيسية&quot;' expr:href='data:blog.homepageUrl'><data:blog.title /></a>
             </b:includable>
             <b:includable id='description'>
               <div class='descriptionwrapper'>
@@ -2901,7 +2928,7 @@
         <nav aria-label='التنقل الرئيسي' class='site-navigation' id='primary-navigation'>
           <b:section class='main-menu-section' id='main-menu-section' maxwidgets='1'
             showaddelement='no'>
-            <b:widget id='PageList1' locked='false' title='Pages' type='PageList' version='1'>
+            <b:widget id='PageList1' locked='false' title='صفحات المدونة' type='PageList' version='1'>
               <b:widget-settings>
                 <b:widget-setting name='pageListJson'><![CDATA[{}]]></b:widget-setting>
                 <b:widget-setting name='homeTitle'>الرئيسية</b:widget-setting>
@@ -3124,7 +3151,7 @@
         </b:section>
 
         <b:section class='quick-access' id='quick-access' maxwidgets='2' showaddelement='yes'>
-          <b:widget id='Label1' locked='false' title='Labels' type='Label' version='1'>
+          <b:widget id='Label1' locked='false' title='التصنيفات' type='Label' version='1'>
             <b:widget-settings>
               <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
               <b:widget-setting name='display'>LIST</b:widget-setting>
@@ -3489,7 +3516,7 @@
                           </div>
                           <h3>
                             <a
-                              expr:aria-label='data:post.title ? data:post.title : &quot;Read article&quot;'
+                              expr:aria-label='data:post.title ? data:post.title : &quot;اقرأ المقال&quot;'
                               expr:href='data:post.url'>
                               <data:post.title />
                             </a>
