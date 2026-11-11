@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#172b3a">
-<meta name="description" content="سنام إكسبرس لخدمات توصيل الطرود والشحن للأفراد والمتاجر. حلول توصيل منظمة وتجربة متابعة واضحة من الاستلام حتى التسليم.">
-<title>سنام إكسبرس | توصيل طرودك بثقة</title>
+<meta name="description" content="هنا الأول للشحن والخدمات اللوجستية. حلول شحن بري وبحري وجوي وخدمات توصيل الطرود للأفراد وقطاع الأعمال.">
+<title>هنا الأول | الشحن والخدمات اللوجستية</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=jannat">
 <style>
 :root{
  --ink:#172b3a;--ink-2:#243d4e;--muted:#667783;--accent:#ed8b32;--accent-dark:#c96b19;
@@ -194,17 +194,35 @@ svg{display:block}
  .footer-bottom{flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+/* Brand, typography and hero image refinements */
+body{font-family:"Times New Roman",Times,serif}
+h1,h2,h3,h4,.brand-name,.main-nav,.btn,.kicker,.eyebrow,
+.tracking-title h2,.step-number,.business-feature,.text-link,
+.footer-col h3,.announcement{
+ font-family:"jannat","Times New Roman",serif;
+}
+.hero{padding:0;background:#fff;overflow:hidden;min-height:0}
+.hero::before,.hero::after{display:none}
+.hero-banner{width:100%;margin:0;line-height:0}
+.hero-banner img{display:block;width:100%;max-width:100%;height:auto;object-fit:contain}
+.tracking-card{grid-template-columns:minmax(220px,.7fr) 1.5fr}
+@media(max-width:760px){
+ .hero-banner img{width:100%;height:auto}
+ .tracking-card{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
-<div class="announcement"><div class="container"><span><strong>سنام إكسبرس</strong> — حلول توصيل الطرود للأفراد والمتاجر</span><span>نعتني بشحنتك من الاستلام حتى التسليم</span></div></div>
+<div class="announcement"><div class="container"><span><strong>هنا الأول</strong> — حلول توصيل الطرود للأفراد والمتاجر</span><span>نعتني بشحنتك من الاستلام حتى التسليم</span></div></div>
 
 <header class="site-header">
  <div class="container header-row">
-  <a class="brand" href="#home" aria-label="سنام إكسبرس - الرئيسية">
+  <a class="brand" href="#home" aria-label="هنا الأول - الرئيسية">
    <span class="brand-mark"><i data-lucide="package-check"></i></span>
-   <span class="brand-name"><b>سنام إكسبرس</b><small>SANAM EXPRESS</small></span>
+   <span class="brand-name"><b>هنا الأول</b><small>للشحن والخدمات اللوجستية</small></span>
   </a>
   <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
    <a href="#home">الرئيسية</a><a href="#services">خدماتنا</a><a href="#how">كيف نعمل</a><a href="#business">حلول الأعمال</a><a href="#faq">الأسئلة الشائعة</a>
@@ -218,46 +236,11 @@ svg{display:block}
 </header>
 
 <main id="main">
-<section class="hero" id="home">
- <div class="container hero-grid">
-  <div>
-   <div class="eyebrow">توصيل يقرّب المسافات</div>
-   <h1>طرودك بأمان،<br><span>وتوصيل يليق بثقتك.</span></h1>
-   <p class="hero-copy">من أول استلام إلى آخر خطوة في الطريق، نسهّل عليك إرسال طرودك ومتابعتها بتجربة واضحة وخدمة تهتم بالتفاصيل.</p>
-   <div class="hero-actions">
-    <a class="btn btn-primary" href="#tracking">تتبع شحنتك <i data-lucide="arrow-left"></i></a>
-    <a class="btn btn-outline" href="#services">اكتشف خدماتنا <i data-lucide="arrow-left"></i></a>
-   </div>
-   <div class="hero-note">
-    <span><i data-lucide="shield-check"></i> عناية بالشحنات</span>
-    <span><i data-lucide="route"></i> متابعة واضحة</span>
-    <span><i data-lucide="headset"></i> دعم يهتم بك</span>
-   </div>
-  </div>
-  <div class="parcel-stage" aria-label="رسم توضيحي لطرد جاهز للشحن">
-   <div class="parcel-panel">
-    <div class="panel-top"><span><i class="panel-dot"></i> رحلة شحنتك تبدأ هنا</span><span>01 / 03</span></div>
-    <div class="box-illustration">
-     <svg viewBox="0 0 380 270" role="img" aria-label="صندوق شحن">
-      <path d="M32 196L184 112l164 79-158 75z" fill="#b66b32"/>
-      <path d="M32 196v-91l154-83v90z" fill="#e7a05e"/>
-      <path d="M186 112V22l162 82v87z" fill="#f4bd83"/>
-      <path d="M186 22l-48 26 158 82 48-26z" fill="#ffd4a8"/>
-      <path d="M138 48v86l48 25v-47z" fill="#d58a4d" opacity=".8"/>
-      <path d="M186 112l110-58v89l-110 58z" fill="#d88a4b"/>
-      <path d="M186 112v135l-158-51v-91z" fill="#c27a42"/>
-      <path d="M186 112l162-8v87l-162 56z" fill="#e7a05e"/>
-      <path d="M159 37l54 27v57l-54-28z" fill="#fff0de" opacity=".9"/>
-      <path d="M181 80h12m-12 10h25m-25 10h18" stroke="#9b633b" stroke-width="4" stroke-linecap="round"/>
-      <path d="M75 158l44 14v27l-44-14z" fill="#fff0de"/>
-      <path d="M87 169h21m-21 8h14" stroke="#9b633b" stroke-width="3" stroke-linecap="round"/>
-      <path d="M22 228c53 25 111 35 173 35 64 0 119-13 166-37" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="2" stroke-dasharray="5 8"/>
-     </svg>
-    </div>
-   </div>
-   <div class="delivery-chip">كل طرد له عناية خاصة</div>
-   <div class="route-chip"><i><i data-lucide="package"></i></i><span>من بابك إلى وجهته</span></div>
-  </div>
+<section class="hero" id="home" aria-label="هنا الأول للشحن والخدمات اللوجستية">
+ <div class="hero-banner">
+  <img src="https://raw.githubusercontent.com/snamaksbrs-ui/ads/main/assets/here-first-hero.webp"
+       alt="هنا الأول للشحن والخدمات اللوجستية — شحن بري وبحري وجوي"
+       width="1024" height="572" fetchpriority="high" decoding="async">
  </div>
 </section>
 
@@ -269,7 +252,7 @@ svg{display:block}
     <div><h2 id="trackingHeading">تتبع شحنتك</h2><p>أدخل رقم الشحنة لمعرفة تحديثاتها</p></div>
    </div>
    <form class="tracking-form" id="trackingForm">
-    <input class="tracking-input" id="trackingNumber" name="trackingNumber" type="text" autocomplete="off" placeholder="مثال: SX123456789" aria-label="رقم تتبع الشحنة" required>
+    <input class="tracking-input" id="trackingNumber" name="trackingNumber" type="text" autocomplete="off" placeholder="أدخل رقم بوليصة الشحن" aria-label="رقم تتبع الشحنة" required>
     <button class="btn btn-primary" type="submit"><i data-lucide="search"></i> تتبع الآن</button>
    </form>
    <p class="tracking-message" id="trackingMessage" role="status" aria-live="polite" hidden></p>
@@ -338,7 +321,7 @@ svg{display:block}
    </svg>
   </div>
   <div>
-   <div class="section-head"><div class="kicker">لماذا سنام إكسبرس؟</div><h2>تجربة توصيل واضحة من أول خطوة.</h2><p>نؤمن أن خدمة التوصيل الجيدة تبدأ بالتنظيم والوضوح والاهتمام بكل شحنة.</p></div>
+   <div class="section-head"><div class="kicker">لماذا هنا الأول؟</div><h2>تجربة توصيل واضحة من أول خطوة.</h2><p>نؤمن أن خدمة التوصيل الجيدة تبدأ بالتنظيم والوضوح والاهتمام بكل شحنة.</p></div>
    <div class="why-list">
     <div class="why-item"><span class="why-item-icon"><i data-lucide="handshake"></i></span><div><h3>اهتمام بكل شحنة</h3><p>نتعامل مع كل طرد بعناية واهتمام ببياناته ومتطلبات توصيله.</p></div></div>
     <div class="why-item"><span class="why-item-icon"><i data-lucide="route"></i></span><div><h3>خطوات مفهومة</h3><p>رحلة شحن منظمة ومعلومات واضحة حول الخطوات المطلوبة.</p></div></div>
@@ -354,7 +337,7 @@ svg{display:block}
   <div class="faq-list">
    <details><summary>كيف يمكنني تتبع شحنتي؟</summary><p>أدخل رقم الشحنة في مربع التتبع أعلى الصفحة. يلزم ربط النموذج بنظام إدارة الشحنات لعرض الحالة الفعلية وتحديثات الرحلة.</p></details>
    <details><summary>ما البيانات المطلوبة لإرسال طرد؟</summary><p>تحتاج عادةً إلى بيانات المرسل والمستلم بشكل صحيح، بما في ذلك الاسم ورقم التواصل والعنوان، إضافة إلى وصف مناسب لمحتويات الشحنة.</p></details>
-   <details><summary>هل تقدم سنام إكسبرس خدمات للمتاجر؟</summary><p>تم تصميم هذه الصفحة لعرض خدمات الأفراد والمتاجر والشركات. تفاصيل التعاقد والتغطية وآلية الاستلام تحددها سياسة التشغيل الفعلية للشركة.</p></details>
+   <details><summary>هل تقدم هنا الأول خدمات للمتاجر؟</summary><p>تم تصميم هذه الصفحة لعرض خدمات الأفراد والمتاجر والشركات. تفاصيل التعاقد والتغطية وآلية الاستلام تحددها سياسة التشغيل الفعلية للشركة.</p></details>
    <details><summary>هل يمكن طلب استلام الشحنة من موقعي؟</summary><p>تختلف إمكانية الاستلام من الموقع بحسب نطاق الخدمة وآلية التشغيل المعتمدة. يرجى التواصل مع الشركة لتأكيد توفر الخدمة في منطقتك.</p></details>
   </div>
  </div>
@@ -372,8 +355,8 @@ svg{display:block}
  <div class="container">
   <div class="footer-top">
    <div class="footer-brand">
-    <a class="brand" href="#home"><span class="brand-mark"><i data-lucide="package-check"></i></span><span class="brand-name"><b>سنام إكسبرس</b><small>SANAM EXPRESS</small></span></a>
-    <p>خدمات توصيل الطرود والشحن للأفراد والمتاجر. نعمل على تقديم تجربة منظمة وواضحة في كل خطوة من رحلة الشحنة.</p>
+    <a class="brand" href="#home"><span class="brand-mark"><i data-lucide="package-check"></i></span><span class="brand-name"><b>هنا الأول</b><small>HENA AL AWWAL</small></span></a>
+    <p>الشحن والخدمات اللوجستية للأفراد والمتاجر. نعمل على تقديم تجربة منظمة وواضحة في كل خطوة من رحلة الشحنة.</p>
     <div class="socials" aria-label="روابط التواصل الاجتماعي">
      <a href="#contact" aria-label="تواصل معنا"><i data-lucide="message-circle"></i></a>
      <a href="#contact" aria-label="البريد الإلكتروني"><i data-lucide="mail"></i></a>
@@ -382,7 +365,7 @@ svg{display:block}
    <div class="footer-col"><h3>روابط سريعة</h3><div class="footer-links"><a href="#home">الرئيسية</a><a href="#services">خدماتنا</a><a href="#how">كيف نعمل</a><a href="#tracking">تتبع شحنتك</a></div></div>
    <div class="footer-col"><h3>للأعمال والمساعدة</h3><div class="footer-links"><a href="#business">حلول الأعمال</a><a href="#faq">الأسئلة الشائعة</a><a href="#contact">تواصل معنا</a></div></div>
   </div>
-  <div class="footer-bottom"><span>© <span id="year">2026</span> سنام إكسبرس. جميع الحقوق محفوظة.</span><span>خدمات توصيل الطرود والشحن</span></div>
+  <div class="footer-bottom"><span>© <span id="year">2026</span> هنا الأول. جميع الحقوق محفوظة.</span><span>الشحن والخدمات اللوجستية</span></div>
  </div>
 </footer>
 
