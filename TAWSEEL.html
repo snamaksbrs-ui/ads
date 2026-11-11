@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>البريد السعودي | سبل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--p:#00c8e1;--s:#146e82;--d:#153c3f;--bg:#ffffff;--bg2:#f3fafb;--t:#373737;--t2:#516477;--b:#e5e5e5;--card:#ffffff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e2426;--bg2:#12302f;--t:#e8f1f2;--t2:#9db3bd;--b:#24474a;--card:#153c3f}}
+:root[data-theme="dark"]{--bg:#0e2426;--bg2:#12302f;--t:#e8f1f2;--t2:#9db3bd;--b:#24474a;--card:#153c3f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--t);font-family:"URW Geometric Arabic","Tajawal",system-ui,sans-serif;font-weight:500;font-size:16px;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.w{max-width:1200px;margin:0 auto;padding:0 16px}
+svg.lucide{width:1.25em;height:1.25em;stroke-width:1.8}
+.top{background:var(--d);color:#fff;font-size:14px}
+.top .w{display:flex;justify-content:space-between;align-items:center;height:44px}
+.top nav{display:flex;gap:4px;height:100%}
+.top nav a{display:flex;align-items:center;padding:0 24px;border-radius:10px 10px 0 0;margin-top:6px;opacity:.8}
+.top nav a.on{background:var(--bg);color:var(--s);opacity:1;font-weight:700}
+.top .r{display:flex;gap:20px;align-items:center}.top .r a{display:flex;gap:6px;align-items:center}
+.hdr{background:var(--bg);border-bottom:1px solid var(--b);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+.hdr .w{display:flex;align-items:center;gap:32px;height:80px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:28px;color:var(--s)}
+.logo i{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--p);color:var(--d)}
+.menu{display:flex;gap:6px;flex:1;overflow-x:auto}
+.menu a{display:flex;gap:4px;align-items:center;padding:8px 14px;border-radius:10px;white-space:nowrap;font-weight:600}
+.menu a:hover{background:var(--bg2);color:var(--s)}
+.acts{display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:10px 24px;font:inherit;font-weight:700;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s}
+.btn.f{background:var(--p);color:var(--d)}.btn.f:hover{background:var(--s);color:#fff}
+.btn.o{border-color:var(--s);color:var(--s);background:transparent}.btn.o:hover{background:var(--s);color:#fff}
+:focus-visible{outline:3px solid var(--p);outline-offset:2px}
+.hero{background:linear-gradient(135deg,var(--d) 0%,#0f4a52 60%,var(--s) 100%);color:#fff;position:relative;overflow:hidden;padding:72px 0 120px}
+.hero::after{content:"";position:absolute;inset-inline-start:-140px;bottom:-200px;width:520px;height:520px;border-radius:50%;border:60px solid rgba(0,200,225,.18)}
+.hero .w{position:relative;z-index:1}
+.hero h1{font-size:clamp(48px,9vw,96px);line-height:1.15;font-weight:800;margin:0 0 8px}
+.hero p.sub{font-size:24px;margin:0 0 40px;opacity:.9}
+.track{background:var(--card);color:var(--t);border-radius:30px;padding:32px;max-width:760px;box-shadow:rgba(21,60,63,.3) 0 21px 40px 0}
+.track h2{margin:0 0 4px;font-size:24px;display:flex;gap:8px;align-items:center;color:var(--s)}
+.track .hint{color:var(--t2);font-size:14px;margin:0 0 16px}
+.tbox{display:flex;gap:12px;flex-wrap:wrap}
+.tin{flex:1;min-width:220px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;border:2px solid var(--b);border-radius:14px;padding:8px 14px;background:var(--bg)}
+.tin:focus-within{border-color:var(--p)}
+.tin input{flex:1;min-width:120px;border:0;outline:0;background:transparent;font:inherit;color:var(--t);padding:6px 0}
+.tag{display:inline-flex;gap:6px;align-items:center;background:var(--bg2);color:var(--s);border-radius:8px;padding:2px 10px;font-weight:700;direction:ltr}
+.tag button{all:unset;cursor:pointer;display:grid}
+.tin-note{font-size:13px;color:var(--t2);margin:10px 0 0}
+#res{margin-top:16px;display:grid;gap:8px}
+.rs{display:flex;gap:10px;align-items:center;background:var(--bg2);border-radius:12px;padding:10px 14px}
+.rs b{direction:ltr}
+.strip{margin-top:-56px;position:relative;z-index:2}
+.alerts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.al{display:flex;gap:14px;align-items:center;background:var(--card);border-radius:16px;padding:16px 20px;box-shadow:rgba(0,0,0,.09) 0 0 25px 0}
+.al i{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--bg2);color:var(--s)}
+.al.w2 i{background:#fff4e0;color:#c47a00}
+.al a{margin-inline-start:auto;color:var(--s);font-weight:700;white-space:nowrap}
+.sec{padding:72px 0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.c{background:var(--card);border:1px solid var(--b);border-radius:28px;padding:32px 24px;display:flex;flex-direction:column;gap:12px;transition:box-shadow .25s}
+.c:hover{box-shadow:rgba(21,60,63,.3) 0 21px 40px -12px}
+.c .ic{width:64px;height:64px;border-radius:20px;background:var(--bg2);color:var(--s);display:grid;place-items:center}
+.c .ic svg{width:32px;height:32px}
+.c h3{margin:0;font-size:24px;color:var(--d)}
+.c p{margin:0;color:var(--t2);flex:1}
+.c .btn{align-self:flex-start}
+.split{display:grid;grid-template-columns:1fr 1fr;border-radius:40px;overflow:hidden;background:var(--d);color:#fff;margin-bottom:24px}
+.split.rev{background:var(--bg2);color:var(--t)}
+.split .tx{padding:56px;display:flex;flex-direction:column;gap:14px;justify-content:center;align-items:flex-start}
+.split h2{margin:0;font-size:40px;line-height:1.3}
+.split p{margin:0;font-size:18px;opacity:.9}
+.split .im{min-height:300px;display:grid;place-items:center;background:linear-gradient(135deg,var(--s),var(--p));color:#fff}
+.split.rev .im{background:linear-gradient(135deg,var(--d),var(--s))}
+.split .im svg{width:120px;height:120px;stroke-width:1.2;opacity:.9}
+.split.rev .btn.f:hover{background:var(--d)}
+.split .im svg.ill{width:82%;height:auto;max-width:380px;stroke-width:0;opacity:1}
+.hg{position:absolute;inset-inline-end:3%;top:40px;width:min(38vw,440px);height:auto;z-index:0}
+.orb{transform-origin:200px 200px;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:1024px){.hg{display:none}}
+@media (prefers-reduced-motion:reduce){.orb{animation:none}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.bn{border-radius:40px;padding:40px;display:flex;gap:20px;align-items:center;background:var(--p);color:var(--d);box-shadow:rgba(21,60,63,.3) 0 21px 40px -12px}
+.bn.b2{background:var(--s);color:#fff}
+.bn .ic{flex:none;width:72px;height:72px;border-radius:22px;background:rgba(255,255,255,.35);display:grid;place-items:center}
+.bn .ic svg{width:36px;height:36px}
+.bn h3{margin:0 0 4px;font-size:28px}.bn p{margin:0 0 14px}
+.bn .btn{background:var(--d);color:#fff}
+.br{background:var(--bg2);border-radius:40px;padding:48px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.br h2{font-size:40px;line-height:1.3;margin:0 0 8px;color:var(--d)}
+.srch{display:flex;gap:10px;margin:16px 0;flex-wrap:wrap}
+.srch .tin{padding:6px 14px}
+.map{min-height:260px;border-radius:28px;background:
+radial-gradient(circle at 30% 40%,var(--p) 0 8px,transparent 9px),radial-gradient(circle at 62% 28%,var(--s) 0 8px,transparent 9px),radial-gradient(circle at 70% 66%,var(--p) 0 8px,transparent 9px),radial-gradient(circle at 40% 72%,var(--s) 0 8px,transparent 9px),
+repeating-linear-gradient(0deg,transparent 0 39px,var(--b) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,var(--b) 39px 40px),var(--card);border:1px solid var(--b)}
+.app{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;background:var(--d);color:#fff;border-radius:40px;padding:56px}
+.app h2{font-size:40px;margin:8px 0 16px}
+.stores{display:flex;gap:12px;flex-wrap:wrap}
+.stores a{display:flex;gap:10px;align-items:center;background:#fff;color:var(--d);border-radius:14px;padding:10px 20px;font-weight:700}
+.phone{justify-self:center;width:220px;height:380px;border-radius:36px;border:8px solid rgba(255,255,255,.25);background:linear-gradient(160deg,var(--s),var(--p));display:grid;place-items:center}
+.phone svg{width:80px;height:80px}
+.help{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.hb{border:1px solid var(--b);border-radius:28px;padding:32px;display:flex;gap:18px;background:var(--card)}
+.hb i{flex:none;width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:var(--bg2);color:var(--s)}
+.hb h3{margin:0 0 6px;font-size:22px;color:var(--d)}.hb p{margin:0 0 14px;color:var(--t2)}
+.hb .l{display:flex;gap:10px;flex-wrap:wrap}
+footer{background:var(--d);color:#fff;padding:64px 0 24px}
+.fg{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.fg h4{margin:0 0 14px;font-size:18px;color:var(--p)}
+.fg a{display:block;padding:3px 0;opacity:.85}.fg a:hover{opacity:1;color:var(--p)}
+.soc{display:flex;gap:10px;margin:32px 0;flex-wrap:wrap}
+.soc a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12)}
+.soc a:hover{background:var(--p);color:var(--d)}
+.fb{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;opacity:.9}
+.fb nav{display:flex;gap:20px}
+@media (max-width:1024px){.cards,.fg{grid-template-columns:1fr 1fr}.menu{display:none}.hdr .w{justify-content:space-between}}
+@media (max-width:760px){.alerts,.two,.split,.br,.app,.help,.cards,.fg{grid-template-columns:1fr}.split .tx,.br,.app{padding:32px 24px}.split h2,.br h2,.app h2{font-size:30px}.hero{padding:48px 0 100px}.top .r a span{display:none}.top nav a{padding:0 12px}.acts .btn{padding:8px 14px}.bn{flex-direction:column;align-items:flex-start}.phone{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top"><div class="w">
+ <nav aria-label="القطاعات"><a class="on" href="#">الأفراد</a><a href="#">الأعمال</a><a href="#">الخدمات الحكومية</a></nav>
+ <div class="r"><a href="#"><i data-lucide="life-buoy"></i><span>مساعدة ودعم</span></a><a href="#branches"><i data-lucide="map-pin"></i><span>الفروع</span></a><a href="#"><i data-lucide="languages"></i><span>English</span></a></div>
+</div></div>
+
+<header class="hdr"><div class="w">
+ <a class="logo" href="#"><i><i data-lucide="mail"></i></i>سبل</a>
+ <nav class="menu" aria-label="الرئيسية">
+  <a href="#">إرسال <i data-lucide="chevron-down"></i></a><a href="#">استلام <i data-lucide="chevron-down"></i></a><a href="#">عالمي</a><a href="#">العنوان الوطني</a><a href="#">خدمات التجزئة <i data-lucide="chevron-down"></i></a><a href="#">الطوابع</a>
+ </nav>
+ <div class="acts"><a class="btn o" href="#">دخول</a><a class="btn f" href="#">تسجيل</a></div>
+</div></header>
+
+<section class="hero"><svg class="hg" viewBox="0 0 400 400" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00c8e1"/><stop offset="1" stop-color="#146e82"/></linearGradient></defs><circle cx="200" cy="200" r="112" fill="url(#gg)"/><g fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"><ellipse cx="200" cy="200" rx="46" ry="112"/><ellipse cx="200" cy="200" rx="88" ry="112"/><path d="M88 200h224M104 150h192M104 250h192"/></g><circle cx="200" cy="200" r="168" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-dasharray="4 10"/><g class="orb"><g transform="translate(354 186)"><rect width="32" height="32" rx="7" fill="#fff"/><path d="M0 11h32M16 0v11" stroke="#00c8e1" stroke-width="5"/></g><g transform="translate(14 170)"><rect width="30" height="30" rx="7" fill="#00c8e1"/><path d="M0 10h30M15 0v10" stroke="#153c3f" stroke-width="4"/></g><path d="M190 28l36 12-36 12 6-12z" fill="#fff"/></g><circle cx="168" cy="170" r="7" fill="#fff"/><circle cx="168" cy="170" r="16" fill="none" stroke="#fff" stroke-opacity=".5"/></svg><div class="w">
+ <h1>سبيلك للعالم</h1>
+ <p class="sub">أهلا بك في البريد السعودي | سبل</p>
+ <div class="track">
+  <h2><i data-lucide="package-search"></i>تتبع الشحنات</h2>
+  <p class="hint">يمكنك إيجاد رقم التتبع (المكوّن من 13 رقم أو أكثر) في الرسالة المرسلة على رقم جوالك.</p>
+  <div class="tbox">
+   <label class="tin" id="tin"><input id="ti" inputmode="numeric" placeholder="أدخل رقمًا أو عدة أرقام تتبع" aria-label="رقم التتبع"></label>
+   <button class="btn f" id="tb" type="button"><i data-lucide="search"></i>تتبع</button>
+  </div>
+  <p class="tin-note">افصل بين أرقام التتبع المتعددة بمسافة لمعرفة حالة كل شحنة</p>
+  <div id="res" aria-live="polite"></div>
+ </div>
+</div></section>
+
+<div class="strip"><div class="w alerts">
+ <div class="al"><i data-lucide="message-square-heart"></i><span>رأيك يهمنا! قيّم تجربتك الرقمية مع سبل</span><a href="#">قيّم تجربتك الآن</a></div>
+ <div class="al w2"><i data-lucide="triangle-alert"></i><span>تحذير: لا يستخدم البريد الإلكتروني لسداد الفواتير!</span><a href="#">اكتشف المزيد</a></div>
+</div></div>
+
+<section class="sec"><div class="w cards">
+ <article class="c"><div class="ic"><i data-lucide="map-pinned"></i></div><h3>العنوان الوطني</h3><p>العنوان الوطني هو نظام عنونة دقيق يحدد مواقع الأفراد والمؤسسات سواء كانت شركات أو جهات حكومية بدقة.</p><a class="btn f" href="#">سّجل الآن</a></article>
+ <article class="c"><div class="ic"><i data-lucide="calculator"></i></div><h3>حاسبة الأسعار</h3><p>هل لديك شحنة أو طرد بحاجة إلى إرساله؟ أدخل وزن الشحنة ووجهتها واعرف تكاليف شحنتك ومدة التوصيل.</p><a class="btn f" href="#">احسب طردك</a></article>
+ <article class="c"><div class="ic"><i data-lucide="credit-card"></i></div><h3>سداد الفواتير</h3><p>هل لديك فاتورة مستحقة؟ يمكنك دفع جميع فواتيرك البريدية بسهولة عبر الإنترنت.</p><a class="btn f" href="#">سدد فاتورتك</a></article>
+ <article class="c"><div class="ic"><i data-lucide="layers"></i></div><h3>منصة SMEs</h3><p>منصة إلكترونية تمكنك من شراء باقة من 20 شحنة أو أكثر لإرسال شحناتك داخل المملكة بوزن يصل حتى 20 كيلو للشحنة.</p><a class="btn f" href="#">اختر باقتك</a></article>
+</div></section>
+
+<section class="w">
+ <div class="split"><div class="tx"><h2>الناشر التجاري</h2><p>وثق وأدر جميع مواقعك في خرائط قوقل! عزز من وجودك على خرائط قوقل وتقديم مجموعة من المزايا التي تسمح لك بالنمو وإدارة عملك بشكل احترافي</p><a class="btn f" href="#">للمزيد من التفاصيل</a></div><div class="im"><svg class="ill" viewBox="0 0 320 240" aria-hidden="true"><rect x="20" y="20" width="280" height="200" rx="26" fill="rgba(255,255,255,.18)"/><path d="M20 110h280M110 20v200M210 20v200" stroke="rgba(255,255,255,.35)" stroke-width="3"/><g fill="#fff"><path d="M160 52a26 26 0 0 1 26 26c0 20-26 48-26 48s-26-28-26-48a26 26 0 0 1 26-26z"/><path d="M75 120a16 16 0 0 1 16 16c0 12-16 30-16 30s-16-18-16-30a16 16 0 0 1 16-16z" opacity=".8"/><path d="M248 128a16 16 0 0 1 16 16c0 12-16 30-16 30s-16-18-16-30a16 16 0 0 1 16-16z" opacity=".8"/></g><g fill="#153c3f"><circle cx="160" cy="78" r="10"/><circle cx="75" cy="136" r="6"/><circle cx="248" cy="144" r="6"/></g></svg></div></div>
+ <div class="split rev"><div class="im"><svg class="ill" viewBox="0 0 320 240" aria-hidden="true"><circle cx="160" cy="120" r="84" fill="rgba(255,255,255,.2)"/><g fill="none" stroke="rgba(255,255,255,.55)" stroke-width="3"><ellipse cx="160" cy="120" rx="36" ry="84"/><path d="M76 120h168M90 80h140M90 160h140"/></g><g transform="translate(30 150)"><path d="M0 14h56l-6 50H6z" fill="#fff"/><path d="M16 14v-6a12 12 0 0 1 24 0v6" fill="none" stroke="#fff" stroke-width="5"/></g><g transform="translate(236 30)"><path d="M0 14h50l-6 44H6z" fill="#00c8e1"/><path d="M14 14v-5a11 11 0 0 1 22 0v5" fill="none" stroke="#00c8e1" stroke-width="5"/></g></svg></div><div class="tx"><h2>عالمي</h2><p>تسوّق من علاماتك التجارية المفضلة حول العالم، واستلم مشترياتك على عنوانك الوطني أو أي عنوان آخر.</p><a class="btn f" href="#">ابدأ التسوّق</a></div></div>
+ <div class="split"><div class="tx"><h2>تجاري</h2><p>نوصلك وين ماتكون.. نوصلك وين ماتبي.. ورصيد إضافي 30%.. خدمة عصرية وموثوقة, تقدم عنوان سهل وواضح ومعياري للجهات التجارية لتحقيق تطلعات القطاع التجاري.</p><a class="btn f" href="#">للمزيد من التفاصيل</a></div><div class="im"><svg class="ill" viewBox="0 0 320 240" aria-hidden="true"><rect x="0" y="176" width="320" height="10" rx="5" fill="rgba(255,255,255,.35)"/><path d="M20 176v-90a10 10 0 0 1 10-10h130a10 10 0 0 1 10 10v90z" fill="#fff"/><path d="M170 106h52a14 14 0 0 1 12 7l22 34a14 14 0 0 1 2 7v22h-88z" fill="#00c8e1"/><path d="M184 122h34l16 26h-50z" fill="#153c3f" opacity=".7"/><circle cx="70" cy="182" r="20" fill="#153c3f"/><circle cx="70" cy="182" r="8" fill="#fff"/><circle cx="230" cy="182" r="20" fill="#153c3f"/><circle cx="230" cy="182" r="8" fill="#fff"/><path d="M52 118h96M52 138h60" stroke="#146e82" stroke-width="8" stroke-linecap="round"/><path d="M240 40h50M256 58h40" stroke="rgba(255,255,255,.5)" stroke-width="6" stroke-linecap="round"/></svg></div></div>
+</section>
+
+<section class="sec"><div class="w two">
+ <div class="bn"><div class="ic"><i data-lucide="id-card"></i></div><div><h3>عنوانك هويتك</h3><p>يمكنك تسجيل عنوانك الوطني بالمجان وإدارته بكل يسر وسهولة.</p><a class="btn" href="#">سجّل الآن</a></div></div>
+ <div class="bn b2"><div class="ic"><i data-lucide="badge-percent"></i></div><div><h3>هل تشحن باستمرار؟</h3><p>يمكنك توفير مايقارب 50٪ من قيمة الشحن عند استخدامك منصة SMEs.</p><a class="btn" href="#">اختر الباقة المناسبة</a></div></div>
+</div></section>
+
+<section class="w" id="branches"><div class="br">
+ <div><h2>أكثر من 450 فرع لخدمتكم<br>الآن أصبحنا أقرب لكم</h2><p>ابحث عن فرع البريد السعودي | سبل</p>
+  <div class="srch"><label class="tin" style="flex:1"><i data-lucide="map-pin"></i><input placeholder="أدخل عنوانًا أو مدينة" aria-label="بحث عن فرع"></label><a class="btn f" href="#"><i data-lucide="search"></i>البحث</a></div>
+  <a class="btn o" href="#"><i data-lucide="locate-fixed"></i>الفرع الأقرب</a>
+  <p style="color:var(--t2)">خريطة تفاعلية تمكنك من معرفة الفروع التابعة للأحياء ومقدمي الخدمة الأقرب لكل حي</p></div>
+ <div class="map" role="img" aria-label="خريطة الفروع"></div>
+</div></section>
+
+<section class="sec"><div class="w app">
+ <div><i data-lucide="smartphone" style="width:44px;height:44px;color:var(--p)"></i><h2>حمّل التطبيق الآن!</h2><p style="font-size:18px;margin:0 0 24px">تطبيق سبل أون لاين: استفد من خدمات سبل عبر التطبيق، واستمتع بتجربة أسهل وأسرع.</p>
+  <div class="stores"><a href="#"><i data-lucide="apple"></i>App Store</a><a href="#"><i data-lucide="play"></i>Google Play</a></div></div>
+ <div class="phone"><i data-lucide="mail-check"></i></div>
+</div></section>
+
+<section class="w" style="padding-bottom:72px"><div class="help">
+ <div class="hb"><i data-lucide="shield-alert"></i><div><h3>تحذير لعملائنا من الرسائل الاحتيالية</h3><p>نُجدّد تنويهنا لعملائنا الكرام بعدم التفاعل مع الرسائل الاحتيالية الواردة عبر البريد الإلكتروني، والتي تنتحل اسم وشعار مؤسسة البريد السعودي | سبل.</p><div class="l"><a class="btn f" href="#">للمزيد من التفاصيل</a><a class="btn o" href="#">مساعدة ودعم</a></div></div></div>
+ <div class="hb"><i data-lucide="headset"></i><div><h3>مركز العناية بالعملاء</h3><p>نسعد بخدمتكم بالرد على جميع طلباتكم واستفساراتكم عبر الرقم المجاني <a href="tel:19992" style="color:var(--s);font-weight:800">19992</a> ومن خارج المملكة <a href="tel:+966112898888" dir="ltr" style="color:var(--s);font-weight:800">+966112898888</a></p><div class="l"><a class="btn f" href="#">اتصل بنا</a><a class="btn o" href="#">الشكاوى والطلبات</a></div></div></div>
+</div></section>
+
+<footer><div class="w">
+ <div class="fg">
+  <div><h4>سبل</h4><a href="#">عن المؤسسة</a><a href="#">كلمة معالي الرئيس</a><a href="#">مجلس الإدارة</a><a href="#">القادة</a><a href="#">الهيكل التنظيمي</a><a href="#">استراتيجية البريد السعودي</a><a href="#">المسؤولية الاجتماعية</a><a href="#">فروعنا</a></div>
+  <div><h4>المركز الإعلامي</h4><a href="#">الأخبار</a><a href="#">الفعاليات</a><a href="#">الجوائز والإنجازات</a><a href="#">التقارير السنوية</a><a href="#">المنقولات</a></div>
+  <div><h4>أخرى</h4><a href="#">التوظيف</a><a href="#">المنافسات والمناقصات</a><a href="#">التوعية بالاحتيال</a><a href="#">البيانات المفتوحة</a><a href="#">مشاركة البيانات</a><a href="#">منصة المشاركة الإلكترونية</a></div>
+  <div><h4>مواقع ذات علاقة</h4><a href="#">وزارة النقل والخدمات اللوجستية</a><a href="#">الهيئة العامة للنقل</a><a href="#">أبشر</a><a href="#">ناقل</a><a href="#">المركز السعودي للتنافسية والأعمال</a></div>
+ </div>
+ <div class="soc"><a href="#" aria-label="فيسبوك"><i data-lucide="facebook"></i></a><a href="#" aria-label="إكس"><i data-lucide="twitter"></i></a><a href="#" aria-label="يوتيوب"><i data-lucide="youtube"></i></a><a href="#" aria-label="لينكدإن"><i data-lucide="linkedin"></i></a><a href="#" aria-label="إنستغرام"><i data-lucide="instagram"></i></a><a href="#" aria-label="واتساب"><i data-lucide="message-circle"></i></a></div>
+ <div class="fb"><span>© 2026 جميع الحقوق محفوظة البريد السعودي | سبل</span><nav><a href="#">شروط الخدمة</a><a href="#">سياسة الخصوصية</a><a href="#">إشعار الخصوصية</a></nav></div>
+</div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.263.1/dist/umd/lucide.min.js"></script>
+<script>
+(function(){
+ var tags=[],tin=document.getElementById('tin'),ti=document.getElementById('ti'),res=document.getElementById('res');
+ function icons(){try{lucide.createIcons()}catch(e){}}
+ function draw(){
+  tin.querySelectorAll('.tag').forEach(function(n){n.remove()});
+  tags.forEach(function(t,i){
+   var s=document.createElement('span');s.className='tag';s.textContent=t;
+   var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','حذف');b.innerHTML='<i data-lucide="x"></i>';
+   b.onclick=function(){tags.splice(i,1);draw()};s.appendChild(b);tin.insertBefore(s,ti);
+  });icons();
+ }
+ function add(){ti.value.split(/\s+/).filter(Boolean).forEach(function(v){if(/^\d+$/.test(v)&&tags.indexOf(v)<0)tags.push(v)});ti.value='';draw()}
+ ti.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();add();if(e.key==='Enter')go()}});
+ ti.addEventListener('blur',add);
+ function go(){
+  add();res.innerHTML='';
+  if(!tags.length){res.innerHTML='<div class="rs">أدخل رقم تتبع واحدًا على الأقل.</div>';return}
+  tags.forEach(function(t){
+   var d=document.createElement('div');d.className='rs';
+   if(t.length<13){d.innerHTML='<i data-lucide="circle-alert"></i><span>رقم التتبع <b></b> يجب أن يتكون من 13 رقمًا أو أكثر.</span>'}
+   else{d.innerHTML='<i data-lucide="circle-check"></i><span>الشحنة <b></b>: هذه صفحة تجريبية، اربطها بخدمة التتبع الفعلية.</span>'}
+   d.querySelector('b').textContent=t;res.appendChild(d);
+  });icons();
+ }
+ document.getElementById('tb').onclick=go;icons();
+})();
+</script>
+</body>
+</html>
