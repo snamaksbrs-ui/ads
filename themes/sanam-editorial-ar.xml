@@ -3058,9 +3058,8 @@
             <b:widget-settings>
               <b:widget-setting name='showSnippet'>true</b:widget-setting>
               <b:widget-setting name='showPostTitle'>true</b:widget-setting>
-              <b:widget-setting name='postId'>1795613189726659819</b:widget-setting>
               <b:widget-setting name='showFirstImage'>true</b:widget-setting>
-              <b:widget-setting name='useMostRecentPost'>false</b:widget-setting>
+              <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
               <b:include name='content' />
