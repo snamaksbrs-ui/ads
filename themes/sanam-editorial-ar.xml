@@ -2952,6 +2952,8 @@
       .article-body-shell .post-body pre { padding: 14px; font-size: 13px; }
     }
 
+    .editor-image-fallback { width:100%; height:100%; display:grid; place-items:center; color:#81796d; font:700 12px 'Tajawal',sans-serif; }
+
     ]]></b:skin>
   </head>
 
@@ -3379,6 +3381,8 @@
                               <img decoding='async' expr:alt='data:post.title'
                                 expr:src='resizeImage(data:post.featuredImage, 320, &quot;16:9&quot;)'
                                 height='180' loading='lazy' width='320' />
+                              <b:else />
+                              <span aria-hidden='true' class='editor-image-fallback'>مقال</span>
                             </b:if>
                           </div>
                         </div>
