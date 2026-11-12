@@ -197,84 +197,84 @@
   PHOENIX THEME DESIGNER VARIABLES
 ====================================================================
 
-<Group description="Phoenix Theme Colors" selector="body">
+<Group description="ألوان القالب" selector="body">
 
 <Variable name="phoenix.primary.color"
-          description="Primary Accent Color"
+          description="اللون الأساسي"
           type="color"
           default="#9A7847"
           value="#9A7847"/>
 
 <Variable name="phoenix.primary.dark"
-          description="Primary Accent Hover"
+          description="لون التفاعل الأساسي"
           type="color"
           default="#765A34"
           value="#765A34"/>
 
 <Variable name="phoenix.secondary.color"
-          description="Secondary Color"
+          description="اللون الثانوي"
           type="color"
           default="#252525"
           value="#252525"/>
 
 <Variable name="phoenix.background.color"
-          description="Page Background"
+          description="خلفية الصفحة"
           type="color"
           default="#F5F4F1"
           value="#F5F4F1"/>
 
 <Variable name="phoenix.surface.color"
-          description="Card Background"
+          description="خلفية البطاقات"
           type="color"
           default="#ffffff"
           value="#ffffff"/>
 
 <Variable name="phoenix.text.color"
-          description="Primary Text"
+          description="لون النص الأساسي"
           type="color"
           default="#2b2b2b"
           value="#2b2b2b"/>
 
 <Variable name="phoenix.text.muted"
-          description="Secondary Text"
+          description="لون النص الثانوي"
           type="color"
           default="#6c757d"
           value="#6c757d"/>
 
 <Variable name="phoenix.border.color"
-          description="Border Color"
+          description="لون الحدود"
           type="color"
           default="#e9ecef"
           value="#e9ecef"/>
 
 </Group>
 
-<Group description="Phoenix Typography" selector="body">
+<Group description="الخطوط" selector="body">
 
 <Variable
     name="phoenix.brand.font"
-    description="Brand Font"
+    description="خط الهوية"
     type="font"
     default="normal normal 700 30px Tajawal, sans-serif"
     value="normal normal 700 30px Tajawal, sans-serif"/>
 
 <Variable
     name="phoenix.heading.font"
-    description="Heading Font"
+    description="خط العناوين"
     type="font"
     default="normal normal 700 48px Tajawal, sans-serif"
     value="normal normal 700 48px Tajawal, sans-serif"/>
 
 <Variable
     name="phoenix.body.font"
-    description="Body Font"
+    description="خط النصوص"
     type="font"
     default="normal normal 16px IBM Plex Sans Arabic, sans-serif"
     value="normal normal 16px IBM Plex Sans Arabic, sans-serif"/>
 
 <Variable
     name="phoenix.ui.font"
-    description="UI Font"
+    description="خط عناصر الواجهة"
     type="font"
     default="normal normal 16px IBM Plex Sans Arabic, sans-serif"
     value="normal normal 16px IBM Plex Sans Arabic, sans-serif"/>
@@ -2576,6 +2576,395 @@
       .editor-image { width:72px; height:72px; }
     }
 
+
+    /* =========================================================
+       SANAM EDITORIAL — REFINED LAYOUT & RESPONSIVE PASS
+       ========================================================= */
+    :root {
+      --max-width: 1240px;
+      --primary-color: #8b6b3f;
+      --primary-dark: #6f512d;
+      --bg-color: #f5f4f1;
+      --card-bg: #ffffff;
+      --text-color: #24231f;
+      --text-muted: #77736b;
+      --border-color: #e7e3dc;
+      --surface-shadow: 0 12px 34px rgba(34, 30, 22, .055);
+      --section-space: clamp(52px, 6vw, 84px);
+      --transition-fast: .2s ease;
+    }
+    body {
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    .container { width: min(100% - 48px, var(--max-width)); padding-inline: 0; }
+    .navbar { z-index: 1000; }
+    .nav-container { min-height: 66px; gap: clamp(14px, 2.2vw, 30px); }
+    .logo { display: inline-flex; align-items: center; min-height: 44px; line-height: 1.2; }
+    .nav-menu { gap: clamp(14px, 1.8vw, 26px); }
+    .nav-item a { display: inline-flex; align-items: center; min-height: 42px; }
+    .nav-right { gap: 12px; }
+    .search-box { min-height: 42px; padding: 5px 13px; }
+    .search-box input { min-width: 120px; }
+    .subscribe-btn, .btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+    .hero { padding-block: clamp(48px, 6vw, 76px); }
+    .hero-grid { grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr); gap: clamp(28px, 5vw, 68px); }
+    .hero-content { min-width: 0; }
+    .hero-title { max-width: 13ch; font-size: clamp(36px, 4.4vw, 58px); line-height: 1.3; }
+    .hero-description { max-width: 58ch; font-size: clamp(15px, 1.25vw, 17px); line-height: 2.05; }
+    .hero-buttons { flex-wrap: wrap; margin-bottom: 28px; }
+    .hero-note-mark {
+      width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center;
+      border: 1px solid #d9cfbd; border-radius: 50%; color: var(--primary);
+      background: #f7f4ee; font: 800 21px 'Tajawal', sans-serif;
+    }
+    .hero-community { gap: 12px; }
+    .hero-community strong { display: block; font-size: 14px; line-height: 1.7; }
+    .hero-community p { margin-top: 2px; }
+    .hero-spotlight { align-self: stretch; }
+    .hero-spotlight-image { height: clamp(220px, 24vw, 310px); }
+    .hero-spotlight-fallback { background: #e9e5dc; color: #736b5e; }
+    .hero-spotlight-content { padding: clamp(20px, 2.5vw, 30px); }
+    .hero-spotlight-content h2 { font-size: clamp(22px, 2.2vw, 29px); line-height: 1.5; }
+    .hero-spotlight-content p { line-height: 1.95; }
+    .hero-spotlight-link { align-self: flex-start; color: var(--primary); font-weight: 700; border-bottom: 1px solid #cbb99c; padding-bottom: 3px; }
+    .announcement-bar { padding-block: 10px; }
+    .announcement-content { gap: 10px 14px; }
+    .announcement-badge { border-radius: 3px; padding: 2px 9px; }
+    .quick-access { padding-block: 18px; }
+    .quick-access-wrapper { gap: 9px; }
+    .quick-pill { min-height: 38px; display: inline-flex; align-items: center; }
+    .stats { padding-block: 24px; }
+    .stats-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    .stat-card { padding: 18px 12px; }
+    .section { padding-block: var(--section-space); }
+    .section-header { margin-bottom: 30px; }
+    .section-header h2 { line-height: 1.35; }
+    .category-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .category-card { min-height: 220px; padding: clamp(20px, 2.2vw, 28px); }
+    .category-icon { width: 46px; height: 46px; margin-bottom: 18px; font-size: 12px; }
+    .category-card h3 { line-height: 1.45; }
+    .category-card p { margin-bottom: 16px; line-height: 1.85; }
+    .featured-story-grid { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(26px, 4vw, 56px); }
+    .featured-story .hero-spotlight-image { height: clamp(280px, 34vw, 430px); }
+    .hero-spotlight-img { object-fit: cover; }
+    .editors-picks .section-header { align-items: center; }
+    .editor-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+    .editor-card { min-width: 0; padding: 16px; gap: 12px; }
+    .editor-card-link { gap: 12px; }
+    .editor-header { margin: 0; }
+    .editor-image { width: 76px; height: 76px; }
+    .editor-title { font-size: 16px; line-height: 1.55; }
+    .editor-meta { gap: 7px; margin-block: 4px; }
+    .editor-number { font-size: 22px; }
+    .editor-snippet { margin-top: 7px; font-size: 13px; line-height: 1.75; -webkit-line-clamp: 3; }
+    .article-grid, .blog-posts { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+    .article-card { min-width: 0; }
+    .article-image { height: auto; aspect-ratio: 16 / 10; }
+    .article-content { padding: 20px; gap: 11px; }
+    .article-card h3 { font-size: clamp(17px, 1.6vw, 21px); line-height: 1.55; }
+    .article-card p { font-size: 14px; line-height: 1.85; }
+    .article-meta { font-size: 12px; }
+    .article-link { padding-top: 4px; }
+    .latest-articles-header { margin-bottom: 26px; }
+    .latest-articles-header h2 { font: 800 clamp(26px, 3vw, 36px)/1.4 'Tajawal', sans-serif; }
+    .article-page .article-hero { padding: clamp(32px, 5vw, 58px) 0 22px; }
+    .article-header { max-width: 900px; }
+    .article-title { max-width: 24ch; font-size: clamp(32px, 4.5vw, 54px); line-height: 1.35; }
+    .article-summary { max-width: 68ch; font-size: 17px; line-height: 2; }
+    .article-body-shell { padding: 22px 0 64px; }
+    .article-body-shell > .container { max-width: 900px; }
+    .article-body-shell .post-body {
+      background: #fff; border: 1px solid var(--border); border-radius: 6px;
+      padding: clamp(22px, 4vw, 54px); font-size: 18px; line-height: 2.15;
+    }
+    .post-body h2 { font-size: clamp(24px, 3vw, 32px); line-height: 1.5; margin: 2.2em 0 .7em; }
+    .post-body h3 { font-size: clamp(21px, 2.5vw, 27px); line-height: 1.5; margin: 1.8em 0 .6em; }
+    .post-body p { margin-bottom: 1.25em; }
+    .post-body img { max-width: 100%; height: auto; margin: 1.5em auto; float: none; display: block; }
+    .post-body figure { max-width: 100%; margin: 1.75em auto; }
+    .post-body figcaption { color: var(--text-muted); font-size: 13px; text-align: center; margin-top: 8px; }
+    .post-body ul, .post-body ol { padding-inline-start: 1.5em; padding-inline-end: 0; }
+    html[dir='rtl'] .post-body blockquote { border-right: 3px solid var(--primary); border-left: 0; padding: 18px 22px; }
+    html[dir='ltr'] .post-body blockquote { border-left: 3px solid var(--primary); border-right: 0; padding: 18px 22px; }
+    .author-card { border-radius: 6px; box-shadow: none; border-color: var(--border); }
+    .author-card__avatar { display: grid; place-items: center; border-radius: 50%; background: #f1eee8; color: var(--primary); font: 800 42px 'Tajawal', sans-serif; }
+    .author-card__badge { background: #f4f1eb; border: 1px solid #e7e0d4; color: #6e5a3d; }
+    .author-card__bio { border-radius: 5px; background: #f7f6f3; border-color: var(--border); text-align: right; font-size: 16px; }
+    .comments-section-wrap { border-radius: 6px; padding: clamp(18px, 3vw, 34px); }
+    .newsletter { padding-block: clamp(48px, 6vw, 72px); }
+    .newsletter-box h2 { font-size: clamp(26px, 3vw, 36px); }
+    .newsletter-form { max-width: 620px; margin: 24px auto 0; }
+    .newsletter-input { min-height: 48px; }
+    .site-footer { padding-block: 56px 24px; }
+    .footer-top { gap: clamp(30px, 5vw, 70px); }
+    .footer-navigation { gap: clamp(18px, 3vw, 42px); }
+    .footer-links { display: grid; gap: 10px; }
+    .footer-links a { display: inline-flex; padding-block: 2px; }
+    .footer-bottom { text-align: center; }
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 3px solid rgba(139,107,63,.32); outline-offset: 3px;
+    }
+    button, input { font: inherit; }
+    .btn, .subscribe-btn, .quick-pill, .category-card, .article-card, .editor-card {
+      transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    html[dir='rtl'] .nav-menu { padding-inline: 0; }
+    html[dir='rtl'] .quick-title { margin-inline: 0 8px; }
+    html[dir='rtl'] .hero-spotlight-badge, html[dir='rtl'] .article-badge { right: 16px; left: auto; }
+    html[dir='rtl'] .hero-spotlight-overlay { right: 16px; left: auto; }
+    html[dir='rtl'] .article-body-shell .post-body { text-align: right; }
+    html[dir='rtl'] .footer-navigation { direction: rtl; }
+    @media (max-width: 1024px) {
+      .nav-container { gap: 16px; }
+      .nav-menu { gap: 14px; }
+      .nav-item a { font-size: 13px; }
+      .nav-right { gap: 8px; }
+      .search-box input { min-width: 88px; width: 100px; }
+      .category-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .editor-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .article-grid, .blog-posts { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 768px) {
+      .container { width: calc(100% - 36px); }
+      .navbar { padding: 8px 0; }
+      .nav-container { min-height: 54px; flex-wrap: nowrap; }
+      .logo { font-size: 25px; max-width: calc(100% - 96px); overflow: hidden; text-overflow: ellipsis; }
+      .nav-right { margin-inline-start: auto; }
+      .nav-toggle { width: 42px; height: 42px; order: 3; }
+      .search-toggle { order: 1; width: 42px; height: 42px; }
+      .site-navigation, .site-navigation.active {
+        position: absolute; top: 100%; inset-inline: 0; width: 100%;
+        display: none; background: #fff; border-top: 1px solid var(--border);
+        box-shadow: 0 18px 30px rgba(30,27,20,.10); padding: 8px 18px 16px;
+        max-height: calc(100vh - 72px); overflow-y: auto;
+      }
+      .navbar.is-nav-open .site-navigation { display: block; }
+      .navbar.is-nav-open .nav-menu { display: flex; flex-direction: column; gap: 0; padding: 0; }
+      .navbar.is-nav-open .nav-item { border-bottom: 1px solid #f0ede7; }
+      .navbar.is-nav-open .nav-menu a { display: flex; align-items: center; min-height: 48px; padding: 8px 4px; font-size: 16px; }
+      .nav-right .subscribe-btn { display: none; }
+      .search-box.is-open { position: absolute; z-index: 1002; inset-inline: 54px 48px; top: 5px; margin: 0; min-width: 0; }
+      .search-box.is-open input { min-width: 0; width: 100%; }
+      .hero { padding-block: 40px; }
+      .hero-grid, .featured-story-grid { grid-template-columns: minmax(0,1fr); gap: 26px; }
+      .hero-title { max-width: 100%; font-size: clamp(34px, 8vw, 44px); }
+      .hero-description { font-size: 15px; }
+      .hero-spotlight-image { height: clamp(210px, 58vw, 300px); }
+      .hero-spotlight-content { padding: 20px; }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .stat-card { padding: 14px 8px; }
+      .stat-card h2 { font-size: 24px; }
+      .section { padding-block: 48px; }
+      .section-header { margin-bottom: 22px; }
+      .category-grid, .editor-grid, .article-grid, .blog-posts { grid-template-columns: minmax(0,1fr); gap: 14px; }
+      .category-card { min-height: 0; padding: 20px; }
+      .editor-card { padding: 14px; }
+      .editor-image { width: 72px; height: 72px; }
+      .article-image { aspect-ratio: 16 / 9; }
+      .article-content { padding: 18px; }
+      .article-card h3 { font-size: 19px; }
+      .editors-picks .section-header { align-items: flex-start; flex-direction: column; gap: 14px; }
+      .latest-articles-header { flex-direction: row; align-items: center; flex-wrap: wrap; gap: 12px; }
+      .latest-articles-header h2 { width: auto; }
+      .article-header { padding-inline: 0; }
+      .article-title { font-size: clamp(30px, 8vw, 40px); }
+      .article-summary { font-size: 15px; margin-block: 14px 18px; }
+      .article-body-shell { padding-block: 8px 40px; }
+      .article-body-shell .post-body { padding: 20px 18px; font-size: 16px; line-height: 2.05; }
+      .author-card { margin: 28px 0; padding: 20px; }
+      .author-card__header { flex-direction: row; text-align: right; gap: 14px; }
+      .author-card__avatar { width: 60px; height: 60px; flex: 0 0 60px; font-size: 28px; }
+      .author-card__name { font-size: 20px; }
+      .author-card__bio { padding: 16px; font-size: 14px; }
+      .author-card__actions { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .author-btn { min-height: 48px; height: auto; padding: 10px; font-size: 14px; }
+      .comments-section-wrap { margin-top: 28px; padding: 16px; }
+      .newsletter { padding-block: 42px; }
+      .newsletter-form { gap: 10px; }
+      .newsletter-form .subscribe-btn { width: 100%; }
+      .site-footer { padding-block: 42px 20px; }
+      .footer-navigation { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 18px; }
+      .footer-brand { min-width: 0; }
+      .footer-logo { font-size: 24px; }
+      .footer-description { max-width: 42ch; }
+    }
+    @media (max-width: 420px) {
+      .container { width: calc(100% - 28px); }
+      .logo { font-size: 22px; }
+      .hero-title { font-size: 33px; }
+      .hero-buttons .btn { width: 100%; }
+      .stats-grid { gap: 4px; }
+      .stat-card h2 { font-size: 21px; }
+      .footer-navigation { grid-template-columns: 1fr 1fr; }
+      .author-card__actions { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+
+
+    /* Image loading and card media consistency */
+    .article-image img {
+      display: block; width: 100%; height: 100%; object-fit: cover;
+      transition: transform .35s ease;
+    }
+    .article-card:hover .article-image img { transform: scale(1.035); }
+    .article-image { isolation: isolate; }
+    .article-badge { z-index: 2; }
+    @media (max-width: 768px) {
+      .article-image { aspect-ratio: 16 / 9; height: auto; }
+      .article-image img { min-height: 100%; }
+    }
+
+
+    /* Editorial value strip: informative, not fabricated metrics */
+    .editorial-values { background: #f0eee9; border-block: 1px solid #e6e1d8; }
+    .editorial-values .section-header { max-width: 720px; margin-inline: auto; text-align: center; }
+    .editorial-values .section-header .section-label { color: var(--primary); font-weight: 700; }
+    .editorial-values .stats-grid { gap: 0; border: 1px solid #e2ddd3; background: #fff; }
+    .editorial-values .stat-card {
+      min-width: 0; text-align: start; padding: clamp(18px,2.4vw,30px);
+      border: 0; border-inline-end: 1px solid #e9e5de; border-radius: 0;
+      background: transparent; box-shadow: none;
+    }
+    .editorial-values .stat-card:last-child { border-inline-end: 0; }
+    .editorial-values .value-index {
+      display: inline-flex; margin-bottom: 14px; color: var(--primary);
+      font-size: 12px; font-weight: 700; letter-spacing: .08em;
+    }
+    .editorial-values .stat-card h3 {
+      margin: 0 0 7px; font: 700 19px/1.5 'Tajawal',sans-serif; color: var(--text);
+    }
+    .editorial-values .stat-card p { margin: 0; color: var(--text-light); font-size: 14px; line-height: 1.85; }
+    #latest-articles-title { scroll-margin-top: 90px; }
+    @media(max-width:768px) {
+      .editorial-values .stats-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .editorial-values .stat-card { padding: 18px 14px; border-bottom: 1px solid #e9e5de; }
+      .editorial-values .stat-card:nth-child(2n) { border-inline-end: 0; }
+      .editorial-values .stat-card:nth-last-child(-n+2) { border-bottom: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-right .search-box.is-open { display: flex; }
+      .search-box.is-open { align-items: center; }
+      .search-box.is-open .search-close { display: inline-flex; }
+    }
+
+
+    html[dir='rtl'] .search-box.is-open .search-close { right: auto; left: 12px; }
+    html[dir='rtl'] .search-box.is-open input { padding-right: 12px; padding-left: 38px; }
+    html[dir='ltr'] .search-box.is-open .search-close { left: auto; right: 12px; }
+    html[dir='ltr'] .search-box.is-open input { padding-left: 12px; padding-right: 38px; }
+    .search-box.is-open .search-close {
+      width: 30px; height: 30px; align-items: center; justify-content: center;
+      border-radius: 50%; line-height: 1; cursor: pointer;
+    }
+    .search-box.is-open .search-close:hover { background: #eeeae2; color: var(--text); }
+    .phoenix-pager { gap: 12px; }
+    .pager-nav-link, .pager-home-link {
+      min-height: 44px; display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 16px; border: 1px solid var(--border); border-radius: 4px;
+      background: #fff; color: var(--text); font-weight: 700;
+    }
+    .pager-nav-link:hover, .pager-home-link:hover {
+      border-color: var(--primary); color: var(--primary); background: #faf8f4;
+    }
+    .phoenix-pager .spacer { flex: 1; }
+    @media(max-width: 520px) {
+      .phoenix-pager { flex-wrap: wrap; }
+      .pager-home-wrap { order: 3; width: 100%; }
+      .pager-home-link { width: 100%; }
+      .pager-nav-link { max-width: 100%; font-size: 13px; }
+    }
+
+
+    /* Ad sections should occupy space only when an ad is configured */
+    .ad-zone { padding: 0; border: 0; background: transparent; }
+    .ad-zone .ad-placeholder { padding: 24px 0; }
+
+    html[dir='rtl'] .skip-link { left: auto; right: 20px; }
+
+
+    /* Final editorial surface refinement */
+    .hero-spotlight {
+      padding: 0; border-radius: 6px; overflow: hidden;
+      background: #fff; border-color: var(--border);
+      box-shadow: 0 10px 30px rgba(34,30,22,.045);
+    }
+    .hero-spotlight:hover { transform: none; box-shadow: 0 14px 36px rgba(34,30,22,.075); }
+    .hero-spotlight-image { margin: 0; border-radius: 0; }
+    .hero-spotlight-content { padding: clamp(22px, 3vw, 34px); }
+    .category-card, .article-card, .editor-card { border-radius: 6px; }
+    .category-card { border-color: var(--border); }
+    .category-card:hover {
+      transform: translateY(-3px); border-color: rgba(139,107,63,.26);
+      box-shadow: 0 10px 26px rgba(34,30,22,.06);
+    }
+    .category-icon { border-radius: 4px; }
+    .article-card:hover { transform: translateY(-3px); }
+    .article-card:hover .article-image img { transform: scale(1.025); }
+    .article-badge, .hero-spotlight-badge { border-radius: 3px; }
+    .editor-card { border-color: var(--border); }
+    .editor-card:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(34,30,22,.055); }
+    .author-card:hover { transform: none; box-shadow: none; }
+    .comments-section-wrap { border-radius: 6px; }
+    .newsletter-box { max-width: 760px; }
+    .newsletter-box .subscribe-btn { border-radius: 4px; }
+    .footer-links a:hover { color: #fff; }
+    @media (max-width: 768px) {
+      .hero-spotlight { padding: 0; }
+      .hero-spotlight-content { padding: 20px; }
+      .hero-spotlight:hover, .article-card:hover, .category-card:hover { transform: none; }
+    }
+
+
+    /* Long-form content and embedded media */
+    .article-body-shell .post-body { overflow-wrap: anywhere; }
+    .article-body-shell .post-body pre {
+      max-width: 100%; overflow-x: auto; direction: ltr; text-align: left;
+      border: 1px solid #e8e4dc; border-radius: 5px; line-height: 1.65;
+    }
+    .article-body-shell .post-body pre code {
+      white-space: pre; background: transparent; padding: 0; border-radius: 0;
+    }
+    .article-body-shell .post-body table {
+      display: block; max-width: 100%; overflow-x: auto;
+      border-collapse: collapse; -webkit-overflow-scrolling: touch;
+    }
+    .article-body-shell .post-body iframe,
+    .article-body-shell .post-body video,
+    .article-body-shell .post-body embed {
+      max-width: 100%;
+    }
+    .article-body-shell .post-body video { height: auto; }
+    .editor-image { border-radius: 6px; }
+    .editor-image:empty::after {
+      content: 'مقال'; width: 100%; height: 100%; display: grid; place-items: center;
+      color: #81796d; font: 700 12px 'Tajawal',sans-serif;
+    }
+    @media(max-width:768px) {
+      .article-body-shell .post-body { overflow-wrap: anywhere; }
+      .article-body-shell .post-body pre { padding: 14px; font-size: 13px; }
+    }
+
+    .editor-image-fallback { width:100%; height:100%; display:grid; place-items:center; color:#81796d; font:700 12px 'Tajawal',sans-serif; }
+
+
+    .archive-title {
+      margin: 0 0 28px; padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text); font: 800 clamp(28px,3.5vw,40px)/1.4 'Tajawal',sans-serif;
+    }
+    .static-page-container { max-width: 900px; margin-inline: auto; }
+    .static-page-container .post-title {
+      font-size: clamp(30px,4vw,46px); line-height: 1.4; margin-bottom: 26px;
+    }
+
     ]]></b:skin>
   </head>
 
@@ -2588,7 +2977,7 @@
     <header class='navbar' role='banner'>
       <div class='container nav-container'>
         <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
-          <b:widget id='Header1' locked='true' title='Blog Header' type='Header' version='1'>
+          <b:widget id='Header1' locked='true' title='رأس المدونة' type='Header' version='1'>
             <b:widget-settings>
               <b:widget-setting name='displayUrl' />
               <b:widget-setting name='displayHeight'>0</b:widget-setting>
@@ -2599,7 +2988,7 @@
               <b:widget-setting name='displayWidth'>0</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
-              <a class='logo' expr:aria-label='data:blog.title + &quot; home&quot;' expr:href='data:blog.homepageUrl'><data:blog.title /></a>
+              <a class='logo' expr:aria-label='data:blog.title + &quot; الرئيسية&quot;' expr:href='data:blog.homepageUrl'><data:blog.title /></a>
             </b:includable>
             <b:includable id='description'>
               <div class='descriptionwrapper'>
@@ -2619,10 +3008,10 @@
           </b:widget>
         </b:section>
 
-        <nav aria-label='Primary navigation' class='site-navigation' id='primary-navigation'>
+        <nav aria-label='التنقل الرئيسي' class='site-navigation' id='primary-navigation'>
           <b:section class='main-menu-section' id='main-menu-section' maxwidgets='1'
             showaddelement='no'>
-            <b:widget id='PageList1' locked='false' title='Pages' type='PageList' version='1'>
+            <b:widget id='PageList1' locked='false' title='صفحات المدونة' type='PageList' version='1'>
               <b:widget-settings>
                 <b:widget-setting name='pageListJson'><![CDATA[{}]]></b:widget-setting>
                 <b:widget-setting name='homeTitle'>الرئيسية</b:widget-setting>
@@ -2651,7 +3040,7 @@
         </nav>
 
         <div class='nav-right'>
-          <form action='/search' class='search-box' method='get' role='search'>
+          <form action='/search' class='search-box' id='site-search-form' method='get' role='search'>
             <label class='sr-only' for='site-search'>ابحث في المقالات</label>
             <span aria-hidden='true'>
               <svg fill='none' focusable='false' height='18' viewBox='0 0 24 24' width='18'
@@ -2666,21 +3055,21 @@
             </span>
             <input aria-label='ابحث في المقالات' autocomplete='off' id='site-search' name='q'
               placeholder='ابحث هنا...' type='search' />
-            <button aria-label='Close search' class='search-close' type='button'>
+            <button aria-label='إغلاق البحث' class='search-close' type='button'>
               &#215;
             </button>
           </form>
 
           <a class='subscribe-btn' href='#newsletter'>
-            تابعنا
+            موجز المقالات
           </a>
-          <button aria-label='Open search' class='search-toggle' type='button'>
-            🔍
+          <button aria-controls='site-search-form' aria-expanded='false' aria-label='فتح البحث' class='search-toggle' type='button'>
+            <svg aria-hidden='true' fill='none' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><circle cx='10.75' cy='10.75' r='6.75' stroke='currentColor' stroke-width='1.8'/><path d='m16 16 5 5' stroke='currentColor' stroke-linecap='round' stroke-width='1.8'/></svg>
           </button>
 
 
           <button aria-controls='primary-navigation' aria-expanded='false'
-            aria-label='Open navigation menu' class='nav-toggle' type='button'>
+            aria-label='فتح قائمة التنقل' class='nav-toggle' type='button'>
             <span aria-hidden='true' class='nav-toggle-line' />
             <span aria-hidden='true' class='nav-toggle-line' />
             <span aria-hidden='true' class='nav-toggle-line' />
@@ -2695,20 +3084,21 @@
       <!-- GLOBAL AD ZONE 1 - APPEARS ON ALL PAGES -->
       <!-- ============================================ -->
       <b:section class='ad-zone' id='ad-zone-1' maxwidgets='1' showaddelement='yes'>
-        <b:widget id='HTML1' locked='false' title='Leaderboard Ad' type='HTML' version='1'>
+        <b:widget id='HTML1' locked='false' title='مساحة إعلانية عريضة' type='HTML' version='1'>
           <b:widget-settings>
             <b:widget-setting name='content' />
           </b:widget-settings>
           <b:includable id='main'>
-            <div class='container'>
+            <b:if cond='data:content != &quot;&quot;'>
+<div class='container'>
               <div class='ad-placeholder'>
-                <span class='ad-label'>Advertisement</span>
-                <div aria-label='970 by 250 leaderboard advertising placement' class='ad-box'
-                  role='img'>
+                <span class='ad-label'>مساحة إعلانية</span>
+                <div class='ad-box'>
                   <data:content />
                 </div>
               </div>
             </div>
+</b:if>
           </b:includable>
         </b:widget>
       </b:section>
@@ -2720,14 +3110,14 @@
 
         <b:section class='announcement-bar' id='announcement-bar' maxwidgets='1'
           showaddelement='yes'>
-          <b:widget id='HTML2' locked='false' title='Announcement' type='HTML' version='1'>
+          <b:widget id='HTML2' locked='false' title='شريط الإعلان' type='HTML' version='1'>
             <b:widget-settings>
               <b:widget-setting name='content' />
             </b:widget-settings>
             <b:includable id='main'>
               <div class='container'>
                 <div class='announcement-content'>
-                  <span aria-hidden='true' class='announcement-badge'>New</span>
+                  <span aria-hidden='true' class='announcement-badge'>جديد</span>
                   <span class='announcement-text'>
                     أفكار ومعارف تساعدك على فهم العالم الرقمي
                   </span>
@@ -2741,14 +3131,13 @@
         </b:section>
 
         <b:section class='hero' id='hero' maxwidgets='3' showaddelement='yes'>
-          <b:widget id='FeaturedPost1' locked='false' title='Featured Post' type='FeaturedPost'
+          <b:widget id='FeaturedPost1' locked='false' title='المقال المميز' type='FeaturedPost'
             version='1'>
             <b:widget-settings>
               <b:widget-setting name='showSnippet'>true</b:widget-setting>
               <b:widget-setting name='showPostTitle'>true</b:widget-setting>
-              <b:widget-setting name='postId'>1795613189726659819</b:widget-setting>
               <b:widget-setting name='showFirstImage'>true</b:widget-setting>
-              <b:widget-setting name='useMostRecentPost'>false</b:widget-setting>
+              <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
               <b:include name='content' />
@@ -2764,11 +3153,9 @@
                     مساحة عربية للأفكار والمعرفة والاكتشاف.
                   </h1>
                   <p class='hero-description'>
-                    استكشف practical insights on التقنية, التصميم, Web
-                    Development, التسويق, Branding, and emerging
-                    technologies&#8212;designed to help you learn, create, and grow.
+                    اكتشف رؤى عملية في التقنية والتصميم وتطوير الويب والتسويق والأعمال، إلى جانب موضوعات تساعدك على فهم التحولات الرقمية وتطبيق المعرفة بثقة.
                   </p>
-                  <div aria-label='Featured actions' class='hero-buttons'>
+                  <div aria-label='روابط رئيسية' class='hero-buttons'>
                     <a class='btn btn-primary' href='/search'>
                       اكتشف المقالات
                     </a>
@@ -2776,13 +3163,8 @@
                       عن المدونة
                     </a>
                   </div>
-                  <div aria-label='Reader community' class='hero-community'>
-                    <div aria-hidden='true' class='avatar-group'>
-                      <div class='avatar'>M</div>
-                      <div class='avatar'>A</div>
-                      <div class='avatar'>D</div>
-                      <div class='avatar'>+</div>
-                    </div>
+                  <div aria-label='رسالة المدونة' class='hero-community'>
+                    <div aria-hidden='true' class='hero-note-mark'>م</div>
                     <div>
                       <strong>نؤمن أن المعرفة تبدأ بفضول صغير.</strong>
                       <p>اقرأ، اكتشف، وشارك</p>
@@ -2796,7 +3178,7 @@
                       مختارات اليوم
                     </span>
                     <a class='hero-spotlight-image-link' expr:href='data:postUrl'>
-                      <span aria-label='Featured story image placeholder'
+                      <span aria-label='موضع صورة الموضوع المميز'
                         class='hero-spotlight-fallback' role='img'>موضوع مميز</span>
                       <b:if cond='data:showFirstImage and data:postFirstImage != &quot;&quot;'>
                         <img class='hero-spotlight-img' decoding='async' expr:alt='data:postTitle'
@@ -2806,7 +3188,7 @@
                     </a>
                   </div>
 
-                  <article class='hero-spotlight-content'>
+                  <div class='hero-spotlight-content'>
                     <p class='story-category'>
                       من اختيار التحرير
                     </p>
@@ -2833,25 +3215,16 @@
                         </time>
                       </b:if>
                     </div>
-                    <a expr:href='data:postUrl'> Read <data:postTitle />
-                    </a>
-                  </article>
+                    <a class='hero-spotlight-link' expr:href='data:postUrl'>اقرأ الموضوع</a>
+                  </div>
                 </article>
               </div>
-            </b:includable>
-          </b:widget>
-          <b:widget id='HTML3' locked='false' title='Hero Section' type='HTML' version='1'>
-            <b:widget-settings>
-              <b:widget-setting name='content' />
-            </b:widget-settings>
-            <b:includable id='main'>
-              <!-- Reserved for future Hero enhancements -->
             </b:includable>
           </b:widget>
         </b:section>
 
         <b:section class='quick-access' id='quick-access' maxwidgets='2' showaddelement='yes'>
-          <b:widget id='Label1' locked='false' title='Labels' type='Label' version='1'>
+          <b:widget id='Label1' locked='false' title='التصنيفات' type='Label' version='1'>
             <b:widget-settings>
               <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
               <b:widget-setting name='display'>LIST</b:widget-setting>
@@ -2876,24 +3249,33 @@
           </b:widget>
         </b:section>
 
-        <section class='stats' id='stats'>
+        <section aria-labelledby='editorial-values-title' class='stats editorial-values' id='editorial-values'>
           <div class='container'>
+            <div class='section-header'>
+              <p class='section-label'>ما ستجده هنا</p>
+              <h2 id='editorial-values-title'>معرفة أقرب إلى التطبيق</h2>
+              <p>نختار الموضوعات التي تمنحك فكرة واضحة وخطوة يمكنك البناء عليها.</p>
+            </div>
             <div class='stats-grid'>
               <article class='stat-card'>
-                <h2>تقنية</h2>
-                <p>تقنية</p>
+                <span aria-hidden='true' class='value-index'>01</span>
+                <h3>تقنية مفهومة</h3>
+                <p>شرح مبسط للأدوات والتقنيات والتحولات الرقمية.</p>
               </article>
               <article class='stat-card'>
-                <h2>تصميم</h2>
-                <p>تصميم</p>
+                <span aria-hidden='true' class='value-index'>02</span>
+                <h3>تصميم هادف</h3>
+                <p>أفكار في تجربة المستخدم والهوية والاتصال البصري.</p>
               </article>
               <article class='stat-card'>
-                <h2>أعمال</h2>
-                <p>أدلة عملية</p>
+                <span aria-hidden='true' class='value-index'>03</span>
+                <h3>أعمال عملية</h3>
+                <p>رؤى تساعد على تطوير المشاريع والحضور الرقمي.</p>
               </article>
               <article class='stat-card'>
-                <h2>معرفة</h2>
-                <p>معرفة متجددة</p>
+                <span aria-hidden='true' class='value-index'>04</span>
+                <h3>معرفة متجددة</h3>
+                <p>مقالات وأدلة تواكب ما يتغير وتبقى مفيدة.</p>
               </article>
             </div>
           </div>
@@ -2912,39 +3294,39 @@
                 </div>
                 <div class='category-grid'>
                   <a class='category-card' href='/search/label/Artificial%20Intelligence'>
-                    <span aria-hidden='true' class='category-icon'>AI</span>
-                    <h3>التقنية</h3>
-                    <p>أخبار التقنية والأدوات والابتكارات الرقمية.</p>
+                    <span aria-hidden='true' class='category-icon'>ذكاء</span>
+                    <h3>الذكاء الاصطناعي</h3>
+                    <p>أدوات الذكاء الاصطناعي وتطبيقاته واستخداماته في الحياة والعمل.</p>
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/UI%2FUX'>
-                    <span aria-hidden='true' class='category-icon'>UX</span>
+                    <span aria-hidden='true' class='category-icon'>تجربة</span>
                     <h3>التصميم</h3>
                     <p>أفكار التصميم والإبداع وتجارب الاستخدام.</p>
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Web%20Development'>
-                    <span aria-hidden='true' class='category-icon'>DEV</span>
-                    <h3>الأعمال</h3>
-                    <p>ريادة الأعمال والعمل والإنتاجية.</p>
+                    <span aria-hidden='true' class='category-icon'>ويب</span>
+                    <h3>تطوير الويب</h3>
+                    <p>البرمجة وبناء المواقع والتقنيات التي تقف خلف الويب.</p>
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Digital%20Marketing'>
-                    <span aria-hidden='true' class='category-icon'>SEO</span>
+                    <span aria-hidden='true' class='category-icon'>بحث</span>
                     <h3>التسويق</h3>
                     <p>التسويق وصناعة المحتوى والحضور الرقمي.</p>
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Branding'>
-                    <span aria-hidden='true' class='category-icon'>BR</span>
-                    <h3>الثقافة الرقمية</h3>
-                    <p>اتجاهات وأفكار تؤثر في حياتنا الرقمية.</p>
+                    <span aria-hidden='true' class='category-icon'>هوية</span>
+                    <h3>الهوية والعلامة التجارية</h3>
+                    <p>بناء الهوية البصرية وصناعة حضور مميز للعلامات.</p>
                     <span class='category-link'>استكشف</span>
                   </a>
                   <a class='category-card' href='/search/label/Tech%20News'>
-                    <span aria-hidden='true' class='category-icon'>NEWS</span>
-                    <h3>أدلة ومعرفة</h3>
-                    <p>شروحات ومعلومات عملية بلغة واضحة.</p>
+                    <span aria-hidden='true' class='category-icon'>أخبار</span>
+                    <h3>أخبار التقنية</h3>
+                    <p>متابعة المستجدات والاتجاهات في عالم التقنية.</p>
                     <span class='category-link'>استكشف</span>
                   </a>
                 </div>
@@ -2952,24 +3334,23 @@
             </b:includable>
           </b:widget>
         </b:section>
-        <b:section class='section featured-story' id='featured-story' maxwidgets='1'
-          showaddelement='yes' />
 
         <b:section class='ad-zone' id='ad-zone-homepage' maxwidgets='1' showaddelement='yes'>
-          <b:widget id='HTML8' locked='false' title='مساحة إعلانية Ad' type='HTML' version='1'>
+          <b:widget id='HTML8' locked='false' title='مساحة إعلانية' type='HTML' version='1'>
             <b:widget-settings>
               <b:widget-setting name='content' />
             </b:widget-settings>
             <b:includable id='main'>
-              <div class='container'>
-                <div class='ad-placeholder'>
-                  <span class='ad-label'>مساحة إعلانية</span>
-                  <div aria-label='Responsive in-content advertising placement' class='ad-box'
-                    role='img'>
-                    <data:content />
+              <b:if cond='data:content != &quot;&quot;'>
+                <div class='container'>
+                  <div class='ad-placeholder'>
+                    <span class='ad-label'>مساحة إعلانية</span>
+                    <div class='ad-box'>
+                      <data:content />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </b:if>
             </b:includable>
           </b:widget>
         </b:section>
@@ -2998,7 +3379,7 @@
                     <p>موضوعات تستحق وقتك، اختيرت بعناية.</p>
                   </div>
                   <a class='btn btn-outline' href='/search'>
-                    استكشف All
+                    استكشف المقالات
                   </a>
                 </div>
                 <div class='editor-grid popular-posts'>
@@ -3008,8 +3389,11 @@
                         <div class='editor-header'>
                           <div class='editor-image'>
                             <b:if cond='data:post.featuredImage'>
-                              <img expr:alt='data:post.title'
-                                expr:src='resizeImage(data:post.featuredImage, 320, &quot;16:9&quot;)' />
+                              <img decoding='async' expr:alt='data:post.title'
+                                expr:src='resizeImage(data:post.featuredImage, 320, &quot;16:9&quot;)'
+                                height='180' loading='lazy' width='320' />
+                              <b:else />
+                              <span aria-hidden='true' class='editor-image-fallback'>مقال</span>
                             </b:if>
                           </div>
                         </div>
@@ -3047,12 +3431,12 @@
       <section class='section'>
         <div class='container'>
           <b:section class='main' id='main' showaddelement='yes'>
-            <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='1'>
+            <b:widget id='Blog1' locked='true' title='المقالات' type='Blog' version='1'>
               <b:widget-settings>
                 <b:widget-setting name='showDateHeader'>true</b:widget-setting>
                 <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
                 <b:widget-setting name='showShareButtons'>true</b:widget-setting>
-                <b:widget-setting name='authorLabel'>By</b:widget-setting>
+                <b:widget-setting name='authorLabel'>بواسطة</b:widget-setting>
                 <b:widget-setting name='showCommentLink'>true</b:widget-setting>
                 <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
                 <b:widget-setting name='showAuthor'>false</b:widget-setting>
@@ -3075,23 +3459,23 @@
 
                 <!-- HOMEPAGE: Show posts in grid with title -->
                 <b:if cond='data:blog.url == data:blog.homepageUrl'>
-                  <b:include name='phoenix-home-hero' />
                   <div class='flex-between latest-articles-header'>
-                    <h2>أحدث المقالات</h2>
-                    <a class='btn btn-outline' href='/search'>View All</a>
+                    <h2 id='latest-articles-title'>أحدث المقالات</h2>
+                    <a class='btn btn-outline' href='/search'>عرض جميع المقالات</a>
                   </div>
                   <div class='blog-posts hfeed'>
                     <b:loop values='data:posts' var='post'>
                       <article class='post-outer article-card'>
                         <b:if cond='data:post.firstImageUrl'>
-                          <div aria-label='Article Image' class='article-image'
-                            expr:style='&quot;background: url(&quot; + data:post.firstImageUrl + &quot;) center/cover;&quot;'
-                            role='img'>
-                            <span aria-hidden='true' class='article-badge'>Latest</span>
+                          <div class='article-image'>
+                            <img decoding='async' expr:alt='data:post.title'
+                              expr:src='resizeImage(data:post.firstImageUrl, 720, &quot;16:10&quot;)'
+                              loading='lazy' />
+                            <span aria-hidden='true' class='article-badge'>الأحدث</span>
                           </div>
                           <b:else />
-                          <div aria-label='Default Image' class='article-image' role='img'>
-                            <span class='article-badge'>Blog</span>
+                          <div aria-label='صورة افتراضية للمقال' class='article-image' role='img'>
+                            <span class='article-badge'>مقال</span>
                           </div>
                         </b:if>
                         <div class='article-content'>
@@ -3108,11 +3492,12 @@
                           <p>
                             <data:post.snippet />
                           </p>
-                          <a class='article-link' expr:href='data:post.url'>Read Article</a>
+                          <a class='article-link' expr:href='data:post.url'>اقرأ المقال</a>
                         </div>
                       </article>
                     </b:loop>
                   </div>
+                  <b:include name='nextprev' />
                 </b:if>
 
                 <!-- STATIC PAGES: Render full page content inside required array loops -->
@@ -3136,7 +3521,7 @@
                       <section class='article-hero'>
                         <div class='container'>
                           <div class='article-header'>
-                            <span class='article-eyebrow'>ARTICLE</span>
+                            <span class='article-eyebrow'>مقال</span>
                             <h1 class='article-title'>
                               <data:post.title />
                             </h1>
@@ -3156,7 +3541,7 @@
                         </div>
                       </section>
 
-                      <section class='article-content'>
+                      <section class='article-body-shell'>
                         <div class='container'>
                           <div class='post-body'>
                             <data:post.body />
@@ -3180,21 +3565,22 @@
                 <!-- ARCHIVE/LABEL/SEARCH PAGES -->
                 <b:if
                   cond='data:blog.pageType not in {&quot;item&quot;,&quot;static_page&quot;} and data:blog.url != data:blog.homepageUrl'>
-                  <h2 class='mb-5'>
+                  <h1 class='archive-title'>
                     <data:blog.pageName />
-                  </h2>
+                  </h1>
                   <div class='blog-posts hfeed'>
                     <b:loop values='data:posts' var='post'>
                       <article class='post-outer article-card'>
                         <b:if cond='data:post.firstImageUrl'>
-                          <div aria-label='Article Image' class='article-image'
-                            expr:style='&quot;background: url(&quot; + data:post.firstImageUrl + &quot;) center/cover;&quot;'
-                            role='img'>
-                            <span class='article-badge'>Latest</span>
+                          <div class='article-image'>
+                            <img decoding='async' expr:alt='data:post.title'
+                              expr:src='resizeImage(data:post.firstImageUrl, 720, &quot;16:10&quot;)'
+                              loading='lazy' />
+                            <span aria-hidden='true' class='article-badge'>الأحدث</span>
                           </div>
                           <b:else />
-                          <div aria-label='Default Image' class='article-image' role='img'>
-                            <span class='article-badge'>Blog</span>
+                          <div aria-label='صورة افتراضية للمقال' class='article-image' role='img'>
+                            <span class='article-badge'>مقال</span>
                           </div>
                         </b:if>
                         <div class='article-content'>
@@ -3205,7 +3591,7 @@
                           </div>
                           <h3>
                             <a
-                              expr:aria-label='data:post.title ? data:post.title : &quot;Read article&quot;'
+                              expr:aria-label='data:post.title ? data:post.title : &quot;اقرأ المقال&quot;'
                               expr:href='data:post.url'>
                               <data:post.title />
                             </a>
@@ -3213,11 +3599,12 @@
                           <p>
                             <data:post.snippet />
                           </p>
-                          <a class='article-link' expr:href='data:post.url'>Read Article</a>
+                          <a class='article-link' expr:href='data:post.url'>اقرأ المقال</a>
                         </div>
                       </article>
                     </b:loop>
                   </div>
+                  <b:include name='nextprev' />
                 </b:if>
 
               </b:includable>
@@ -3526,7 +3913,7 @@
                       <a class='pager-nav-link' expr:href='data:newerPageUrl'
                         expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;'
                         expr:title='data:newerPageTitle'>
-                        &#8592; Previous Article
+                        &#8592; المقال الأحدث
                       </a>
                     </div>
                     <b:else />
@@ -3535,7 +3922,7 @@
 
                   <div class='mobile-link-button pager-home-wrap' id='blog-pager-home-link'>
                     <a class='pager-home-link' expr:href='data:blog.homepageUrl'>
-                      Back to Home
+                      العودة إلى الرئيسية
                     </a>
                   </div>
 
@@ -3544,7 +3931,7 @@
                       <a class='pager-nav-link' expr:href='data:olderPageUrl'
                         expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;'
                         expr:title='data:olderPageTitle'>
-                        Next Article &#8594;
+                        المقال الأقدم &#8594;
                       </a>
                     </div>
                     <b:else />
@@ -3559,33 +3946,7 @@
 
                   <div class='author-card__header'>
 
-                    <div class='author-card__avatar'>
-
-                      <svg aria-hidden='true' viewBox='0 0 120 120'>
-
-                        <defs>
-
-                          <linearGradient id='phoenixAvatar' x1='0%' x2='100%' y1='0%' y2='100%'>
-
-                            <stop offset='0%' stop-color='#EEF2FF' />
-
-                            <stop offset='100%' stop-color='#DCE7FF' />
-
-                          </linearGradient>
-
-                        </defs>
-
-                        <circle cx='60' cy='60' fill='url(#phoenixAvatar)' r='56' />
-
-                        <circle cx='60' cy='42' fill='#6D7CA6' r='18' />
-
-                        <path
-                          d='M30 92                    C30 72 45 62 60 62                    C75 62 90 72 90 92'
-                          fill='#6D7CA6' />
-
-                      </svg>
-
-                    </div>
+                    <div aria-hidden='true' class='author-card__avatar'>م</div>
 
                     <div class='author-card__identity'>
 
@@ -3595,7 +3956,7 @@
 
                       </h3>
 
-                      <div class='author-card__badge'> Contributor <span>&#8226;</span> <data:blog.title /> </div>
+                      <div class='author-card__badge'>كاتب في <span>&#8226;</span> <data:blog.title /></div>
 
                     </div>
 
@@ -3603,8 +3964,7 @@
 
                   <div class='author-card__bio'>
 
-                    Helping businesses and creators build modern digital experiences through UI/UX
-                    design, branding, digital marketing and artificial intelligence.
+                    محتوى يقرّب المعرفة الرقمية إلى القارئ، ويقدم أفكارًا عملية في التقنية والتصميم والأعمال والتسويق.
 
                   </div>
 
@@ -3612,13 +3972,13 @@
 
                     <a class='author-btn author-btn--secondary' href='/p/about-us.html'>
 
-                      About Me
+                      عن الكاتب
 
                     </a>
 
                     <a class='author-btn author-btn--primary' href='/search'>
 
-                      All Articles
+                      جميع المقالات
 
                     </a>
 
@@ -3636,15 +3996,14 @@
                     <div class='home-hero__content'>
 
                       <span class='home-hero__eyebrow'>
-                        JOIN OUR EDITORIAL
+                        مساحة للمعرفة والاكتشاف
                       </span>
 
-                      <h1 class='home-hero__title'> Empower Your Creativity With Knowl<span>edge.</span>
+                      <h1 class='home-hero__title'>وسّع معرفتك، <span>واصنع أفكارك.</span>
                       </h1>
 
                       <p class='home-hero__description'>
-                        Discover practical insights on التقنية, التصميم,
-                        التسويق and الأعمال.
+                        مقالات مختارة ورؤى عملية في التقنية والتصميم والتسويق والأعمال.
                       </p>
 
                       <div class='home-hero__actions'>
@@ -4209,16 +4568,13 @@
         <div class='container'>
           <div class='newsletter-box'>
             <h2>ابقَ على اطلاع</h2>
-            <p class='newsletter-text'>تابع أحدث المقالات والموضوعات الجديدة من المدونة.</p>
-            <form class='newsletter-form' onsubmit='return false;'>
-              <input aria-label='البريد الإلكتروني' class='newsletter-input'
-                placeholder='أدخل بريدك الإلكتروني' required='required' type='email' />
-              <button aria-label='تابعنا to newsletter' class='subscribe-btn'
-                onclick='alert(&apos;سيتم تفعيل الاشتراك لاحقًا من إعدادات الموقع.&apos;)'
-                type='button'>
-                تابعنا
-              </button>
-            </form>
+            <p class='newsletter-text'>تابع جديد المدونة عبر موجز RSS، وأضف الموجز إلى تطبيق قراءة الأخبار المفضل لديك.</p>
+            <div class='newsletter-form'>
+              <a class='subscribe-btn' href='/feeds/posts/default?alt=rss'
+                rel='nofollow noopener noreferrer' target='_blank'>
+                تابع موجز المقالات
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -4233,7 +4589,7 @@
         <div class='footer-top'>
           <div class='footer-brand'>
             <a class='footer-logo' expr:href='data:blog.homepageUrl'><data:blog.title /></a>
-            <p class='footer-description'>مدونة عربية تقدم مقالات وموضوعات متنوعة في التقنية والأعمال والمعرفة.</p>
+            <p class='footer-description'>مساحة عربية للأفكار والمعرفة، بمحتوى واضح في التقنية والتصميم والأعمال والثقافة الرقمية.</p>
             <p class='footer-tagline'>&#169; <data:blog.title />. جميع الحقوق محفوظة.</p>
           </div>
           <div class='footer-navigation'>
@@ -4241,13 +4597,13 @@
               <h3 class='footer-title'>الأقسام</h3>
               <ul class='footer-links'>
                 <li>
-                  <a href='/search/label/Artificial%20Intelligence'>التقنية</a>
+                  <a href='/search/label/Artificial%20Intelligence'>الذكاء الاصطناعي</a>
                 </li>
                 <li>
                   <a href='/search/label/UI%2FUX'>التصميم</a>
                 </li>
                 <li>
-                  <a href='/search/label/Web%20Development'>الأعمال</a>
+                  <a href='/search/label/Web%20Development'>تطوير الويب</a>
                 </li>
               </ul>
             </div>
@@ -4258,10 +4614,10 @@
                   <a href='/search/label/Digital%20Marketing'>التسويق</a>
                 </li>
                 <li>
-                  <a href='/search/label/Branding'>Branding</a>
+                  <a href='/search/label/Branding'>الهوية والعلامة التجارية</a>
                 </li>
                 <li>
-                  <a href='/search/label/Tech%20News'>Tech News</a>
+                  <a href='/search/label/Tech%20News'>أخبار التقنية</a>
                 </li>
               </ul>
             </div>
@@ -4272,10 +4628,10 @@
                   <a href='/p/about-us.html'>من نحن</a>
                 </li>
                 <li>
-                  <a href='/p/contact.html'>Contact</a>
+                  <a href='/p/contact.html'>اتصل بنا</a>
                 </li>
                 <li>
-                  <a href='/p/privacy-policy.html'>Privacy Policy</a>
+                  <a href='/p/privacy-policy.html'>سياسة الخصوصية</a>
                 </li>
               </ul>
             </div>
@@ -4283,7 +4639,7 @@
         </div>
         <hr class='footer-divider' />
         <div class='footer-bottom'>
-          <p class='footer-copyright'>Designed with <strong>Phoenix Theme</strong></p>
+          <p class='footer-copyright'>تصميم وتطوير بواجهة تحريرية عربية</p>
         </div>
       </div>
     </footer>
@@ -4307,7 +4663,7 @@
             fallback = document.createElement('span');
             fallback.className = 'hero-spotlight-fallback';
             fallback.setAttribute('role', 'img');
-            fallback.setAttribute('aria-label', 'Featured story image placeholder');
+            fallback.setAttribute('aria-label', 'موضع صورة الموضوع المميز');
             fallback.textContent = 'موضوع مميز';
             link.insertBefore(fallback, link.firstChild);
           }
@@ -4327,7 +4683,7 @@
         function setMenuState(isOpen) {
           navbar.classList.toggle('is-nav-open', isOpen);
           toggle.setAttribute('aria-expanded', String(isOpen));
-          toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+          toggle.setAttribute('aria-label', isOpen ? 'إغلاق قائمة التنقل' : 'فتح قائمة التنقل');
           document.body.style.overflow = isOpen ? 'hidden' : '';
         }
 
@@ -4339,48 +4695,51 @@
           if (event.target.closest('a')) setMenuState(false);
         });
 
+        function closeSearch(restoreFocus) {
+          if (!searchBox || !searchToggle) return;
+          searchBox.classList.remove('is-open');
+          searchToggle.style.display = '';
+          searchToggle.setAttribute('aria-expanded', 'false');
+          if (restoreFocus) searchToggle.focus();
+        }
+
         document.addEventListener('keydown', function (event) {
           if (event.key === 'Escape') {
             setMenuState(false);
-            toggle.focus();
+            if (searchBox && searchBox.classList.contains('is-open')) {
+              closeSearch(true);
+            } else if (document.activeElement === toggle) {
+              toggle.focus();
+            }
           }
         });
+
         if (searchToggle && searchBox) {
+          searchToggle.setAttribute('aria-expanded', 'false');
+          searchToggle.addEventListener('click', function () {
+            var willOpen = !searchBox.classList.contains('is-open');
+            searchBox.classList.toggle('is-open', willOpen);
+            searchToggle.style.display = willOpen ? 'none' : '';
+            searchToggle.setAttribute('aria-expanded', String(willOpen));
+            if (willOpen && searchInput) {
+              searchInput.focus();
+            }
+          });
+        }
 
-    searchToggle.addEventListener('click', function () {
-  
+        if (searchClose) {
+          searchClose.addEventListener('click', function () {
+            closeSearch(true);
+          });
+        }
 
-    searchBox.classList.toggle('is-open');
-    searchToggle.style.display =
-    searchBox.classList.contains('is-open') ? 'none' : 'flex';
+        document.addEventListener('click', function (event) {
+          if (searchBox && searchToggle && searchBox.classList.contains('is-open')
+              && !searchBox.contains(event.target) && !searchToggle.contains(event.target)) {
+            closeSearch(false);
+          }
+        });
 
-   
-
-    if (searchBox.classList.contains('is-open') && searchInput) {
-        searchInput.focus();
-        searchInput.select();
-    }
-
-});
-
-}
-if (searchClose) {
-
-    searchClose.addEventListener('click', function () {
-
-    if (searchInput) {
-        searchInput.value = '';
-    }
-
-    searchBox.classList.remove('is-open');
-
-    searchToggle.style.display = 'flex';
-
-    searchInput.blur();
-
-});
-
-}
       }());
       //]]>
     </script>
